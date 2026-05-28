@@ -217,7 +217,7 @@
 
         .hero-bg {
             position: absolute; inset: -20px;
-            background: url('O.jpg') center/cover no-repeat;
+            background: url('../images/okayama.jpg') center/cover no-repeat;
             will-change: transform;
             animation: heroEntry 2s var(--ease-out-expo) both;
         }
