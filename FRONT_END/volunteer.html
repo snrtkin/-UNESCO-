@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ボランティア参加申込 — UNISCO</title>
+  <meta name="description" content="UNISCOのボランティア参加申込フォーム。必要事項をご記入のうえ、送信してください。" />
+  <link rel="stylesheet" href="style/volunteer.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav" id="main-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand" aria-label="UNISCO Home">
+        <span class="nav-brand-text">UNISCO</span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="/" class="nav-link">ホーム</a></li>
+        <li><a href="#" class="nav-link">活動紹介</a></li>
+        <li><a href="#" class="nav-link">イベント</a></li>
+        <li><a href="#" class="nav-link">お問い合わせ</a></li>
+      </ul>
+      <a href="#volunteer-form" class="nav-cta" id="nav-apply-btn">申し込む</a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero" role="banner">
+
+    <!-- Decorative SVG grid (Flyward-style) -->
+    <div class="hero-grid" aria-hidden="true">
+      <svg width="100%" height="100%" viewBox="0 0 1440 560" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0" y1="80" x2="1440" y2="80" stroke="#C8BFB0" stroke-width="0.6" stroke-dasharray="4 4"/>
+        <line x1="0" y1="280" x2="1440" y2="280" stroke="#C8BFB0" stroke-width="0.6" stroke-dasharray="4 4"/>
+        <line x1="0" y1="480" x2="1440" y2="480" stroke="#C8BFB0" stroke-width="0.6" stroke-dasharray="4 4"/>
+        <line x1="240" y1="0" x2="240" y2="560" stroke="#C8BFB0" stroke-width="0.6" stroke-dasharray="4 4"/>
+        <line x1="480" y1="0" x2="480" y2="560" stroke="#C8BFB0" stroke-width="0.6" stroke-dasharray="4 4"/>
+        <line x1="720" y1="0" x2="720" y2="560" stroke="#C8BFB0" stroke-width="0.6" stroke-dasharray="4 4"/>
+        <line x1="960" y1="0" x2="960" y2="560" stroke="#C8BFB0" stroke-width="0.6" stroke-dasharray="4 4"/>
+        <line x1="1200" y1="0" x2="1200" y2="560" stroke="#C8BFB0" stroke-width="0.6" stroke-dasharray="4 4"/>
+        <!-- Flyward arc -->
+        <path d="M0 280 C360 120, 1080 120, 1440 280" stroke="#C8BFB0" stroke-width="0.8" stroke-dasharray="4 4" fill="none"/>
+      </svg>
+    </div>
+
+    <!-- Decorative stars -->
+    <div class="star star-1" aria-hidden="true">
+      <svg viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14 0L15.8 10.9L26 7L26.4 7.6L18 14L26.4 20.4L26 21L15.8 17.1L14 28H13.2L11.4 17.1L1.2 21L0.8 20.4L9.2 14L0.8 7.6L1.2 7L11.4 10.9L13.2 0H14Z" fill="currentColor"/>
+      </svg>
+    </div>
+    <div class="star star-2" aria-hidden="true">
+      <svg viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14 0L15.8 10.9L26 7L26.4 7.6L18 14L26.4 20.4L26 21L15.8 17.1L14 28H13.2L11.4 17.1L1.2 21L0.8 20.4L9.2 14L0.8 7.6L1.2 7L11.4 10.9L13.2 0H14Z" fill="currentColor"/>
+      </svg>
+    </div>
+    <div class="star star-3" aria-hidden="true">
+      <svg viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14 0L15.8 10.9L26 7L26.4 7.6L18 14L26.4 20.4L26 21L15.8 17.1L14 28H13.2L11.4 17.1L1.2 21L0.8 20.4L9.2 14L0.8 7.6L1.2 7L11.4 10.9L13.2 0H14Z" fill="currentColor"/>
+      </svg>
+    </div>
+
+    <div class="hero-inner">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        ボランティア募集中
+      </div>
+      <h1 class="hero-title">
+        <span class="hero-title-serif">共に創る、</span><br>
+        <span class="hero-title-serif is-italic">未来のために。</span>
+      </h1>
+      <p class="hero-desc">あなたの力を、地域とともに。必要事項をご記入のうえ、<br>送信していただければ担当者よりご連絡いたします。</p>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num">320<span class="stat-plus">+</span></span>
+          <span class="stat-label">登録ボランティア</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item">
+          <span class="stat-num">48</span>
+          <span class="stat-label">活動イベント</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item">
+          <span class="stat-num">15<span class="stat-plus">+</span></span>
+          <span class="stat-label">連携団体</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span>下にスクロール</span>
+      <div class="scroll-line"></div>
+    </div>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="page-main" id="main-content">
+
+    <!-- Section header -->
+    <div class="section-header">
+      <div class="section-eyebrow">
+        <div class="eyebrow-line" aria-hidden="true"></div>
+        申込フォーム
+      </div>
+      <h2 class="section-title">参加をご希望の方へ</h2>
+      <p class="section-desc">以下のフォームに必要事項をご記入ください。<br>ご登録後、3営業日以内に担当者よりご連絡いたします。</p>
+    </div>
+
+    <!-- Form card -->
+    <section class="form-section" aria-labelledby="form-section-title">
+      <h2 id="form-section-title" class="sr-only">ボランティア申込フォーム</h2>
+
+      <div class="form-card">
+        <!-- Left column: info -->
+        <aside class="form-info" aria-label="お申し込みについて">
+          <div class="info-block">
+            <div class="info-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="8" r="3"/>
+                <path d="M6 20v-1a6 6 0 0 1 12 0v1"/>
+              </svg>
+            </div>
+            <h3 class="info-title">申込の流れ</h3>
+            <ol class="info-steps" role="list">
+              <li class="info-step">
+                <span class="step-num" aria-label="Step 1">01</span>
+                <span>フォームに必要事項を入力</span>
+              </li>
+              <li class="info-step">
+                <span class="step-num" aria-label="Step 2">02</span>
+                <span>担当者より連絡（3営業日以内）</span>
+              </li>
+              <li class="info-step">
+                <span class="step-num" aria-label="Step 3">03</span>
+                <span>オリエンテーションへ参加</span>
+              </li>
+              <li class="info-step">
+                <span class="step-num" aria-label="Step 4">04</span>
+                <span>活動スタート！</span>
+              </li>
+            </ol>
+          </div>
+
+          <div class="info-divider" aria-hidden="true"></div>
+
+          <div class="info-block">
+            <div class="info-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+            </div>
+            <h3 class="info-title">活動エリア</h3>
+            <p class="info-text">主に〇〇市内および近郊にて活動中。オンライン参加も歓迎しています。</p>
+          </div>
+
+          <div class="info-divider" aria-hidden="true"></div>
+
+          <div class="info-block">
+            <div class="info-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+            </div>
+            <h3 class="info-title">次回イベント</h3>
+            <p class="info-text">2025年6月15日（日）<br>地域清掃 &amp; 交流イベント<br><em>参加者募集中</em></p>
+          </div>
+
+          <a href="#" class="info-link" id="info-learn-more">
+            活動詳細を見る
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4"/>
+            </svg>
+          </a>
+        </aside>
+
+        <!-- Right column: form -->
+        <div class="form-main">
+          <form id="volunteer-form" class="vform" novalidate aria-label="ボランティア参加申込フォーム">
+
+            <fieldset class="vform-group" aria-label="お名前情報">
+              <legend class="vform-legend">お名前情報</legend>
+              <div class="vform-row two-col">
+                <div class="vform-field">
+                  <label for="fullName" class="vform-label">
+                    お名前（漢字）<span class="required-mark" aria-label="必須">*</span>
+                  </label>
+                  <input
+                    id="fullName"
+                    name="fullName"
+                    type="text"
+                    class="vform-input"
+                    placeholder="山田 太郎"
+                    required
+                    autocomplete="name"
+                    aria-required="true"
+                  >
+                  <span class="vform-error" id="fullName-error" role="alert" aria-live="polite"></span>
+                </div>
+
+                <div class="vform-field">
+                  <label for="furigana" class="vform-label">フリガナ（カタカナ）</label>
+                  <input
+                    id="furigana"
+                    name="furigana"
+                    type="text"
+                    class="vform-input"
+                    placeholder="ヤマダ タロウ"
+                    autocomplete="off"
+                  >
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="vform-group" aria-label="連絡先情報">
+              <legend class="vform-legend">連絡先情報</legend>
+              <div class="vform-row two-col">
+                <div class="vform-field">
+                  <label for="email" class="vform-label">
+                    メールアドレス<span class="required-mark" aria-label="必須">*</span>
+                  </label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    class="vform-input"
+                    placeholder="taro@example.com"
+                    required
+                    autocomplete="email"
+                    aria-required="true"
+                  >
+                  <span class="vform-error" id="email-error" role="alert" aria-live="polite"></span>
+                </div>
+
+                <div class="vform-field">
+                  <label for="phone" class="vform-label">電話番号</label>
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    class="vform-input"
+                    placeholder="090-0000-0000"
+                    autocomplete="tel"
+                  >
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="vform-group" aria-label="プロフィール情報">
+              <legend class="vform-legend">プロフィール情報</legend>
+              <div class="vform-row two-col">
+                <div class="vform-field">
+                  <label for="organization" class="vform-label">所属（学校・団体・会社）</label>
+                  <input
+                    id="organization"
+                    name="organization"
+                    type="text"
+                    class="vform-input"
+                    placeholder="○○大学 / ○○株式会社"
+                    autocomplete="organization"
+                  >
+                </div>
+
+                <div class="vform-field">
+                  <label for="age" class="vform-label">年齢</label>
+                  <input
+                    id="age"
+                    name="age"
+                    type="number"
+                    min="0"
+                    max="120"
+                    class="vform-input"
+                    placeholder="25"
+                  >
+                </div>
+              </div>
+
+              <div class="vform-row">
+                <div class="vform-field">
+                  <label for="availability" class="vform-label">参加希望日・時間帯</label>
+                  <input
+                    id="availability"
+                    name="availability"
+                    type="text"
+                    class="vform-input"
+                    placeholder="例：6月5日 午前 / 土日のみ可"
+                  >
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="vform-group" aria-label="自己紹介">
+              <legend class="vform-legend">自己紹介</legend>
+              <div class="vform-field">
+                <label for="skills" class="vform-label">特技・スキル（任意）</label>
+                <textarea
+                  id="skills"
+                  name="skills"
+                  class="vform-input vform-textarea"
+                  rows="3"
+                  placeholder="語学、デザイン、料理など得意なことがあればご記入ください。"
+                ></textarea>
+              </div>
+
+              <div class="vform-field">
+                <label for="motivation" class="vform-label">参加動機・備考</label>
+                <textarea
+                  id="motivation"
+                  name="motivation"
+                  class="vform-input vform-textarea"
+                  rows="4"
+                  placeholder="ボランティア活動への思いや、参加のきっかけ、ご要望などをご記入ください。"
+                ></textarea>
+              </div>
+            </fieldset>
+
+            <!-- Privacy agreement -->
+            <div class="vform-agree">
+              <label class="agree-label" for="agree" id="agree-wrapper">
+                <span class="agree-checkbox-wrapper">
+                  <input type="checkbox" id="agree" name="agree" required aria-required="true">
+                  <span class="agree-custom-check" aria-hidden="true"></span>
+                </span>
+                <span class="agree-text">
+                  <a href="#" class="agree-link" id="privacy-link">個人情報保護方針</a>に同意します
+                </span>
+              </label>
+              <span class="vform-error" id="agree-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <!-- Actions -->
+            <div class="vform-actions">
+              <button type="submit" class="btn-submit" id="submit-btn">
+                <span class="btn-submit-text">申し込む</span>
+                <span class="btn-submit-icon" aria-hidden="true">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 8h10M9 4l4 4-4 4"/>
+                  </svg>
+                </span>
+              </button>
+              <button type="reset" class="btn-reset" id="reset-btn">リセット</button>
+            </div>
+
+            <!-- Status message -->
+            <div id="form-status" class="form-status" role="status" aria-live="polite" aria-atomic="true"></div>
+
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <p class="footer-brand">UNISCO</p>
+      <p class="footer-copy">&copy; 2025 UNISCO. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPT ===== -->
+  <script>
+    // ---- Nav scroll effect ----
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('is-scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // ---- Floating label animation ----
+    document.querySelectorAll('.vform-input').forEach(input => {
+      const field = input.closest('.vform-field');
+      if (!field) return;
+      input.addEventListener('focus', () => field.classList.add('is-focused'));
+      input.addEventListener('blur', () => {
+        field.classList.remove('is-focused');
+        field.classList.toggle('is-filled', input.value.trim().length > 0);
+      });
+      if (input.value.trim().length > 0) field.classList.add('is-filled');
+    });
+
+    // ---- Form validation & submission ----
+    const form = document.getElementById('volunteer-form');
+    const status = document.getElementById('form-status');
+
+    function showError(fieldId, message) {
+      const el = document.getElementById(fieldId + '-error');
+      if (el) { el.textContent = message; }
+      const input = document.getElementById(fieldId);
+      if (input) { input.setAttribute('aria-invalid', 'true'); input.closest('.vform-field')?.classList.add('has-error'); }
+    }
+    function clearErrors() {
+      document.querySelectorAll('.vform-error').forEach(e => e.textContent = '');
+      document.querySelectorAll('.vform-field.has-error').forEach(f => { f.classList.remove('has-error'); });
+      document.querySelectorAll('[aria-invalid]').forEach(i => i.removeAttribute('aria-invalid'));
+      status.textContent = '';
+      status.className = 'form-status';
+    }
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      clearErrors();
+
+      const fullName = document.getElementById('fullName').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const agree = document.getElementById('agree').checked;
+      let valid = true;
+
+      if (!fullName) { showError('fullName', 'お名前を入力してください。'); valid = false; }
+      if (!email) { showError('email', 'メールアドレスを入力してください。'); valid = false; }
+      else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError('email', '正しいメールアドレスを入力してください。'); valid = false; }
+      if (!agree) {
+        const agreeErr = document.getElementById('agree-error');
+        if (agreeErr) { agreeErr.textContent = '個人情報保護方針への同意が必要です。'; }
+        valid = false;
+      }
+
+      if (!valid) return;
+
+      const btn = document.getElementById('submit-btn');
+      btn.disabled = true;
+      btn.querySelector('.btn-submit-text').textContent = '送信中...';
+
+      // Simulate async submission
+      setTimeout(() => {
+        status.textContent = 'お申し込みありがとうございます。担当者より3営業日以内にご連絡いたします。';
+        status.className = 'form-status is-success';
+        form.reset();
+        document.querySelectorAll('.vform-field').forEach(f => f.classList.remove('is-filled'));
+        btn.disabled = false;
+        btn.querySelector('.btn-submit-text').textContent = '申し込む';
+        status.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 1200);
+    });
+
+    form.addEventListener('reset', () => {
+      clearErrors();
+      setTimeout(() => {
+        document.querySelectorAll('.vform-field').forEach(f => f.classList.remove('is-filled'));
+      }, 50);
+    });
+
+    // ---- Scroll reveal ----
+    const revealEls = document.querySelectorAll('.stat-item, .info-block, .vform-group, .vform-agree, .vform-actions');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => { el.classList.add('reveal'); observer.observe(el); });
+  </script>
+
+</body>
+</html>
