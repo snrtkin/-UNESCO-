@@ -1,0 +1,113 @@
+.content-wrapper {
+    padding: 160px 40px 80px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.eyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 0.28em;
+    color: var(--gold);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.content-wrapper>h1 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(1.75rem, 5vw, 4rem);
+    color: var(--cream);
+    margin-bottom: 24px;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.content-wrapper>p {
+    font-size: 1.1rem;
+    color: rgba(245, 240, 232, 0.8);
+    max-width: 600px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    font-weight: 300;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.btn-back {
+    display: inline-block;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+    color: var(--cream);
+    text-decoration: none;
+    border: 1px solid rgba(201, 169, 110, 0.6);
+    padding: 14px 40px;
+    position: relative;
+    overflow: hidden;
+    cursor: none;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transition: color 0.3s, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s;
+}
+
+.btn-back::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gold);
+    transform: translateX(-101%);
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: -1;
+}
+
+.btn-back:hover {
+    color: var(--navy);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(201, 169, 110, 0.2);
+}
+
+.btn-back:hover::before {
+    transform: translateX(0);
+}
+
+/* ── MOBILE OVERRIDES ── */
+@media (max-width: 768px) {
+    .content-wrapper {
+        padding: 120px 20px 60px;
+    }
+
+    .about-card,
+    .history-card,
+    .organization-card {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-wrapper {
+        padding: 106px 14px 42px;
+    }
+
+    .content-wrapper>p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        margin-bottom: 28px;
+    }
+
+    .btn-back {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}

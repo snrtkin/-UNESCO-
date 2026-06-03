@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ボランティア参加申込 - 岡山ユネスコ協会</title>
+    <title>岡山ユネスコ協会紹介 - 岡山ユネスコ協会</title>
     <link rel="stylesheet" href="../style/style.css">
-    <link rel="stylesheet" href="../style/membership.css"> <!-- Reuse the form styles! -->
+    <link rel="stylesheet" href="../style/about.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -63,53 +63,15 @@
     </header>
 
     <div class="content-wrapper reveal">
-        <span class="eyebrow">VOLUNTEER</span>
-        <h1>ボランティア参加申込</h1>
+        <span class="eyebrow">OKAYAMA UNESCO</span>
+        <h1>岡山ユネスコ協会紹介</h1>
         
-        <div class="membership-form-container reveal">
-            <h2>お申し込みフォーム</h2>
-            <p>以下のフォームに必要事項をご記入の上、「送信する」ボタンを押してください。<br>ご登録後、3営業日以内に担当者よりご連絡いたします。</p>
-            
-            <form class="membership-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('ボランティア参加のお申し込みを受け付けました。');">
-                <div class="form-group">
-                    <label for="name">氏名 (Name) <span class="required">*</span></label>
-                    <input type="text" id="name" name="name" required placeholder="例: 岡山 太郎">
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">メールアドレス (Email) <span class="required">*</span></label>
-                    <input type="email" id="email" name="email" required placeholder="例: sample@unesco.okayama.jp">
-                </div>
-                
-                <div class="form-group">
-                    <label for="phone">電話番号 (Phone)</label>
-                    <input type="tel" id="phone" name="phone" placeholder="例: 090-1234-5678">
-                </div>
-                
-                <div class="form-group">
-                    <label for="activity">希望する活動 (Preferred Activity) <span class="required">*</span></label>
-                    <select id="activity" name="activity" required>
-                        <option value="" disabled selected>選択してください</option>
-                        <option value="event">イベント運営サポート</option>
-                        <option value="education">教育・出前講座サポート</option>
-                        <option value="pr">広報・SNS運用</option>
-                        <option value="other">その他・未定</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">志望動機・メッセージ (Message)</label>
-                    <textarea id="message" name="message" rows="4" placeholder="参加のきっかけや、活かしたいスキルなどがあればご記入ください"></textarea>
-                </div>
-                
-                <div class="form-actions">
-                    <button type="submit" class="btn-primary" style="border:none;"><span>送信する (SUBMIT)</span></button>
-                    <a href="../index.html" class="btn-back" style="animation:none; opacity:1;"><span>ホームに戻る</span></a>
-                </div>
-            </form>
-        </div>
+        <p>This page introduces the Okayama UNESCO Association. Detailed content regarding the association's history, mission, and structure will be displayed here.</p>
+        <a href="../index.html" class="btn-back"><span>BACK TO HOME</span></a>
     </div>
 
+    <script src="../script/index.js"></script>
+    
     <footer class="footer" id="contact">
         <div class="footer-container">
             <div class="footer-brand">
@@ -140,7 +102,6 @@
             </p>
         </div>
     </footer>
-
-    <script src="../script/index.js"></script>
+<script src="../script/about.js"></script>
 </body>
 </html>

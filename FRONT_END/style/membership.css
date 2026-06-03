@@ -1,0 +1,415 @@
+/* ─── EXISTING BASE PROTOTYPE STYLES ─── */
+.content-wrapper {
+    padding: 160px 40px 80px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.eyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 0.28em;
+    color: var(--gold);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.content-wrapper>h1 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(1.75rem, 5vw, 4rem);
+    color: var(--cream);
+    margin-bottom: 24px;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.content-wrapper>p {
+    font-size: 1.1rem;
+    color: rgba(245, 240, 232, 0.8);
+    max-width: 600px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    font-weight: 300;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.btn-back {
+    display: inline-block;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+    color: var(--cream);
+    text-decoration: none;
+    border: 1px solid rgba(201, 169, 110, 0.6);
+    padding: 14px 40px;
+    position: relative;
+    overflow: hidden;
+    cursor: none;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transition: color 0.3s, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s;
+}
+
+.btn-back::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gold);
+    transform: translateX(-101%);
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: -1;
+}
+
+.btn-back:hover {
+    color: var(--navy);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(201, 169, 110, 0.2);
+}
+
+.btn-back:hover::before {
+    transform: translateX(0);
+}
+
+/* ─── MEMBERSHIP PAGE STYLES ─── */
+
+.membership-intro p {
+    font-size: 1.15rem;
+    max-width: 700px;
+    margin: 0 auto 60px;
+    color: rgba(245, 240, 232, 0.85);
+}
+
+.membership-tiers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1100px;
+    margin-bottom: 80px;
+}
+
+.tier-card {
+    background: rgba(17, 24, 39, 0.6);
+    border: 1px solid rgba(201, 169, 110, 0.15);
+    border-radius: 12px;
+    padding: 40px 30px;
+    text-align: left;
+    backdrop-filter: blur(10px);
+    transition: transform 0.4s var(--ease-spring), border-color 0.4s, box-shadow 0.4s;
+    display: flex;
+    flex-direction: column;
+}
+
+.tier-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(201, 169, 110, 0.5);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.tier-card.premium {
+    background: linear-gradient(145deg, rgba(201, 169, 110, 0.1) 0%, rgba(17, 24, 39, 0.8) 100%);
+    border-color: rgba(201, 169, 110, 0.3);
+}
+
+.tier-card.premium:hover {
+    border-color: var(--gold);
+}
+
+.tier-header {
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(245, 240, 232, 0.1);
+}
+
+.tier-header h3 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1.5rem;
+    color: var(--cream);
+    margin-bottom: 15px;
+    letter-spacing: 0.05em;
+}
+
+.tier-price {
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: var(--gold-light);
+    display: flex;
+    align-items: baseline;
+}
+
+.tier-price span {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    margin-left: 5px;
+}
+
+.tier-body p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(245, 240, 232, 0.7);
+    margin-bottom: 25px;
+    opacity: 1;
+    animation: none;
+}
+
+.tier-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.tier-benefits li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    color: var(--cream);
+}
+
+.tier-benefits li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: var(--gold);
+    font-size: 0.9rem;
+}
+
+.membership-cta {
+    background: rgba(201, 169, 110, 0.05);
+    border: 1px solid rgba(201, 169, 110, 0.2);
+    border-radius: 16px;
+    padding: 60px 40px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.membership-cta h2 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 2rem;
+    color: var(--gold-light);
+    margin-bottom: 20px;
+    letter-spacing: 0.05em;
+}
+
+.membership-cta p {
+    font-size: 1.05rem;
+    margin: 0 auto 40px;
+    max-width: 600px;
+    opacity: 1;
+    animation: none;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    display: inline-block;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+    color: var(--navy);
+    background: var(--gold);
+    text-decoration: none;
+    padding: 14px 40px;
+    position: relative;
+    overflow: hidden;
+    cursor: none;
+    transition: transform 0.3s var(--ease-spring), box-shadow 0.3s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(201, 169, 110, 0.3);
+}
+
+/* ─── MEMBERSHIP FORM STYLES ─── */
+.membership-form-container {
+    background: rgba(17, 24, 39, 0.6);
+    border: 1px solid rgba(201, 169, 110, 0.2);
+    border-radius: 16px;
+    padding: 60px 40px;
+    width: 100%;
+    max-width: 800px;
+    text-align: left;
+    backdrop-filter: blur(10px);
+}
+
+.membership-form-container h2 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 2rem;
+    color: var(--gold-light);
+    margin-bottom: 15px;
+    letter-spacing: 0.05em;
+    text-align: center;
+}
+
+.membership-form-container p {
+    font-size: 1.05rem;
+    margin: 0 auto 40px;
+    text-align: center;
+    opacity: 1;
+    animation: none;
+    color: rgba(245, 240, 232, 0.8);
+}
+
+.membership-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.9rem;
+    color: var(--cream);
+    letter-spacing: 0.05em;
+}
+
+.form-group .required {
+    color: #e74c3c;
+    margin-left: 4px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(245, 240, 232, 0.2);
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 1rem;
+    color: var(--cream);
+    outline: none;
+    transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(245, 240, 232, 0.3);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--gold);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.2);
+}
+
+.form-group select {
+    appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23c9a96e%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 12px;
+}
+
+.form-group select option {
+    background: var(--navy);
+    color: var(--cream);
+}
+
+.form-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* ── MOBILE OVERRIDES ── */
+@media (max-width: 768px) {
+    .content-wrapper {
+        padding: 120px 20px 60px;
+    }
+
+    .membership-cta,
+    .membership-form-container {
+        padding: 40px 20px;
+    }
+
+    .tier-card {
+        padding: 30px 20px;
+    }
+
+    .membership-intro p {
+        font-size: 1rem;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-back {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-wrapper {
+        padding: 106px 14px 42px;
+    }
+
+    .membership-intro p,
+    .membership-cta p,
+    .membership-form-container p {
+        font-size: 0.95rem;
+        line-height: 1.65;
+    }
+
+    .membership-tiers {
+        gap: 16px;
+        margin-bottom: 40px;
+    }
+
+    .tier-header h3 {
+        font-size: 1.25rem;
+    }
+
+    .tier-price {
+        font-size: 1.8rem;
+    }
+
+    .membership-form-container,
+    .membership-cta,
+    .tier-card {
+        border-radius: 10px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 12px 13px;
+        font-size: 0.95rem;
+    }
+}
