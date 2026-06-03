@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ボランティア参加申込 - 岡山ユネスコ協会</title>
+    <title>入会案内 - 岡山ユネスコ協会</title>
     <link rel="stylesheet" href="../style/style.css">
-    <link rel="stylesheet" href="../style/membership.css"> <!-- Reuse the form styles! -->
+    <link rel="stylesheet" href="../style/membership.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -63,14 +63,65 @@
     </header>
 
     <div class="content-wrapper reveal">
-        <span class="eyebrow">VOLUNTEER</span>
-        <h1>ボランティア参加申込</h1>
+        <span class="eyebrow">JOIN US</span>
+        <h1>入会案内</h1>
         
+        <div class="membership-intro">
+            <p>岡山ユネスコ協会では、私たちの活動に賛同し、共に平和で持続可能な社会づくりに貢献してくださる会員を募集しています。</p>
+        </div>
+
+        <div class="membership-tiers">
+            <div class="tier-card reveal reveal-stagger">
+                <div class="tier-header">
+                    <h3>正会員</h3>
+                    <span class="tier-price">¥5,000<span>/年</span></span>
+                </div>
+                <div class="tier-body">
+                    <p>個人の方向けの基本となる会員種別です。総会での議決権を持ち、当協会の運営に直接関わることができます。</p>
+                    <ul class="tier-benefits">
+                        <li>総会での議決権</li>
+                        <li>会報誌のお届け</li>
+                        <li>イベントの優先案内</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tier-card premium reveal reveal-stagger">
+                <div class="tier-header">
+                    <h3>賛助会員 (団体・法人)</h3>
+                    <span class="tier-price">¥10,000<span>/口(年)</span></span>
+                </div>
+                <div class="tier-body">
+                    <p>当協会の活動趣旨に賛同し、財政的に支援してくださる企業・団体向けの会員種別です。</p>
+                    <ul class="tier-benefits">
+                        <li>会報誌のお届け</li>
+                        <li>イベントの優先案内</li>
+                        <li>当協会ウェブサイトでのご紹介（希望者）</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tier-card reveal reveal-stagger">
+                <div class="tier-header">
+                    <h3>学生会員</h3>
+                    <span class="tier-price">¥2,000<span>/年</span></span>
+                </div>
+                <div class="tier-body">
+                    <p>学生（高校生・大学生・専門学生など）の方を対象とした、参加しやすい会員種別です。</p>
+                    <ul class="tier-benefits">
+                        <li>会報誌のお届け</li>
+                        <li>イベントの優先案内</li>
+                        <li>ユース活動への参加</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
         <div class="membership-form-container reveal">
-            <h2>お申し込みフォーム</h2>
-            <p>以下のフォームに必要事項をご記入の上、「送信する」ボタンを押してください。<br>ご登録後、3営業日以内に担当者よりご連絡いたします。</p>
+            <h2>入会お申し込み</h2>
+            <p>以下のフォームに必要事項をご記入の上、「送信する」ボタンを押してください。</p>
             
-            <form class="membership-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('ボランティア参加のお申し込みを受け付けました。');">
+            <form class="membership-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('お申し込みを受け付けました。');">
                 <div class="form-group">
                     <label for="name">氏名 (Name) <span class="required">*</span></label>
                     <input type="text" id="name" name="name" required placeholder="例: 岡山 太郎">
@@ -87,19 +138,18 @@
                 </div>
                 
                 <div class="form-group">
-                    <label for="activity">希望する活動 (Preferred Activity) <span class="required">*</span></label>
-                    <select id="activity" name="activity" required>
+                    <label for="tier">希望会員種別 (Membership Type) <span class="required">*</span></label>
+                    <select id="tier" name="tier" required>
                         <option value="" disabled selected>選択してください</option>
-                        <option value="event">イベント運営サポート</option>
-                        <option value="education">教育・出前講座サポート</option>
-                        <option value="pr">広報・SNS運用</option>
-                        <option value="other">その他・未定</option>
+                        <option value="regular">正会員 (¥5,000/年)</option>
+                        <option value="corporate">賛助会員 (¥10,000/口)</option>
+                        <option value="student">学生会員 (¥2,000/年)</option>
                     </select>
                 </div>
                 
                 <div class="form-group">
-                    <label for="message">志望動機・メッセージ (Message)</label>
-                    <textarea id="message" name="message" rows="4" placeholder="参加のきっかけや、活かしたいスキルなどがあればご記入ください"></textarea>
+                    <label for="message">備考・メッセージ (Message)</label>
+                    <textarea id="message" name="message" rows="4" placeholder="ご質問やご要望があればご記入ください"></textarea>
                 </div>
                 
                 <div class="form-actions">
@@ -110,6 +160,8 @@
         </div>
     </div>
 
+    <script src="../script/index.js"></script>
+    
     <footer class="footer" id="contact">
         <div class="footer-container">
             <div class="footer-brand">
@@ -140,7 +192,6 @@
             </p>
         </div>
     </footer>
-
-    <script src="../script/index.js"></script>
+<script src="../script/membership.js"></script>
 </body>
 </html>

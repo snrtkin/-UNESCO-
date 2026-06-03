@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +7,14 @@
     <link rel="stylesheet" href="style/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <!-- CUSTOM CURSOR -->
     <div id="cursor-dot"></div>
     <div id="cursor-ring"></div>
-    <div style="text-align: center; padding: 10px;">
-    <img src="images/1.png" alt="Logo" style="height: 50px; width: auto;">
-</div>
+    
     
 
     <!-- SIDEBAR OVERLAY -->
@@ -26,15 +24,14 @@
     <aside class="offcanvas-menu" id="sidebarMenu" role="dialog" aria-label="Navigation menu">
         <div class="offcanvas-header">
             <button class="close-toggle" id="closeToggle" aria-label="Close menu">✕</button>
-            <a href="#contact" class="btn-nav">CONTACT</a>
+            <a href="pages/membership.html" class="btn-nav">CONTACT</a>
         </div>
         <nav class="offcanvas-nav" aria-label="Main navigation">
             <ul class="menu-links">
-                <li><a href="#about"     class="menu-item"><span class="menu-num">01</span>​会長挨拶</a></li>
-                <li><a href="#discover"  class="menu-item"><span class="menu-num">02</span>岡山ユネスコ協会紹介</a></li>
-                <li><a href="#corporate" class="menu-item"><span class="menu-num">03</span>ロゴマークについて</a></li>
-                <li><a href="#contact"   class="menu-item"><span class="menu-num">04</span>​活動紹介</a></li>
-                <li><a href="#contact"   class="menu-item"><span class="menu-num">04</span>入会案内</a></li>
+                <li><a href="pages/aisatsu.html"  class="menu-item"><span class="menu-num">01</span>​会長挨拶</a></li>
+                <li><a href="pages/about.html"  class="menu-item"><span class="menu-num">02</span>岡山ユネスコ協会紹介</a></li>
+                <li><a href="pages/activities.html"   class="menu-item"><span class="menu-num">03</span>​活動紹介</a></li>
+                <li><a href="pages/membership.html"   class="menu-item"><span class="menu-num">04</span>入会案内</a></li>
             
             </ul>
         </nav>
@@ -45,17 +42,36 @@
     </aside>
 
     <!-- NAVBAR -->
-    <header class="navbar" id="navbar" style="animation: fadeDown 0.7s var(--ease-out-expo) both;">
-        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="sidebarMenu">
-            <span></span><span></span>
-        </button>
-        
-        <a href="#contact" class="btn-nav">CONTACT</a>
+    <header class="navbar" id="navbar" style="animation: fadeDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;">
+        <div class="nav-left">
+            <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="sidebarMenu">
+                <span></span><span></span>
+            </button>
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="Logo">
+            </a>
+        </div>
+        <nav class="desktop-nav">
+            <ul class="desktop-menu-links">
+                <li><a href="pages/aisatsu.html">会長挨拶</a></li>
+                <li><a href="pages/about.html">協会紹介</a></li>
+                <li><a href="pages/activities.html">活動紹介</a></li>
+                <li><a href="pages/membership.html">入会案内</a></li>
+            </ul>
+        </nav>
+        <div class="nav-right">
+            <a href="pages/membership.html" class="btn-nav">CONTACT</a>
+        </div>
     </header>
 
     <!-- HERO -->
     <section class="hero-section">
-        <div class="hero-bg" id="heroBg"></div>
+        <div class="hero-bg" id="heroBg">
+            <div class="hero-slide is-active" style="background-image: url('images/okayama.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('images/volent.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('images/unesco member.avif');"></div>
+            <div class="hero-slide" style="background-image: url('images/1.png');"></div>
+        </div>
         <div class="hero-overlay"></div>
         <div class="hero-particles" id="heroParticles"></div>
 
@@ -70,11 +86,6 @@
             </p>
             <a href="#discover" class="btn-discover"><span>DISCOVER</span></a>
         </div>
-
-        <div class="scroll-hint">
-            <span>SCROLL</span>
-            <div class="scroll-line"></div>
-        </div>
     </section>
 
     <!-- SPLIT -->
@@ -82,20 +93,20 @@
         <div class="split-block private-bg">
             <div class="block-overlay"></div>
             <div class="block-content">
-                <a href="#" class="btn-explore">EXPLORE ↗</a>
+                <a href="pages/volunteer.html" class="btn-explore">EXPLORE ↗</a>
                 <div class="text-row">
                     <h2>ボランティア<br>募集中</h2>
-                    <p>Thoughtfully planned travel for individuals and families. Every detail handled with care, discretion, and flexibility.</p>
+                    <p>地域社会で国際理解を深め、平和の文化を築くためのボランティア活動に参加しませんか。皆様の力を必要としています。</p>
                 </div>
             </div>
         </div>
         <div class="split-block corporate-bg" id="corporate">
             <div class="block-overlay"></div>
             <div class="block-content">
-                <a href="#" class="btn-explore">EXPLORE ↗</a>
+                <a href="pages/activities.html" class="btn-explore">EXPLORE ↗</a>
                 <div class="text-row">
-                    <h2>CORPORATE<br>TRAVEL</h2>
-                    <p>Efficient, reliable travel management for businesses and executives who need things done right.</p>
+                    <h2>主な活動内容<br>SDGs</h2>
+                    <p>持続可能な開発目標（SDGs）の達成に向けた、ESD（持続可能な開発のための教育）や環境保護などの地域活動をご紹介します。</p>
                 </div>
             </div>
         </div>
@@ -103,183 +114,153 @@
 
     <!-- SUPPORT -->
     <section class="support-section reveal reveal-stagger" id="about">
-        <h3 class="section-tag">HOW WE SUPPORT EVERY JOURNEY</h3>
+        <h3 class="section-tag">OUR CORE MISSIONS / ユネスコ活動の柱</h3>
         <div class="support-grid">
             <div class="grid-item">
                 <span class="grid-num">1</span>
-                <h4>END-TO-END MANAGEMENT</h4>
-                <p>Flights, hotels, visas, transfers, itineraries — handled seamlessly.</p>
+                <h4>ESDの推進</h4>
+                <p>未来の地球を担う人材を育成するため、持続可能な開発のための教育を地域全体で推進します。</p>
             </div>
             <div class="grid-item">
                 <span class="grid-num">2</span>
-                <h4>24/7 CLIENT ASSISTANCE</h4>
-                <p>Real people, always reachable whenever plans change dynamically.</p>
+                <h4>SDGsの達成</h4>
+                <p>誰一人取り残さない持続可能で多様性と包摂性のある社会の実現に向けて、地域から世界へ貢献します。</p>
             </div>
             <div class="grid-item">
                 <span class="grid-num">3</span>
-                <h4>LIVE MONITORING</h4>
-                <p>Our backend team keeps a watchful eye around the clock to prevent delays.</p>
+                <h4>青少年育成</h4>
+                <p>次代を担うユース世代の国際交流やボランティア活動を支援し、グローバルな視野を養います。</p>
             </div>
             <div class="grid-item">
                 <span class="grid-num">4</span>
-                <h4>PROBLEM RESOLUTION</h4>
-                <p>We anticipate issues and solve them before they ever reach your radar.</p>
+                <h4>平和の文化の構築</h4>
+                <p>教育・科学・文化の発展を通じて、人々の心の中に平和のとりでを築く活動を展開しています。</p>
             </div>
         </div>
     </section>
 
-    <!-- STATS -->
-    <section class="stats-section reveal reveal-stagger" id="stats">
-        <div class="stats-grid">
-            <div class="stat-item" data-target="94" data-suffix="%">
-                <span class="stat-number" id="stat0">0%</span>
-                <span class="stat-label">REPEAT BOOKINGS</span>
+
+    
+    <!-- NEWS & EVENTS -->
+    <section class="news-section reveal reveal-stagger" id="news">
+        <h3 class="section-tag">NEWS & EVENTS / お知らせ・イベント</h3>
+        <div class="news-grid">
+            <a href="#" class="news-card">
+                <div class="news-date">2024.05.15</div>
+                <div class="news-title">2024年度 岡山ユネスコ協会 通常総会のご案内</div>
+                <div class="news-arrow">→</div>
+            </a>
+            <a href="#" class="news-card">
+                <div class="news-date">2024.04.10</div>
+                <div class="news-title">「ESDフォーラム2024」開催のお知らせと参加者募集</div>
+                <div class="news-arrow">→</div>
+            </a>
+            <a href="#" class="news-card">
+                <div class="news-date">2024.03.22</div>
+                <div class="news-title">ユネスコスクール支援: 出前講座の今年度レポート公開</div>
+                <div class="news-arrow">→</div>
+            </a>
+        </div>
+    </section>
+
+    <!-- PRESIDENT MESSAGE -->
+    <!-- MEMBERS SECTION -->
+    <section class="members-section reveal reveal-stagger" id="team">
+        <h3 class="section-tag">OUR TEAM / 役員・メンバー紹介</h3>
+        <div class="members-grid">
+            <div class="member-card">
+                <div class="member-avatar">
+                    <!-- Placeholder generic avatar using unplash -->
+                    <img src="images/aisatsu-shachou.jpg" alt="山田 太郎">
+                </div>
+                <div class="member-info">
+                    <span class="member-role">副会長 (Vice President)</span>
+                    <h4 class="member-name">山田 太郎</h4>
+                    <p class="member-bio">「教育を通じて、持続可能な地域の未来を共に創りましょう。」</p>
+                </div>
             </div>
-            <div class="stat-item" data-target="89" data-suffix="%">
-                <span class="stat-number" id="stat1">0%</span>
-                <span class="stat-label">NET PROMOTER SCORE</span>
+            
+            <div class="member-card">
+                <div class="member-avatar">
+                    <img src="images/aisatsu-shachou.jpg" alt="佐藤 花子">
+                </div>
+                <div class="member-info">
+                    <span class="member-role">事務局長 (Secretary General)</span>
+                    <h4 class="member-name">佐藤 花子</h4>
+                    <p class="member-bio">「多様な人々が協力し合える、開かれた協会運営を目指しています。」</p>
+                </div>
             </div>
-            <div class="stat-item" data-target="5" data-suffix="+ YRS">
-                <span class="stat-number" id="stat2">0+ YRS</span>
-                <span class="stat-label">AVG AGENT EXPERIENCE</span>
+
+            <div class="member-card">
+                <div class="member-avatar">
+                    <img src="images/aisatsu-shachou.jpg" alt="鈴木 一郎">
+                </div>
+                <div class="member-info">
+                    <span class="member-role">ユース・代表 (Youth Rep)</span>
+                    <h4 class="member-name">鈴木 一郎</h4>
+                    <p class="member-bio">「若い世代の声を届け、新しいアイデアで活動を盛り上げます！」</p>
+                </div>
+            </div>
+
+            <div class="member-card">
+                <div class="member-avatar">
+                    <img src="images/aisatsu-shachou.jpg" alt="高橋 由美">
+                </div>
+                <div class="member-info">
+                    <span class="member-role">ESD推進委員 (ESD Committee)</span>
+                    <h4 class="member-name">高橋 由美</h4>
+                    <p class="member-bio">「学校や地域と連携し、実践的なESDプログラムを展開しています。」</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="president-snippet-section reveal" id="president-message">
+        <div class="president-container">
+            <div class="president-image">
+                <img src="images/aisatsu-shachou.jpg" alt="President">
+                <div class="president-backdrop"></div>
+            </div>
+            <div class="president-text">
+                <h3 class="section-tag">MESSAGE / 会長挨拶</h3>
+                <h2>未来を担う人づくり、<br>ESDとユネスコ活動の使命。</h2>
+                <p>持続不可能な社会から持続可能な社会へと、世の中が大きく変わろうとしている中で、その核となる人づくりであるESD、ユネスコ活動はとても大きな使命を持っています。地域のユネスコ協会だからこそできる活動に積極的に取り組んでまいります。</p>
+                <a href="pages/aisatsu.html" class="btn-discover"><span>READ MORE</span></a>
             </div>
         </div>
     </section>
 
     <footer class="footer" id="contact">
-        <p> 2021 Okayama UNESCO Association. all rights reserved.</p>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">
+                    <img src="images/logo.png" alt="Okayama UNESCO Association">
+                </a>
+                <div class="footer-contact">
+                    <p>〒700-0000 岡山県岡山市 (Placeholder)</p>
+                    <p>Tel: 086-XXX-XXXX / Email: info@unesco.okayama.jp</p>
+                <div class="social-icons" aria-label="SNS links">
+                    <a href="#" class="social-icon social-facebook" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 9H16V6h-2.5C10.9 6 9 7.9 9 10.5V13H7v3h2v5h3v-5h2.2l.8-3H12v-2.5c0-.9.6-1.5 1.5-1.5Z"/></svg>
+                    </a>
+                    <a href="#" class="social-icon social-x" aria-label="X">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h3.8l4.4 6 5-6H20l-6.5 7.8L20 20h-3.8l-4.8-6.5L6 20H4l6.6-7.9L4 4Z"/></svg>
+                    </a>
+                    <a href="#" class="social-icon social-instagram" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 3h9A4.5 4.5 0 0 1 21 7.5v9a4.5 4.5 0 0 1-4.5 4.5h-9A4.5 4.5 0 0 1 3 16.5v-9A4.5 4.5 0 0 1 7.5 3Zm0 2A2.5 2.5 0 0 0 5 7.5v9A2.5 2.5 0 0 0 7.5 19h9a2.5 2.5 0 0 0 2.5-2.5v-9A2.5 2.5 0 0 0 16.5 5h-9Zm10.8 1.3a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/></svg>
+                    </a>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Okayama UNESCO Association. All rights reserved.</p>
+            <p class="design-credit">
+                DESIGN by <a href="pages/designers.html" class="design-credit-link">岡山情報ビジネス学院 国際ITビジネス学科</a>
+            </p>
+        </div>
     </footer>
 
-    <script>
-    /* ── CURSOR ── */
-    const dot  = document.getElementById('cursor-dot');
-    const ring = document.getElementById('cursor-ring');
-    let mx = 0, my = 0, rx = 0, ry = 0;
-
-    document.addEventListener('mousemove', e => {
-        mx = e.clientX; my = e.clientY;
-        dot.style.left = mx + 'px';
-        dot.style.top  = my + 'px';
-    });
-
-    (function animRing() {
-        rx += (mx - rx) * 0.12;
-        ry += (my - ry) *.12;
-        ring.style.left = rx + 'px';
-        ring.style.top  = ry + 'px';
-        requestAnimationFrame(animRing);
-    })();
-
-    document.querySelectorAll('a, button, .split-block').forEach(el => {
-        el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-        el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-    });
-
-    /* ── HERO PARALLAX ── */
-    const heroBg = document.getElementById('heroBg');
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-        if (!ticking) {
-            requestAnimationFrame(() => {
-                const y = window.scrollY;
-                heroBg.style.transform = `scale(1.04) translateY(${y * 0.3}px)`;
-                ticking = false;
-            });
-            ticking = true;
-        }
-    });
-
-    /* ── FLOATING PARTICLES ── */
-    const particlesEl = document.getElementById('heroParticles');
-    for (let i = 0; i < 14; i++) {
-        const p = document.createElement('div');
-        p.className = 'particle';
-        const size = Math.random() * 3 + 1.5;
-        p.style.cssText = `
-            width:${size}px; height:${size}px;
-            top:${Math.random()*100}%;
-            left:${Math.random()*100}%;
-            --dur:${4 + Math.random()*5}s;
-            --delay:-${Math.random()*6}s;
-        `;
-        particlesEl.appendChild(p);
-    }
-
-    /* ── NAVBAR SCROLL ── */
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        navbar.classList.toggle('scrolled', window.scrollY > 60);
-    }, { passive: true });
-
-    /* ── SIDEBAR ── */
-    const menuToggle    = document.getElementById('menuToggle');
-    const closeToggle   = document.getElementById('closeToggle');
-    const sidebarMenu   = document.getElementById('sidebarMenu');
-    const sidebarOverlay= document.getElementById('sidebarOverlay');
-
-    function openSidebar() {
-        sidebarMenu.classList.add('open');
-        sidebarOverlay.classList.add('active');
-        menuToggle.classList.add('open');
-        menuToggle.setAttribute('aria-expanded', 'true');
-        document.body.style.overflow = 'hidden';
-    }
-    function closeSidebar() {
-        sidebarMenu.classList.remove('open');
-        sidebarOverlay.classList.remove('active');
-        menuToggle.classList.remove('open');
-        menuToggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-    }
-
-    menuToggle.addEventListener('click', () => sidebarMenu.classList.contains('open') ? closeSidebar() : openSidebar());
-    closeToggle.addEventListener('click', closeSidebar);
-    sidebarOverlay.addEventListener('click', closeSidebar);
-    document.querySelectorAll('.menu-item').forEach(l => l.addEventListener('click', closeSidebar));
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSidebar(); });
-
-    /* ── ANIMATED COUNTERS ── */
-    function easeOutQuart(t) { return 1 - Math.pow(1 - t, 4); }
-
-    function animateCounter(el, target, suffix, duration) {
-        const start = performance.now();
-        function step(now) {
-            const t = Math.min((now - start) / duration, 1);
-            const val = Math.round(easeOutQuart(t) * target);
-            el.textContent = val + suffix;
-            if (t < 1) requestAnimationFrame(step);
-            else {
-                el.textContent = target + suffix;
-                el.closest('.stat-item').classList.add('counted');
-            }
-        }
-        requestAnimationFrame(step);
-    }
-
-    /* ── INTERSECTION OBSERVER ── */
-    let statsAnimated = false;
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
-            entry.target.classList.add('active');
-
-            // stats counter trigger
-            if (entry.target.id === 'stats' && !statsAnimated) {
-                statsAnimated = true;
-                setTimeout(() => {
-                    document.querySelectorAll('.stat-item').forEach((item, i) => {
-                        const target = parseInt(item.dataset.target);
-                        const suffix = item.dataset.suffix;
-                        const el = item.querySelector('.stat-number');
-                        setTimeout(() => animateCounter(el, target, suffix, 1400), i * 120);
-                    });
-                }, 200);
-            }
-        });
-    }, { threshold: 0.15 });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    </script>
+    <script src="script/index.js"></script>
 </body>
 </html>

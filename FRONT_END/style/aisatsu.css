@@ -1,0 +1,222 @@
+.content-wrapper {
+    padding: 160px 40px 80px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.eyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 0.28em;
+    color: var(--gold);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+h1 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(1.75rem, 5vw, 4rem);
+    color: var(--cream);
+    margin-bottom: 24px;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.aisatsu-content {
+    max-width: 900px;
+    margin: 0 auto 60px;
+    text-align: left;
+}
+
+.hero-image {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 60px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(201, 169, 110, 0.15);
+}
+
+.aisatsu-section {
+    position: relative;
+    background: rgba(17, 24, 39, 0.4);
+    border: 1px solid rgba(245, 240, 232, 0.05);
+    border-left: 3px solid var(--gold);
+    border-radius: 8px;
+    padding: 40px;
+    margin-bottom: 40px;
+    backdrop-filter: blur(10px);
+}
+
+.aisatsu-section.reverse {
+    border-left: 1px solid rgba(245, 240, 232, 0.05);
+    border-right: 3px solid var(--gold);
+    text-align: right;
+}
+
+.section-num {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 3rem;
+    color: rgba(201, 169, 110, 0.15);
+    position: absolute;
+    top: -15px;
+    right: 30px;
+    font-weight: 500;
+}
+
+.aisatsu-section.reverse .section-num {
+    right: auto;
+    left: 30px;
+}
+
+.aisatsu-section h2 {
+    font-size: 1.6rem;
+    color: var(--cream);
+    margin-bottom: 20px;
+    letter-spacing: 0.05em;
+}
+
+.aisatsu-section p {
+    font-size: 1.05rem;
+    color: rgba(245, 240, 232, 0.8);
+    line-height: 1.8;
+    margin: 0;
+    opacity: 1;
+    animation: none;
+}
+
+.president-photo {
+    width: 250px;
+    border-radius: 8px;
+    margin: 0 0 20px 30px;
+    border: 2px solid rgba(201, 169, 110, 0.3);
+}
+
+.float-right {
+    float: right;
+}
+
+.signature {
+    text-align: right;
+    margin-top: 60px;
+    font-size: 1.1rem;
+    color: var(--cream);
+    line-height: 1.6;
+}
+
+.signature strong {
+    font-size: 1.3rem;
+    color: var(--gold-light);
+    display: block;
+    margin-top: 10px;
+}
+
+.btn-back {
+    display: inline-block;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+    color: var(--cream);
+    text-decoration: none;
+    border: 1px solid rgba(201, 169, 110, 0.6);
+    padding: 14px 40px;
+    position: relative;
+    overflow: hidden;
+    cursor: none;
+    transition: color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-back::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gold);
+    transform: translateX(-101%);
+    transition: transform 0.45s;
+    z-index: -1;
+}
+
+.btn-back:hover {
+    color: var(--navy);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(201, 169, 110, 0.2);
+}
+
+.btn-back:hover::before {
+    transform: translateX(0);
+}
+
+/* ── MOBILE OVERRIDES ── */
+@media (max-width: 768px) {
+    .content-wrapper {
+        padding: 120px 20px 60px;
+    }
+
+    .president-photo {
+        float: none !important;
+        display: block;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto 30px !important;
+    }
+
+    .aisatsu-section {
+        padding: 30px 20px;
+    }
+
+    .aisatsu-section.reverse {
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-wrapper {
+        padding: 106px 14px 42px;
+    }
+
+    .aisatsu-content {
+        margin-bottom: 36px;
+    }
+
+    .aisatsu-section {
+        padding: 22px 14px;
+        margin-bottom: 20px;
+    }
+
+    .aisatsu-section h2 {
+        font-size: 1.25rem;
+        line-height: 1.35;
+    }
+
+    .aisatsu-section p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .section-num {
+        font-size: 2.1rem;
+        top: -10px;
+        right: 14px;
+    }
+
+    .aisatsu-section.reverse .section-num {
+        left: 14px;
+        right: auto;
+    }
+
+    .signature {
+        margin-top: 36px;
+        font-size: 0.98rem;
+    }
+
+    .signature strong {
+        font-size: 1.1rem;
+    }
+}
