@@ -1,0 +1,297 @@
+body{
+
+margin:0;
+
+font-family:serif;
+
+background:linear-gradient(
+to bottom,
+#e8d5b7,
+#d9b47f
+);
+
+}
+
+
+.top-header{
+
+background:#f7f3eb;
+
+padding:30px;
+
+text-align:center;
+
+}
+
+.logo-area{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:40px;
+
+margin-bottom:30px;
+
+}
+
+.logo-box{
+
+font-size:35px;
+
+font-weight:bold;
+
+border:3px solid black;
+
+padding:20px;
+
+background:white;
+
+}
+
+.circle-logo{
+
+width:120px;
+
+height:120px;
+
+border-radius:50%;
+
+background:#2c78d0;
+
+color:white;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+font-size:15px;
+
+}
+
+nav{
+
+display:flex;
+
+justify-content:center;
+
+}
+
+nav ul{
+
+padding:0;
+
+list-style:none;
+
+}
+
+.dropdown{
+
+position:relative;
+
+background:#ece7dd;
+
+padding:25px 80px;
+
+font-size:35px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+}
+
+.submenu{
+
+display:none;
+
+position:absolute;
+
+top:100%;
+
+left:0;
+
+width:100%;
+
+background:#f5f3ed;
+
+}
+
+.submenu li{
+
+padding:20px;
+
+border-bottom:1px solid gray;
+
+}
+
+.dropdown:hover .submenu{
+
+display:block;
+
+}
+
+.hero{
+
+text-align:center;
+
+padding:50px;
+
+}
+
+.hero h1{
+
+font-size:50px;
+
+}
+
+.container{
+
+width:80%;
+
+margin:auto;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+}
+.card{
+
+width:100%;
+
+max-width:1000px;
+
+margin:35px auto;
+
+padding:35px;
+
+background:rgba(255,255,255,0.75);
+
+border-radius:25px;
+
+box-sizing:border-box;
+
+line-height:2;
+
+box-shadow:0px 8px 20px rgba(0,0,0,0.1);
+
+}
+
+.card p,
+.card li{
+font-size:18px;
+line-height:2;
+}
+pre{
+white-space:pre-wrap;
+font-family:"Yu Mincho","Hiragino Mincho ProN",serif;
+font-size:17px;
+line-height:2.1;
+background:rgba(255,255,255,0.55);
+padding:30px;
+border-radius:18px;
+border-left:6px solid #8b5e34;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.card h1,
+.card h2{
+color:#5b3a1e;
+border-bottom:2px solid rgba(91,58,30,0.25);
+padding-bottom:12px;
+}
+
+.card{
+animation:fadeUp 0.8s ease;
+}
+
+a{
+color:#5b3a1e;
+text-decoration:none;
+font-weight:bold;
+}
+
+a:hover{
+text-decoration:underline;
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(25px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+body {
+    margin: 0;
+    font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+    background: #f4f6f8;
+}
+
+.container {
+    width: 1000px;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+
+.back-link {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+}
+
+.page-title {
+    font-size: 34px;
+    font-weight: 600;
+    margin: 20px 0;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.document-card {
+    background: #fff;
+    padding: 40px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-left: 6px solid #8c6b5c;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #2f3640;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background: #f1f2f6;
+}
+
+.date {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #777;
+}
