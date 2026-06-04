@@ -44,7 +44,7 @@ main {
     width: 3rem;
     height: 3rem;
     border-radius: 16px;
-    display: grid;
+    display: none !important;
     place-items: center;
     background: linear-gradient(135deg, #6f92b5 0%, #accbe0 100%);
     color: #ffffff;
@@ -158,4 +158,6 @@ main {
     .media-boxes {
         grid-template-columns: 1fr;
     }
+
+    /* keep original min-height on small screens */
 }
