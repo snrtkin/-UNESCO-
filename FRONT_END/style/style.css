@@ -393,11 +393,16 @@
  }
 
  .hero-overlay {
-     position: absolute;
-     inset: 0;
-     background: linear-gradient(to bottom, rgba(11, 15, 26, 0.5) 0%, rgba(11, 15, 26, 0.25) 50%, rgba(11, 15, 26, 0.88) 100%);
- }
-
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(11, 15, 26, 0.55) 0%,
+        rgba(11, 15, 26, 0.55) 40%,   /* was 0.25 — this is the problem */
+        rgba(11, 15, 26, 0.75) 70%,
+        rgba(11, 15, 26, 0.92) 100%
+    );
+}
  /* floating particles */
  .hero-particles {
      position: absolute;
@@ -451,13 +456,21 @@
  }
 
  .hero-title {
-     font-family: 'Bodoni Moda', serif;
-     font-size: clamp(2.2rem, 7vw, 5.5rem);
-     font-weight: 500;
-     letter-spacing: 0.08em;
-     line-height: 1.1;
-     margin-bottom: 28px;
- }
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(2.2rem, 4.5vw, 3.8rem); /* ← reduced from 7vw / 5.5rem */
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    line-height: 1.1;
+    margin-bottom: 28px;
+    white-space: nowrap; /* ← add this to prevent wrapping */
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        white-space: normal; /* allow wrap on very small screens */
+        font-size: clamp(1.8rem, 9vw, 2.6rem);
+    }
+}
 
  .line-wrapper {
      display: block;
