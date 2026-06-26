@@ -1,30 +1,4 @@
-/* ── CURSOR ── */
-const dot = document.getElementById('cursor-dot');
-const ring = document.getElementById('cursor-ring');
-let mx = 0;
-let my = 0;
-let rx = 0;
-let ry = 0;
 
-document.addEventListener('mousemove', (event) => {
-      mx = event.clientX;
-      my = event.clientY;
-      dot.style.left = mx + 'px';
-      dot.style.top = my + 'px';
-});
-
-(function animRing() {
-      rx += (mx - rx) * 0.12;
-      ry += (my - ry) * 0.12;
-      ring.style.left = rx + 'px';
-      ring.style.top = ry + 'px';
-      requestAnimationFrame(animRing);
-})();
-
-document.querySelectorAll('a, button, .split-block').forEach((element) => {
-      element.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-      element.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-});
 
 /* ── HERO PARALLAX ── */
 const heroBg = document.getElementById('heroBg');
@@ -107,7 +81,9 @@ if (particlesEl) {
 const navbar = document.getElementById('navbar');
 
 window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 60);
+      if (navbar) {
+            navbar.classList.toggle('scrolled', window.scrollY > 60);
+      }
 }, { passive: true });
 
 /* ── SIDEBAR ── */
@@ -117,24 +93,34 @@ const sidebarMenu = document.getElementById('sidebarMenu');
 const sidebarOverlay = document.getElementById('sidebarOverlay');
 
 function openSidebar() {
-      sidebarMenu.classList.add('open');
-      sidebarOverlay.classList.add('active');
-      menuToggle.classList.add('open');
-      menuToggle.setAttribute('aria-expanded', 'true');
+      if (sidebarMenu) sidebarMenu.classList.add('open');
+      if (sidebarOverlay) sidebarOverlay.classList.add('active');
+      if (menuToggle) {
+            menuToggle.classList.add('open');
+            menuToggle.setAttribute('aria-expanded', 'true');
+      }
       document.body.style.overflow = 'hidden';
 }
 
 function closeSidebar() {
-      sidebarMenu.classList.remove('open');
-      sidebarOverlay.classList.remove('active');
-      menuToggle.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
+      if (sidebarMenu) sidebarMenu.classList.remove('open');
+      if (sidebarOverlay) sidebarOverlay.classList.remove('active');
+      if (menuToggle) {
+            menuToggle.classList.remove('open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+      }
       document.body.style.overflow = '';
 }
 
-menuToggle.addEventListener('click', () => (sidebarMenu.classList.contains('open') ? closeSidebar() : openSidebar()));
-closeToggle.addEventListener('click', closeSidebar);
-sidebarOverlay.addEventListener('click', closeSidebar);
+if (menuToggle && sidebarMenu) {
+      menuToggle.addEventListener('click', () => (sidebarMenu.classList.contains('open') ? closeSidebar() : openSidebar()));
+}
+if (closeToggle) {
+      closeToggle.addEventListener('click', closeSidebar);
+}
+if (sidebarOverlay) {
+      sidebarOverlay.addEventListener('click', closeSidebar);
+}
 document.querySelectorAll('.menu-item').forEach((link) => link.addEventListener('click', closeSidebar));
 document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape') {
@@ -192,6 +178,155 @@ const observer = new IntersectionObserver((entries) => {
                   }, 200);
             }
       });
-}, { threshold: 0.15 });
+}, { threshold: 0.05 });
 
 document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+
+/* ── ACTIVATE REVEALS ALREADY IN VIEW ON LOAD ── */
+window.addEventListener('load', () => {
+      document.querySelectorAll('.reveal').forEach((element) => {
+            const rect = element.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                  element.classList.add('active');
+            }
+      });
+});
+
+/* ── TRANSLATION SYSTEM ── */
+function applyTranslations(lang) {
+      if (!window.translations || !window.translations[lang]) {
+            console.warn(`Translations for language "${lang}" not found.`);
+            return;
+      }
+      
+      // Update HTML lang attribute
+      document.documentElement.lang = lang;
+
+      const dict = window.translations[lang];
+      
+      // Select all elements with data-i18n
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (dict[key] !== undefined) {
+                  if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        el.placeholder = dict[key];
+                  } else {
+                        el.innerHTML = dict[key];
+                  }
+            }
+      });
+      
+      // Keep dropdown menu active state synced
+      const langDropdown = document.querySelector('.lang-dropdown');
+      if (langDropdown) {
+            const toggleBtn = langDropdown.querySelector('.lang-toggle-btn');
+            if (toggleBtn) {
+                  toggleBtn.querySelector('span').textContent = lang.toUpperCase();
+            }
+            const langItems = langDropdown.querySelectorAll('.lang-item');
+            langItems.forEach(item => {
+                  if (item.dataset.lang === lang) {
+                        item.classList.add('active');
+                  } else {
+                        item.classList.remove('active');
+                  }
+            });
+      }
+}
+
+function setLanguage(lang) {
+      localStorage.setItem('selectedLanguage', lang);
+      applyTranslations(lang);
+}
+
+// Automatically apply saved language as early as possible
+const savedLang = localStorage.getItem('selectedLanguage') || 'ja';
+// We can apply translations on page load / DOMContentLoaded
+if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => applyTranslations(savedLang));
+} else {
+      applyTranslations(savedLang);
+}
+
+/* ── LANGUAGE SWITCHER DROPDOWN ── */
+const langDropdown = document.querySelector('.lang-dropdown');
+if (langDropdown) {
+      const toggleBtn = langDropdown.querySelector('.lang-toggle-btn');
+      toggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            langDropdown.classList.toggle('active');
+            const expanded = langDropdown.classList.contains('active');
+            toggleBtn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      });
+
+      document.addEventListener('click', (e) => {
+            if (!langDropdown.contains(e.target)) {
+                  langDropdown.classList.remove('active');
+                  toggleBtn.setAttribute('aria-expanded', 'false');
+            }
+      });
+      
+      const langItems = langDropdown.querySelectorAll('.lang-item');
+      langItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                  e.preventDefault();
+                  const lang = item.dataset.lang;
+                  setLanguage(lang);
+                  
+                  langDropdown.classList.remove('active');
+                  toggleBtn.setAttribute('aria-expanded', 'false');
+
+                  // Show a localized toast notification
+                  const toastMsg = (window.translations && window.translations[lang] && window.translations[lang].toast_lang_changed) 
+                        || `Language: ${item.textContent}`;
+                  showLangToast(toastMsg);
+            });
+      });
+}
+
+/* ── LANGUAGE TOAST NOTIFICATION ── */
+function showLangToast(message) {
+      // Remove any existing toast
+      const existing = document.getElementById('lang-toast');
+      if (existing) existing.remove();
+
+      const toast = document.createElement('div');
+      toast.id = 'lang-toast';
+      toast.textContent = message;
+      toast.style.cssText = `
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(1rem);
+            background: rgba(20, 20, 20, 0.92);
+            color: #fff;
+            padding: 0.65rem 1.4rem;
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            font-family: inherit;
+            letter-spacing: 0.04em;
+            z-index: 99999;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+            backdrop-filter: blur(8px);
+            opacity: 0;
+            transition: opacity 0.25s ease, transform 0.25s ease;
+            pointer-events: none;
+      `;
+      document.body.appendChild(toast);
+
+      // Animate in
+      requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                  toast.style.opacity = '1';
+                  toast.style.transform = 'translateX(-50%) translateY(0)';
+            });
+      });
+
+      // Auto-dismiss after 2.5s
+      setTimeout(() => {
+            toast.style.opacity = '0';
+            toast.style.transform = 'translateX(-50%) translateY(1rem)';
+            setTimeout(() => toast.remove(), 300);
+      }, 2500);
+}
+

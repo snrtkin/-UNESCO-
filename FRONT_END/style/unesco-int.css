@@ -1,4 +1,4 @@
-.content-wrapper.seukhai-page {
+.content-wrapper.overview-page {
       padding: 150px 40px 88px;
       max-width: 1180px;
       margin: 0 auto;
@@ -6,16 +6,16 @@
       z-index: 10;
 }
 
-.seukhai-page.reveal,
-.seukhai-page .reveal,
-.seukhai-page .reveal-stagger {
+.overview-page.reveal,
+.overview-page .reveal,
+.overview-page .reveal-stagger {
       opacity: 1;
       transform: none;
 }
 
 .hero-intro {
       text-align: center;
-      margin: 0 auto 38px;
+      margin: 0 auto 36px;
       max-width: 860px;
 }
 
@@ -32,7 +32,7 @@
       font-size: clamp(2rem, 5vw, 3.8rem);
       letter-spacing: 0.06em;
       color: var(--cream);
-      margin: 0 0 18px;
+      margin: 0 0 16px;
 }
 
 .intro-copy {
@@ -42,18 +42,12 @@
       font-size: 1.02rem;
 }
 
-.info-card,
-.quote-card,
-.timeline-card {
+.info-card {
       background: rgba(7, 20, 38, 0.72);
       border: 1px solid rgba(201, 169, 110, 0.25);
       border-radius: 18px;
       padding: 30px;
       box-shadow: 0 18px 40px rgba(3, 11, 22, 0.42);
-}
-
-.info-card,
-.timeline-card {
       margin-bottom: 24px;
 }
 
@@ -64,118 +58,110 @@
       margin: 0 0 10px;
 }
 
-.info-card h2,
-.timeline-card h2 {
+.info-card h2 {
       font-family: 'Bodoni Moda', serif;
       color: var(--cream);
-      font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+      font-size: clamp(1.35rem, 2.7vw, 2.1rem);
       letter-spacing: 0.04em;
       margin: 0 0 14px;
 }
 
 .info-card p,
-.timeline-card li {
+.info-card li {
       color: rgba(245, 240, 232, 0.86);
       line-height: 1.9;
       font-size: 0.98rem;
 }
 
-.info-card p+p {
-      margin-top: 12px;
-}
-
-.activity-list {
-      margin: 10px 0 0;
-      padding: 0;
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-}
-
-.activity-list li {
-      background: rgba(2, 11, 21, 0.55);
-      border: 1px solid rgba(201, 169, 110, 0.2);
-      border-radius: 10px;
-      padding: 10px 12px;
-      color: rgba(245, 240, 232, 0.9);
-}
-
-.emblem-grid {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 28px;
-      align-items: center;
-}
-
-.emblem-media {
-      background: rgba(2, 11, 21, 0.55);
-      border-radius: 14px;
-      border: 1px solid rgba(201, 169, 110, 0.2);
-      padding: 20px;
-}
-
-.emblem-media img {
-      display: block;
-      width: 100%;
-      height: auto;
-}
-
-.quote-card {
-      margin: 22px 0;
-      text-align: center;
-      background: linear-gradient(180deg, rgba(201, 169, 110, 0.16), rgba(7, 20, 38, 0.78));
-}
-
-.quote-jp {
-      margin: 0 0 12px;
-      color: var(--cream);
-      font-size: 1.1rem;
-      line-height: 1.8;
-}
-
-.quote-en {
-      margin: 0;
-      color: rgba(245, 240, 232, 0.74);
-      font-size: 0.92rem;
-      letter-spacing: 0.03em;
-}
-
-.timeline-card ul {
-      margin: 0;
+.list-block {
+      margin: 8px 0 0;
       padding-left: 20px;
       display: grid;
-      gap: 10px;
+      gap: 8px;
+}
+
+.overview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.35fr;
+      gap: 20px;
+}
+
+.link-card {
+      text-align: center;
+      background: rgba(7, 20, 38, 0.72);
+      border: 1px solid rgba(201, 169, 110, 0.25);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 18px 40px rgba(3, 11, 22, 0.42);
+}
+
+.link-card h2 {
+      font-family: 'Bodoni Moda', serif;
+      color: var(--cream);
+      font-size: clamp(1.2rem, 2.4vw, 1.9rem);
+      margin: 0 0 18px;
+}
+
+.link-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+}
+
+.btn-back {
+      display: inline-block;
+      font-family: 'Bodoni Moda', serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      color: var(--cream);
+      text-decoration: none;
+      border: 1px solid rgba(201, 169, 110, 0.6);
+      padding: 12px 28px;
+      position: relative;
+      overflow: hidden;
+      transition: color 0.3s, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s;
+}
+
+.btn-back::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--gold);
+      transform: translateX(-101%);
+      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: -1;
+}
+
+.btn-back:hover {
+      color: var(--navy);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(201, 169, 110, 0.26);
+}
+
+.btn-back:hover::before {
+      transform: translateX(0);
 }
 
 @media (max-width: 900px) {
-      .activity-list {
+      .overview-grid {
             grid-template-columns: 1fr;
-      }
-
-      .emblem-grid {
-            grid-template-columns: 1fr;
-      }
-
-      .emblem-media {
-            max-width: 260px;
       }
 }
 
 @media (max-width: 768px) {
-      .content-wrapper.seukhai-page {
+      .content-wrapper.overview-page {
             padding: 120px 20px 60px;
       }
 
       .info-card,
-      .quote-card,
-      .timeline-card {
+      .link-card {
             padding: 20px;
       }
 }
 
 @media (max-width: 480px) {
-      .content-wrapper.seukhai-page {
+      .content-wrapper.overview-page {
             padding: 106px 14px 44px;
       }
 
@@ -189,23 +175,28 @@
       }
 
       .info-card,
-      .quote-card,
-      .timeline-card {
+      .link-card {
             padding: 16px 14px;
             border-radius: 12px;
       }
 
       .info-card p,
-      .timeline-card li,
-      .quote-jp,
-      .quote-en {
+      .info-card li {
             font-size: 0.93rem;
             line-height: 1.75;
       }
 
-      .timeline-card ul {
-            padding-left: 16px;
-            gap: 8px;
+      .link-actions {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 10px;
+      }
+
+      .btn-back {
+            width: 100%;
+            text-align: center;
+            padding-left: 12px;
+            padding-right: 12px;
       }
 }
 
@@ -216,10 +207,7 @@
 }
 
 .info-card,
-.quote-card,
-.timeline-card,
-.activity-list li,
-.emblem-media {
+.link-card {
       background: rgba(186, 217, 206, 0.78);
       border-color: rgba(17, 140, 140, 0.32);
       box-shadow: none;
@@ -229,10 +217,8 @@
 .intro-copy,
 .info-card h2,
 .info-card p,
-.timeline-card h2,
-.timeline-card li,
-.activity-list li,
-.quote-jp,
-.quote-en {
+.info-card li,
+.link-card h2,
+.btn-back {
       color: #000000;
 }
