@@ -1,140 +1,186 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-<meta charset="UTF-8">
-<title>岡山ユネスコ協会概要</title>
-
-<link rel="stylesheet" href="../style/unesco.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>岡山ユネスコ協会概要 - 岡山ユネスコ協会</title>
+  <link rel="stylesheet" href="../style/style.css">
+  <link rel="stylesheet" href="../style/unesco-int.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600;6..96,700;6..96,800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 </head>
-
 <body>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-<header class="top-header">
+  <aside class="offcanvas-menu" id="sidebarMenu" role="dialog" aria-label="Navigation menu">
+    <div class="offcanvas-header">
+      <button class="close-toggle" id="closeToggle" aria-label="Close menu">✕</button>
+      <a href="../index.html#contact" class="btn-nav">CONTACT</a>
+    </div>
+    <nav class="offcanvas-nav" aria-label="Main navigation">
+      <ul class="menu-links">
+        <li><a href="aisatsu.html" class="menu-item"><span class="menu-num">01</span><span data-i18n="nav_aisatsu">会長挨拶</span></a></li>
+        <li><a href="unesco-int.html" class="menu-item"><span class="menu-num">02</span><span data-i18n="nav_intro">協会紹介</span></a></li>
+        <li><a href="events.html" class="menu-item"><span class="menu-num">03</span><span data-i18n="nav_events">イベント</span></a></li>
+        <li><a href="membership.html" class="menu-item"><span class="menu-num">04</span><span data-i18n="nav_membership">入会案内</span></a></li>
+      </ul>
+    </nav>
+    <div class="sidebar-footer">
+      <p>Get in touch</p>
+      <a href="mailto:hello@flyward.co">hello@flyward.co</a>
+    </div>
+  </aside>
 
-<div class="logo-area">
+  <header class="navbar" id="navbar" style="animation: fadeDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;">
+    <div class="nav-left">
+      <a href="../index.html" class="nav-logo">
+        <img src="../images/logo.png" alt="Logo">
+      </a>
+    </div>
+    <nav class="desktop-nav">
+      <ul class="desktop-menu-links">
+        <li><a href="aisatsu.html" data-i18n="nav_aisatsu">会長挨拶</a></li>
+        <li><a href="unesco-int.html" data-i18n="nav_intro">協会紹介</a></li>
+        <li><a href="events.html" data-i18n="nav_events">イベント</a></li>
+        <li><a href="membership.html" data-i18n="nav_membership">入会案内</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+        <div class="lang-dropdown">
+                <button class="lang-toggle-btn" aria-haspopup="true" aria-expanded="false" aria-label="Switch language">
+                    <span>JA</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <ul class="lang-menu" role="menu">
+                    <li role="none"><a href="#" class="lang-item active" data-lang="ja" role="menuitem">日本語</a></li>
+                    <li role="none"><a href="#" class="lang-item" data-lang="en" role="menuitem">English</a></li>
+                    <li role="none"><a href="#" class="lang-item" data-lang="ne" role="menuitem">ネパール語</a></li>
+                    <li role="none"><a href="#" class="lang-item" data-lang="my" role="menuitem">ミャンマー語</a></li>
+                    <li role="none"><a href="#" class="lang-item" data-lang="vi" role="menuitem">ベトナム語</a></li>
+                    <li role="none"><a href="#" class="lang-item" data-lang="bn" role="menuitem">バングラデシュ語</a></li>
+                </ul>
+            </div>
+        <a href="login.html" class="nav-icon-btn login-btn" aria-label="Login">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+            </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="sidebarMenu">
+                <span></span><span></span><span></span>
+            </button>
+        <a href="../index.html#contact" class="btn-nav" data-i18n="nav_contact">CONTACT</a>
+    </div>
+  </header>
 
-<div class="logo-box">
-UNESCO
-</div>
+  <main class="content-wrapper overview-page reveal" role="main">
+    <section class="hero-intro">
+      <span class="eyebrow">ASSOCIATION OVERVIEW</span>
+      <h1>岡山ユネスコ協会紹介</h1>
+      <p class="intro-copy">世界の平和と人類の福祉に貢献するため、教育・文化・国際理解の活動を地域から実践しています。</p>
+    </section>
 
-<div class="circle-logo">
-UNESCO<br>
-NGO JAPAN
-</div>
+    <section class="info-card reveal reveal-stagger">
+      <p class="section-label">PURPOSE</p>
+      <h2>目的</h2>
+      <p>本会は、ユネスコ憲章の精神に基づき、ユネスコ活動の実践を通して広く国際社会の進歩と向上に貢献すると同時に、世界の平和と人類の福祉に寄与することを目的とします。</p>
+    </section>
 
-</div>
+    <section class="info-card reveal reveal-stagger">
+      <p class="section-label">ACTIVITIES</p>
+      <h2>事業</h2>
+      <p>本会は、上記の目的を達成するため、次に掲げる事業を行います。</p>
+      <ol class="overview-list">
+        <li>ユネスコ精神の理解と普及をはかるための事業</li>
+        <li>国際理解教育への貢献をはかるための事業</li>
+        <li>新しい文化の創造をはかるための事業</li>
+        <li>科学の発展を促しよりよい環境を創造するための事業</li>
+        <li>国際協力及び交流を促進するための事業</li>
+        <li>青少年の育成を図るための事業</li>
+        <li>ユネスコ、日本ユネスコ国内委員会及び社団法人日本ユネスコ協会連盟が実施する事業への協力並びに近隣のユネスコ協会その他関係団体との協力及び提携</li>
+        <li>前各号に掲げるもののほか、本会の目的達成に必要な事業</li>
+      </ol>
+    </section>
 
-<nav>
+    <section class="info-card reveal reveal-stagger">
+      <p class="section-label">VISION</p>
+      <h2>活動趣旨</h2>
+      <p>岡山ユネスコ協会では、1994年からユネスコ本部及びユネスコ協会本部が推進する、世界平和運動、教育の国際協力である世界寺子屋運動、世界遺産の保護活動等に積極的に協力しています。2005年からESDの活動を主体的に進め、他の団体への啓蒙を行ってきました。具体的には、ユネスコ精神の理解と普及、国際理解教育への貢献、新しい文化への創造、科学の発展を促し、よりよい環境を創造すること、国際協力及び交流の促進、青少年の育成、ユネスコ、日本ユネスコ国内委員会、ユネスコ協会連盟が実施する事業への協力並びに近隣のユネスコ協会その他関係団体との協力及び連携を事業として行っています。設立当初からESDに該当する項目の事業を継続してきました。</p>
+    </section>
 
-<ul>
+    <section class="overview-grid reveal reveal-stagger">
+      <article class="info-card compact">
+        <p class="section-label">FOUNDED</p>
+        <h2>設立年月日</h2>
+        <p>1994年3月12日</p>
+      </article>
 
-<li class="dropdown">
+      <article class="info-card compact">
+        <p class="section-label">CHAIRS</p>
+        <h2>歴代会長</h2>
+        <ul class="overview-list">
+          <li>初代会長 三宅 正勝（1994年3月～2012年7月）</li>
+          <li>第二代会長 阿部 宏史（2012年8月～2013年5月）</li>
+          <li>第三代会長 武 泰稔（2013年6月～2015年5月）</li>
+          <li>第四代会長 松畑 熙一（2015年6月～2018年4月）</li>
+          <li>第五代会長 池田 満之（2018年5月～2026年4月）</li>
+          <li>第六代会長 徳山 順子（2026年5月～現在）</li>
+        </ul>
+      </article>
 
-岡山ユネスコ協会概要
+      <article class="info-card compact">
+        <p class="section-label">NETWORK</p>
+        <h2>加盟団体</h2>
+        <ul class="overview-list">
+          <li>（社）日本ユネスコ協会連盟</li>
+          <li>特定非営利活動法人 岡山県国際団体協議会</li>
+        </ul>
+      </article>
+    </section>
 
-<ul class="submenu">
+    <section class="link-card reveal">
+      <h2>関連情報</h2>
+      <div class="link-actions">
+        <a href="kaisoku会則.html" class="btn-back"><span>会則を見る</span></a>
+        <a href="unesco-member.html" class="btn-back"><span>役員一覧を見る</span></a>
+      </div>
+    </section>
+  </main>
+  <footer class="footer" id="contact">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="../index.html" class="footer-logo">
+          <img src="../images/logo.png" alt="Okayama UNESCO Association">
+        </a>
+        <div class="footer-contact">
+          <p data-i18n="footer_address">〒700-0000 岡山県岡山市 (Placeholder)</p>
+          <p data-i18n="footer_tel">Tel: 086-XXX-XXXX / Email: info@unesco.okayama.jp</p>
+          <div class="social-icons" aria-label="SNS links">
+            <a href="#" class="social-icon social-facebook" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 9H16V6h-2.5C10.9 6 9 7.9 9 10.5V13H7v3h2v5h3v-5h2.2l.8-3H12v-2.5c0-.9.6-1.5 1.5-1.5Z"/></svg>
+            </a>
+            <a href="#" class="social-icon social-x" aria-label="X">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h3.8l4.4 6 5-6H20l-6.5 7.8L20 20h-3.8l-4.8-6.5L6 20H4l6.6-7.9L4 4Z"/></svg>
+            </a>
+            <a href="#" class="social-icon social-instagram" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 3h9A4.5 4.5 0 0 1 21 7.5v9a4.5 4.5 0 0 1-4.5 4.5h-9A4.5 4.5 0 0 1 3 16.5v-9A4.5 4.5 0 0 1 7.5 3Zm0 2A2.5 2.5 0 0 0 5 7.5v9A2.5 2.5 0 0 0 7.5 19h9a2.5 2.5 0 0 0 2.5-2.5v-9A2.5 2.5 0 0 0 16.5 5h-9Zm10.8 1.3a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer_rights">&copy; 2024 Okayama UNESCO Association. All rights reserved.</p>
+      <p class="design-credit">
+        <span data-i18n="footer_design_by">DESIGN by </span><a href="designers.html" class="design-credit-link">岡山情報ビジネス学院 国際ITビジネス学科</a>
+      </p>
+    </div>
+  </footer>
 
-<li><a href="kaisoku会則.html">会則</a></li>
-
-<li><a href="unesco-member.html">役員一覧</a></li>
-
-</ul>
-
-</li>
-
-</ul>
-
-</nav>
-
-</header>
-
-<section class="hero">
-
-<h1>― 岡山ユネスコ協会紹介 ―</h1>
-
-<p>
-世界の平和と人類の福祉に貢献する
-</p>
-
-</section>
-
-<div class="container">
-
-<div class="card">
-
-<h2>目的</h2>
-
-<p>
-本会は、ユネスコ憲章の精神に基づき、ユネスコ活動の実践を通して広く国際社会の進歩と向上に貢献すると同時に、世界の平和と人類の福祉に寄与することを目的とする。
-</p>
-
-</div>
-
-<div class="card">
-
-<h2>事業</h2>
-<p>
-本会は、上記の目的を達成するため、次に掲げる事業を行う。
-</p>
-
-<ol>
-
-<li>精神の理解と普及をはかるための事業</li>
-
-<li>理解教育への貢献をはかるための事業</li>
-
-<li>新しい文化の創造をはかるための事業</li>
-
-<li>科学の発展を促しよりよい環境を創造するための事業</li>
-
-<li>国際協力及び交流を促進するための事業</li>
-
-<li>青少年の育成を図るための事業</li>
-
-<li>ユネスコ、日本ユネスコ国内委員会及び社団法人日本ユネスコ協会連盟が実施する<br>
-事業への協力並びに近隣のユネスコ協会その他関係団体との協力及び提携</li>
-
-<li>前各号に掲げるもののほか、本会の目的達成に必要な事業</li>
-
-</ol>
-
-</div>
-
-<div class="card">
-
-    <h2>活動趣旨</h2>
-    <p>岡山ユネスコ協会では、1994年からユネスコ本部及びユネスコ協会本部が推進する、世界平和運動、教育の国際協力である世界寺子屋運動、世界遺産の保護活動等に積極的に協力しています。2005年からESDの活動を主体的に進め、他の団体への啓蒙を行ってきました。具体的には、ユネスコ精神の理解と普及、国際理解教育への貢献、新しい文化への創造、科学の発展を促し、よりよい環境を創造すること、国際協力及び交流の促進、青少年の育成、ユネスコ、日本ユネスコ国内委員会、ユネスコ協会連盟が実施する事業への協力並びに近隣のユネスコ協会その他関係団体との協力及び連携を事業として行っています。結果的の設立当初からESDに該当する項目の事業を行って来ました。</p>
-  </div>
-
-<div class="card">
-    <h2>設立年月日</h2>
-    <p>1994年3月12日</p>
-  </div>
-
-<div class="card">
-    <h2>歴代会長</h2>
-    <ul>
-      <li>初代会長　三宅 正勝（1994年3月～2012年7月）</li>
-      <li>第二代会長　阿部 宏史（2012年8月～2013年5月）</li>
-      <li>第三代会長　武 泰稔（2013年6月～2015年5月）</li>
-      <li>第四代会長　松畑 熙一（2015年6月～2018年4月）</li>
-      <li>第五代会長　池田 満之（2018年5月～2026年4月）</li>
-      <li>第六代会長　徳山 順子（2026年5月～現在）</li>
-    </ul>
-  </div>
-
-<div class="card">
-    <h2>加盟団体</h2>
-    <ul>
-      <li>（社）日本ユネスコ協会連盟</li>
-      <li>特定非営利活動法人 岡山県国際団体協議会</li>
-    </ul>
-  </div>
-
-</div>
-
+  <script src="../script/translations.js"></script>
+  <script src="../script/index.js"></script>
 </body>
-
 </html>

@@ -1,220 +1,178 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ユネスコとユネスコ協会</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style/unesco-seukhai.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ユネスコとユネスコ協会 - 岡山ユネスコ協会</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/unesco-seukhai.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600;6..96,700;6..96,800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-<nav class="quick-nav" aria-label="Main pages">
-  <a href="../index.html">HOME</a>
-  <a href="aisatsu.html">会長挨拶</a>
-  <a href="unesco-int.html">協会概要</a>
-  <a href="activities.html">活動紹介</a>
-  <a href="events.html">イベント</a>
-  <a href="membership.html">入会案内</a>
-</nav>
+    <aside class="offcanvas-menu" id="sidebarMenu" role="dialog" aria-label="Navigation menu">
+        <div class="offcanvas-header">
+            <button class="close-toggle" id="closeToggle" aria-label="Close menu">✕</button>
+            <a href="../index.html#contact" class="btn-nav">CONTACT</a>
+        </div>
+        <nav class="offcanvas-nav" aria-label="Main navigation">
+            <ul class="menu-links">
+                <li><a href="aisatsu.html" class="menu-item"><span class="menu-num">01</span><span data-i18n="nav_aisatsu">会長挨拶</span></a></li>
+                <li><a href="unesco-int.html" class="menu-item"><span class="menu-num">02</span><span data-i18n="nav_intro">協会紹介</span></a></li>
+                <li><a href="events.html" class="menu-item"><span class="menu-num">03</span><span data-i18n="nav_events">イベント</span></a></li>
+                <li><a href="membership.html" class="menu-item"><span class="menu-num">04</span><span data-i18n="nav_membership">入会案内</span></a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <p>Get in touch</p>
+            <a href="mailto:hello@flyward.co">hello@flyward.co</a>
+        </div>
+    </aside>
 
+    <header class="navbar" id="navbar" style="animation: fadeDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;">
+        <div class="nav-left">
+            <a href="../index.html" class="nav-logo">
+                <img src="../images/logo.png" alt="Logo">
+            </a>
+        </div>
+        <nav class="desktop-nav">
+            <ul class="desktop-menu-links">
+                <li><a href="aisatsu.html" data-i18n="nav_aisatsu">会長挨拶</a></li>
+                <li><a href="unesco-int.html" data-i18n="nav_intro">協会紹介</a></li>
+                <li><a href="events.html" data-i18n="nav_events">イベント</a></li>
+                <li><a href="membership.html" data-i18n="nav_membership">入会案内</a></li>
+            </ul>
+        </nav>
+        <div class="nav-right">
+            <div class="lang-dropdown">
+                <button class="lang-toggle-btn" aria-haspopup="true" aria-expanded="false" aria-label="Switch language">
+                    <span>JA</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <ul class="lang-menu" role="menu">
+                    <li role="none"><a href="#" class="lang-item active" data-lang="ja" role="menuitem">日本語</a></li>
+                    <li role="none"><a href="#" class="lang-item" data-lang="en" role="menuitem">English</a></li>
+                    <li role="none"><a href="#" class="lang-item" data-lang="ne" role="menuitem">ネパール語</a></li>
+                    <li role="none"><a href="#" class="lang-item" data-lang="my" role="menuitem">ミャンマー語</a></li>
+                    <li role="none"><a href="#" class="lang-item" data-lang="vi" role="menuitem">ベトナム語</a></li>
+                    <li role="none"><a href="#" class="lang-item" data-lang="bn" role="menuitem">バングラデシュ語</a></li>
+                </ul>
+            </div>
+            <a href="login.html" class="nav-icon-btn login-btn" aria-label="Login">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="sidebarMenu">
+                <span></span><span></span><span></span>
+            </button>
+            <a href="../index.html#contact" class="btn-nav" data-i18n="nav_contact">CONTACT</a>
+        </div>
+    </header>
 
-<!-- WHAT IS UNESCO -->
-<div class="wrap">
-<section class="chapter fade-in">
-  <p class="chapter-label">01 <span>What is UNESCO</span></p>
-  <div class="two-col">
-    <div>
-      <h2 class="sidebar-label">
-        ユネスコ<em>とは？</em>
-      </h2>
-      <div class="abbr-row">
-        <div class="abbr-item"><span class="abbr-key">U</span><span class="abbr-val">United Nations</span></div>
-        <div class="abbr-item"><span class="abbr-key">E</span><span class="abbr-val">Educational</span></div>
-        <div class="abbr-item"><span class="abbr-key">S</span><span class="abbr-val">Scientific and</span></div>
-        <div class="abbr-item"><span class="abbr-key">C</span><span class="abbr-val">Cultural</span></div>
-        <div class="abbr-item"><span class="abbr-key">O</span><span class="abbr-val">Organization</span></div>
-      </div>
-    </div>
-    <div class="main-text">
-      <p class="lead">
-        教育・科学・文化の分野における国際協力を通じて、世界平和と人類共通の福祉を実現するために設立された国際連合の専門機関です。
-      </p>
-      <p class="body-text">
-        第二次世界大戦後、二度と悲惨な戦争を繰り返さないために、国際社会が知識と文化の力で協力し合うという理念のもとに誕生しました。現在は190を超える加盟国・準加盟地域とともに、地球規模の課題に取り組んでいます。
-      </p>
-    </div>
-  </div>
-</section>
-</div>
+    <main class="content-wrapper seukhai-page reveal" role="main">
+        <section class="hero-intro">
+            <span class="eyebrow">UNESCO</span>
+            <h1>ユネスコとユネスコ協会</h1>
+            <p class="intro-copy">教育・科学・文化の国際協力を通じ、平和で持続可能な社会を築くための理念と活動を紹介します。</p>
+        </section>
 
-<!-- ACTIVITIES -->
-<div class="wrap">
-<section class="activities-section fade-in">
-  <div class="section-head">
-    <h2>主な活動</h2>
-    <div class="section-head-rule"></div>
-    <p class="chapter-label no-margin">02 <span>Activities</span></p>
-  </div>
-  <div class="activities-grid">
-    <div class="act-item">
-      <div class="act-num">01</div>
-      <div class="act-name">識字率の向上</div>
-    </div>
-    <div class="act-item">
-      <div class="act-num">02</div>
-      <div class="act-name">義務教育の普及</div>
-    </div>
-    <div class="act-item">
-      <div class="act-num">03</div>
-      <div class="act-name">世界遺産の保護</div>
-    </div>
-    <div class="act-item">
-      <div class="act-num">04</div>
-      <div class="act-name">記憶遺産の登録</div>
-    </div>
-    <div class="act-item">
-      <div class="act-num">05</div>
-      <div class="act-name">文化多様性の推進</div>
-    </div>
-    <div class="act-item">
-      <div class="act-num">06</div>
-      <div class="act-name">男女差別の解消</div>
-    </div>
-    <div class="act-item">
-      <div class="act-num">07</div>
-      <div class="act-name">貧困削減への支援</div>
-    </div>
-  </div>
-</section>
-</div>
+        <section class="info-card reveal reveal-stagger">
+            <p class="section-label">01 WHAT IS UNESCO</p>
+            <h2>ユネスコとは</h2>
+            <p>教育・科学・文化の分野における国際協力を通じて、世界平和と人類共通の福祉を実現するために設立された国際連合の専門機関です。</p>
+            <p>第二次世界大戦後、二度と悲惨な戦争を繰り返さないために、国際社会が知識と文化の力で協力し合うという理念のもとに誕生しました。現在は190を超える加盟国・準加盟地域とともに、地球規模の課題に取り組んでいます。</p>
+        </section>
 
-<!-- EMBLEM -->
-<div class="wrap">
-<section class="emblem-section fade-in">
-  <p class="chapter-label">03 <span>Emblem</span></p>
-  <div class="emblem-layout">
-    <div>
-      <img class="emblem-img" src="../images/logo.png" alt="UNESCOエンブレム"
-        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <div class="emblem-placeholder">
-        <div class="ep-label">UNESCO EMBLEM</div>
-        <div class="ep-sub">パルテノン神殿</div>
-      </div>
-    </div>
-    <div class="emblem-text">
-      <h3>パルテノン神殿の<br>エンブレム</h3>
-      <p>
-        ユネスコのエンブレムは、古代ギリシャ文明の精神的遺産を象徴するパルテノン神殿をモチーフにデザインされています。<br><br>
-        知の源泉であるギリシャ文明を象徴するこの建物が、教育・科学・文化を掲げるユネスコの精神を体現しています。
-      </p>
-    </div>
-  </div>
-</section>
-</div>
+        <section class="info-card reveal reveal-stagger">
+            <p class="section-label">02 ACTIVITIES</p>
+            <h2>主な活動</h2>
+            <ul class="activity-list">
+                <li>識字率の向上</li>
+                <li>義務教育の普及</li>
+                <li>世界遺産の保護</li>
+                <li>記憶遺産の登録</li>
+                <li>文化多様性の推進</li>
+                <li>男女差別の解消</li>
+                <li>貧困削減への支援</li>
+            </ul>
+        </section>
 
-<!-- QUOTE -->
-<div class="wrap">
-<section class="quote-section fade-in">
-  <div class="quote-block">
-    <p class="quote-jp">
-      戦争は人の心の中で生まれるものであるから、<br>
-      人の心の中に平和のとりでを築かなければならない。
-    </p>
-    <div class="quote-divider"></div>
-    <p class="quote-en">
-      Since wars begin in the minds of men,<br>
-      it is in the minds of men that the<br>
-      defences of peace must be constructed.
-    </p>
-  </div>
-</section>
-</div>
+        <section class="info-card reveal reveal-stagger emblem-grid">
+            <div class="emblem-media">
+                <img src="../images/logo.png" alt="UNESCOエンブレム">
+            </div>
+            <div>
+                <p class="section-label">03 EMBLEM</p>
+                <h2>パルテノン神殿のエンブレム</h2>
+                <p>ユネスコのエンブレムは、古代ギリシャ文明の精神的遺産を象徴するパルテノン神殿をモチーフにデザインされています。</p>
+                <p>知の源泉であるギリシャ文明を象徴するこの建物が、教育・科学・文化を掲げるユネスコの精神を体現しています。</p>
+            </div>
+        </section>
 
-<!-- ASSOCIATION -->
-<div class="wrap">
-<section class="assoc-section fade-in">
-  <p class="chapter-label">04 <span>UNESCO Association</span></p>
-  <div class="section-head">
-    <h2>ユネスコ協会</h2>
-    <div class="section-head-rule"></div>
-  </div>
-  <div class="assoc-layout">
-    <div class="assoc-card">
-      <h3>民間ユネスコ活動の<br>連合組織</h3>
-      <p>
-        ユネスコ協会は、世界に先駆けて仙台で始められた民間ユネスコ活動を受け継ぐ、全国約300のユネスコ協会の連合組織です。UNESCO憲章の精神に基づき、世界平和と人類福祉の実現を目指して活動しています。
-      </p>
-    </div>
-    <div class="assoc-card dark">
-      <h3>世界へ広がる活動</h3>
-      <p>
-        現在では100ヶ国以上にユネスコ協会やクラブが存在し、世界中で民間ユネスコ活動が行われています。日本では「ユネスコ活動に関する法律」により、地域社会と協力しながら様々な活動が進められています。
-      </p>
-    </div>
-  </div>
-</section>
-</div>
+        <section class="quote-card reveal">
+            <p class="quote-jp">戦争は人の心の中で生まれるものであるから、人の心の中に平和のとりでを築かなければならない。</p>
+            <p class="quote-en">Since wars begin in the minds of men, it is in the minds of men that the defences of peace must be constructed.</p>
+        </section>
 
-<!-- KNOW MORE -->
-<div class="wrap">
-<section class="know-section fade-in">
-  <p class="chapter-label">05 <span>Learn More</span></p>
-  <div class="section-head">
-    <h2>ユネスコをもっと知る</h2>
-    <div class="section-head-rule"></div>
-  </div>
-  <div class="timeline">
-    <div class="tl-item">
-      <div class="tl-right tl-card cream">
-        ユネスコは、教育・科学・文化の分野における国際協力を通して、世界平和と人類共通の福祉を実現するために設立されました。
-      </div>
-      <div class="tl-dot"><div class="tl-dot-inner"></div></div>
-      <div class="tl-empty"></div>
-    </div>
+        <section class="info-card reveal reveal-stagger">
+            <p class="section-label">04 UNESCO ASSOCIATION</p>
+            <h2>ユネスコ協会</h2>
+            <p>ユネスコ協会は、世界に先駆けて仙台で始められた民間ユネスコ活動を受け継ぐ、全国約300のユネスコ協会の連合組織です。UNESCO憲章の精神に基づき、世界平和と人類福祉の実現を目指して活動しています。</p>
+            <p>現在では100ヶ国以上にユネスコ協会やクラブが存在し、世界中で民間ユネスコ活動が行われています。日本では「ユネスコ活動に関する法律」により、地域社会と協力しながら様々な活動が進められています。</p>
+        </section>
 
-    <div class="tl-item">
-      <div class="tl-empty"></div>
-      <div class="tl-dot"><div class="tl-dot-inner"></div></div>
-      <div class="tl-left tl-card gold-pale">
-        「平和」は武器によってではなく、人々の心の中から生まれるという考え方が、ユネスコ活動の原点です。
-      </div>
-    </div>
+        <section class="timeline-card reveal reveal-stagger">
+            <p class="section-label">05 LEARN MORE</p>
+            <h2>ユネスコをもっと知る</h2>
+            <ul>
+                <li>ユネスコは、教育・科学・文化の分野における国際協力を通して、世界平和と人類共通の福祉を実現するために設立されました。</li>
+                <li>「平和」は武器によってではなく、人々の心の中から生まれるという考え方が、ユネスコ活動の原点です。</li>
+                <li>ユネスコは、世界各国が加盟する国際的な政府間組織として、地球規模の課題に取り組んでいます。</li>
+                <li>現在では、100ヶ国以上にユネスコ協会やクラブが存在し、世界中で民間ユネスコ活動が行われています。</li>
+                <li>日本では「ユネスコ活動に関する法律」により、地域社会と協力しながら様々な活動が進められています。</li>
+            </ul>
+        </section>
+    </main>
 
-    <div class="tl-item">
-      <div class="tl-right tl-card blue-pale">
-        ユネスコは、世界各国が加盟する国際的な政府間組織として、地球規模の課題に取り組んでいます。
-      </div>
-      <div class="tl-dot"><div class="tl-dot-inner"></div></div>
-      <div class="tl-empty"></div>
-    </div>
+    <footer class="footer" id="contact">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="../index.html" class="footer-logo">
+                    <img src="../images/logo.png" alt="Okayama UNESCO Association">
+                </a>
+                <div class="footer-contact">
+                    <p data-i18n="footer_address">〒700-0000 岡山県岡山市 (Placeholder)</p>
+                    <p data-i18n="footer_tel">Tel: 086-XXX-XXXX / Email: info@unesco.okayama.jp</p>
+                    <div class="social-icons" aria-label="SNS links">
+                        <a href="#" class="social-icon social-facebook" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 9H16V6h-2.5C10.9 6 9 7.9 9 10.5V13H7v3h2v5h3v-5h2.2l.8-3H12v-2.5c0-.9.6-1.5 1.5-1.5Z"/></svg>
+                        </a>
+                        <a href="#" class="social-icon social-x" aria-label="X">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h3.8l4.4 6 5-6H20l-6.5 7.8L20 20h-3.8l-4.8-6.5L6 20H4l6.6-7.9L4 4Z"/></svg>
+                        </a>
+                        <a href="#" class="social-icon social-instagram" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 3h9A4.5 4.5 0 0 1 21 7.5v9a4.5 4.5 0 0 1-4.5 4.5h-9A4.5 4.5 0 0 1 3 16.5v-9A4.5 4.5 0 0 1 7.5 3Zm0 2A2.5 2.5 0 0 0 5 7.5v9A2.5 2.5 0 0 0 7.5 19h9a2.5 2.5 0 0 0 2.5-2.5v-9A2.5 2.5 0 0 0 16.5 5h-9Zm10.8 1.3a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-i18n="footer_rights">&copy; 2024 Okayama UNESCO Association. All rights reserved.</p>
+            <p class="design-credit">
+                <span data-i18n="footer_design_by">DESIGN by </span><a href="designers.html" class="design-credit-link">岡山情報ビジネス学院 国際ITビジネス学科</a>
+            </p>
+        </div>
+    </footer>
 
-    <div class="tl-item">
-      <div class="tl-empty"></div>
-      <div class="tl-dot"><div class="tl-dot-inner"></div></div>
-      <div class="tl-left tl-card cream">
-        現在では、100ヶ国以上にユネスコ協会やクラブが存在し、世界中で民間ユネスコ活動が行われています。
-      </div>
-    </div>
-
-    <div class="tl-item">
-      <div class="tl-right tl-card gold-pale">
-        日本では「ユネスコ活動に関する法律」により、地域社会と協力しながら様々な活動が進められています。
-      </div>
-      <div class="tl-dot"><div class="tl-dot-inner"></div></div>
-      <div class="tl-empty"></div>
-    </div>
-  </div>
-</section>
-</div>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <p>© UNESCO Association Presentation</p>
-</footer>
-
-<script src="../script/unesco-seukhai.js" defer></script>
+    <script src="../script/translations.js"></script>
+    <script src="../script/index.js"></script>
 </body>
 </html>

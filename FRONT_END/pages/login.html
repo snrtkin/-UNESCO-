@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ログイン - 岡山ユネスコ協会</title>
+    <meta name="description" content="岡山ユネスコ協会 会員専用ログインページ">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- SIDEBAR OVERLAY -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="offcanvas-menu" id="sidebarMenu" role="dialog" aria-label="Navigation menu">
+        <div class="offcanvas-header">
+            <button class="close-toggle" id="closeToggle" aria-label="Close menu">✕</button>
+            <a href="../index.html#contact" class="btn-nav">CONTACT</a>
+        </div>
+        <nav class="offcanvas-nav" aria-label="Main navigation">
+            <ul class="menu-links">
+                <li><a href="aisatsu.html"        class="menu-item"><span class="menu-num">01</span><span data-i18n="nav_aisatsu">会長挨拶</span></a></li>
+                <li><a href="unesco-int.html"     class="menu-item"><span class="menu-num">02</span><span data-i18n="nav_intro">協会紹介</span></a></li>
+                <li><a href="events.html"          class="menu-item"><span class="menu-num">03</span><span data-i18n="nav_events">イベント</span></a></li>
+                <li><a href="membership.html"      class="menu-item"><span class="menu-num">04</span><span data-i18n="nav_membership">入会案内</span></a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <p>Get in touch</p>
+            <a href="mailto:hello@flyward.co">hello@flyward.co</a>
+        </div>
+    </aside>
+
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+        <div class="nav-left">
+            <a href="../index.html" class="nav-logo">
+                <img src="../images/logo.png" alt="岡山ユネスコ協会ロゴ">
+            </a>
+        </div>
+        <nav class="desktop-nav">
+            <ul class="desktop-menu-links">
+                <li><a href="aisatsu.html" data-i18n="nav_aisatsu">会長挨拶</a></li>
+                <li><a href="unesco-int.html" data-i18n="nav_intro">協会紹介</a></li>
+                <li><a href="events.html" data-i18n="nav_events">イベント</a></li>
+                <li><a href="membership.html" data-i18n="nav_membership">入会案内</a></li>
+            </ul>
+        </nav>
+        <div class="nav-right">
+            <div class="lang-dropdown">
+                <button class="lang-toggle-btn" aria-haspopup="true" aria-expanded="false" aria-label="言語を切り替える">
+                    <span>JA</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <ul class="lang-menu" role="menu">
+                    <li role="none"><a href="#" class="lang-item active" data-lang="ja" role="menuitem">日本語</a></li>
+                    <li role="none"><a href="#" class="lang-item" data-lang="en" role="menuitem">English</a></li>
+                    <li role="none"><a href="#" class="lang-item" data-lang="ne" role="menuitem">ネパール語</a></li>
+                    <li role="none"><a href="#" class="lang-item" data-lang="my" role="menuitem">ミャンマー語</a></li>
+                    <li role="none"><a href="#" class="lang-item" data-lang="vi" role="menuitem">ベトナム語</a></li>
+                    <li role="none"><a href="#" class="lang-item" data-lang="bn" role="menuitem">バングラデシュ語</a></li>
+                </ul>
+            </div>
+            <a href="login.html" class="nav-icon-btn login-btn" aria-label="ログイン">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="sidebarMenu">
+                <span></span><span></span><span></span>
+            </button>
+            <a href="../index.html#contact" class="btn-nav" data-i18n="nav_contact">CONTACT</a>
+        </div>
+    </header>
+
+    <!-- ═══ LOGIN PAGE ═══ -->
+    <main class="login-page">
+
+        <div class="login-card">
+
+            <!-- Logo -->
+            <div class="card-logo">
+                <img src="../images/logo.png" alt="岡山ユネスコ協会">
+            </div>
+
+            <!-- Heading -->
+            <h1 class="login-heading">ログイン</h1>
+            <p class="login-sub">会員番号またはメールアドレスで<br>ログインしてください</p>
+
+            <!-- Form -->
+            <form id="loginForm" novalidate>
+
+                <!-- Email / ID field -->
+                <div class="field" id="field-user">
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder=" "
+                        autocomplete="username"
+                        required
+                        aria-describedby="username-error"
+                    >
+                    <label for="username">メールアドレス または 会員番号</label>
+                    <span class="field-error" id="username-error" role="alert">
+                        メールアドレスまたは会員番号を入力してください
+                    </span>
+                </div>
+
+                <!-- Password field -->
+                <div class="field" id="field-pass">
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder=" "
+                        autocomplete="current-password"
+                        required
+                        aria-describedby="password-error"
+                    >
+                    <label for="password">パスワード</label>
+                    <button type="button" class="field-icon" id="pwToggle" aria-label="パスワードを表示">
+                        <svg class="icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        <svg class="icon-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+                            <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+                            <line x1="1" y1="1" x2="23" y2="23"/>
+                        </svg>
+                    </button>
+                    <span class="field-error" id="password-error" role="alert">
+                        パスワードを入力してください
+                    </span>
+                </div>
+
+                <!-- Remember me + Forgot -->
+                <div class="form-options">
+                    <label class="remember-label">
+                        <input type="checkbox" id="remember" name="remember">
+                        <span class="toggle-track"></span>
+                        <span>ログイン状態を保持</span>
+                    </label>
+                    <a href="#" class="forgot-link" id="forgotLink">パスワードを忘れた場合</a>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" class="btn-login" id="loginBtn">
+                    <span class="btn-login-text">
+                        ログイン
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                            <polyline points="12 5 19 12 12 19"/>
+                        </svg>
+                    </span>
+                    <span class="spinner"></span>
+                </button>
+            </form>
+
+            <!-- Divider -->
+            <div class="divider">または</div>
+
+            <!-- Register -->
+            <div class="login-register">
+                会員でない方は <a href="membership.html">入会のご案内</a> をご覧ください
+            </div>
+
+            <!-- Back home -->
+            <a href="../index.html" class="back-to-home">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"/>
+                    <polyline points="12 19 5 12 12 5"/>
+                </svg>
+                トップページに戻る
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Toast -->
+    <div class="toast" id="toast" role="status" aria-live="polite">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+        </svg>
+        <span id="toastMsg">ログインしました</span>
+    </div>
+
+    <script src="../script/translations.js"></script>
+    <script src="../script/index.js"></script>
+    <script>
+    (() => {
+        // Password toggle
+        const pwInput   = document.getElementById('password');
+        const pwToggle  = document.getElementById('pwToggle');
+        const eyeOpen   = pwToggle.querySelector('.icon-eye');
+        const eyeClosed = pwToggle.querySelector('.icon-eye-off');
+
+        pwToggle.addEventListener('click', () => {
+            const isHidden = pwInput.type === 'password';
+            pwInput.type         = isHidden ? 'text'     : 'password';
+            eyeOpen.style.display   = isHidden ? 'none' : '';
+            eyeClosed.style.display = isHidden ? ''     : 'none';
+            pwToggle.classList.toggle('active', isHidden);
+            pwToggle.setAttribute('aria-label', isHidden ? 'パスワードを非表示' : 'パスワードを表示');
+        });
+
+        // Forgot password
+        document.getElementById('forgotLink').addEventListener('click', e => {
+            e.preventDefault();
+            showToast('パスワード再設定は事務局までご連絡ください');
+        });
+
+        // Toast
+        function showToast(msg, dur = 3500) {
+            const t = document.getElementById('toast');
+            document.getElementById('toastMsg').textContent = msg;
+            t.classList.add('show');
+            setTimeout(() => t.classList.remove('show'), dur);
+        }
+
+        // Validation
+        const form      = document.getElementById('loginForm');
+        const loginBtn  = document.getElementById('loginBtn');
+        const fieldUser = document.getElementById('field-user');
+        const fieldPass = document.getElementById('field-pass');
+        const userInput = document.getElementById('username');
+
+        function validate() {
+            let ok = true;
+            if (!userInput.value.trim()) {
+                fieldUser.classList.add('has-error');
+                userInput.classList.add('error');
+                ok = false;
+            } else {
+                fieldUser.classList.remove('has-error');
+                userInput.classList.remove('error');
+            }
+            if (!pwInput.value.trim()) {
+                fieldPass.classList.add('has-error');
+                pwInput.classList.add('error');
+                ok = false;
+            } else {
+                fieldPass.classList.remove('has-error');
+                pwInput.classList.remove('error');
+            }
+            return ok;
+        }
+
+        userInput.addEventListener('input', () => {
+            fieldUser.classList.remove('has-error');
+            userInput.classList.remove('error');
+        });
+        pwInput.addEventListener('input', () => {
+            fieldPass.classList.remove('has-error');
+            pwInput.classList.remove('error');
+        });
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            if (!validate()) return;
+            loginBtn.classList.add('loading');
+            loginBtn.disabled = true;
+            setTimeout(() => {
+                loginBtn.classList.remove('loading');
+                loginBtn.disabled = false;
+                showToast(`${userInput.value} 様、ようこそ！マイページは準備中です。`);
+            }, 1600);
+        });
+    })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "okayama-unesco-api",
+  "version": "1.0.0",
+  "description": "Express API with MongoDB for Okayama UNESCO Association forms",
+  "main": "Server.js",
+  "scripts": {
+    "start": "node Server.js",
+    "dev": "node --watch Server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5"
+  }
+}

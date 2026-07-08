@@ -1,0 +1,198 @@
+.content-wrapper.governance-page {
+      padding: 150px 40px 88px;
+      max-width: 1240px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 10;
+}
+
+.governance-page.reveal,
+.governance-page .reveal,
+.governance-page .reveal-stagger {
+      opacity: 1;
+      transform: none;
+}
+
+.governance-page .eyebrow {
+      display: inline-block;
+      color: var(--gold);
+      letter-spacing: 0.24em;
+      font-size: 0.72rem;
+      margin-bottom: 14px;
+}
+
+.governance-page>h1 {
+      font-family: 'Bodoni Moda', serif;
+      font-size: clamp(1.9rem, 4.2vw, 3.4rem);
+      letter-spacing: 0.06em;
+      margin: 0 0 26px;
+      color: var(--cream);
+}
+
+.governance-card {
+      background: rgba(7, 20, 38, 0.72);
+      border: 1px solid rgba(201, 169, 110, 0.28);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 18px 40px rgba(3, 11, 22, 0.45);
+}
+
+.table-wrap {
+      overflow-x: auto;
+}
+
+.governance-card table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 700px;
+}
+
+.governance-card th,
+.governance-card td {
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(245, 240, 232, 0.12);
+      color: rgba(245, 240, 232, 0.9);
+      font-size: 0.95rem;
+}
+
+.governance-card th {
+      color: var(--gold-light);
+      letter-spacing: 0.04em;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+}
+
+.governance-card tbody tr:hover {
+      background: rgba(201, 169, 110, 0.08);
+}
+
+.meta-date {
+      margin: 16px 0 20px;
+      color: rgba(245, 240, 232, 0.66);
+      font-size: 0.9rem;
+}
+
+.rules-text {
+      white-space: pre-wrap;
+      margin: 0;
+      padding: 24px;
+      border-radius: 14px;
+      background: rgba(2, 11, 21, 0.62);
+      border: 1px solid rgba(201, 169, 110, 0.2);
+      color: rgba(245, 240, 232, 0.9);
+      line-height: 1.9;
+      font-size: 0.94rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.governance-card .btn-back {
+      margin-top: 20px;
+      display: inline-block;
+      font-family: 'Bodoni Moda', serif;
+      font-size: 0.74rem;
+      letter-spacing: 0.2em;
+      color: #0E6973;
+      text-decoration: none;
+      border: 1px solid rgba(17, 140, 140, 0.52);
+      background: rgba(255, 255, 255, 0.72);
+      padding: 12px 28px;
+      position: relative;
+      overflow: hidden;
+}
+
+.governance-card .btn-back::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(186, 217, 206, 1);
+      transform: translateX(-101%);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: -1;
+}
+
+.governance-card .btn-back:hover {
+      color: #000000 !important;
+      border-color: rgba(17, 140, 140, 0.44);
+      box-shadow: 0 8px 20px rgba(14, 105, 115, 0.16);
+}
+
+.governance-card .btn-back:hover::before {
+      transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+      .content-wrapper.governance-page {
+            padding: 120px 20px 60px;
+      }
+
+      .governance-card {
+            padding: 18px;
+      }
+
+      .rules-text {
+            padding: 16px;
+            font-size: 0.88rem;
+            line-height: 1.8;
+      }
+}
+
+@media (max-width: 480px) {
+      .content-wrapper.governance-page {
+            padding: 106px 14px 44px;
+      }
+
+      .governance-card {
+            padding: 14px;
+            border-radius: 12px;
+      }
+
+      .governance-page>h1 {
+            margin-bottom: 18px;
+      }
+
+      .governance-card th,
+      .governance-card td {
+            font-size: 0.84rem;
+            padding: 10px 11px;
+      }
+
+      .rules-text {
+            padding: 12px;
+            font-size: 0.84rem;
+            line-height: 1.72;
+      }
+
+      .meta-date {
+            margin: 12px 0 16px;
+            font-size: 0.84rem;
+      }
+
+      .governance-card .btn-back {
+            width: 100%;
+            text-align: center;
+            padding-left: 12px;
+            padding-right: 12px;
+      }
+}
+
+/* ── LIGHT THEME OVERRIDES ── */
+.governance-page .eyebrow,
+.governance-card th {
+      color: #0E6973;
+}
+
+.governance-card,
+.rules-text {
+      background: rgba(186, 217, 206, 0.78);
+      border-color: rgba(17, 140, 140, 0.32);
+      box-shadow: none;
+}
+
+.governance-page>h1,
+.governance-card td,
+.meta-date,
+.rules-text,
+.governance-card .btn-back {
+      color: #000000;
+}

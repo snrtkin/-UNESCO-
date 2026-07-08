@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const membershipSchema = new mongoose.Schema(
+const volunteerSchema = new mongoose.Schema(
   {
     name: {
       type: String,
@@ -21,10 +21,10 @@ const membershipSchema = new mongoose.Schema(
       maxlength: 30,
       default: '',
     },
-    tier: {
+    activity: {
       type: String,
-      required: [true, 'Membership tier is required'],
-      enum: ['regular', 'corporate', 'student'],
+      required: [true, 'Preferred activity is required'],
+      enum: ['event', 'education', 'pr', 'other'],
     },
     message: {
       type: String,
@@ -34,19 +34,19 @@ const membershipSchema = new mongoose.Schema(
     },
     status: {
       type: String,
-      enum: ['pending', 'reviewed', 'approved', 'rejected'],
+      enum: ['pending', 'contacted', 'active', 'closed'],
       default: 'pending',
     },
   },
   {
     timestamps: true,
-    collection: 'memberships',
+    collection: 'volunteers',
   }
 );
 
-membershipSchema.index({ email: 1, createdAt: -1 });
-membershipSchema.index({ status: 1, createdAt: -1 });
+volunteerSchema.index({ email: 1, createdAt: -1 });
+volunteerSchema.index({ status: 1, createdAt: -1 });
 
-const Membership = mongoose.model('Membership', membershipSchema);
+const Volunteer = mongoose.model('Volunteer', volunteerSchema);
 
-module.exports = Membership;
+module.exports = Volunteer;
