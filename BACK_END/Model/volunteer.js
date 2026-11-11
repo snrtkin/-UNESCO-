@@ -21,20 +21,26 @@ const volunteerSchema = new mongoose.Schema(
       maxlength: 30,
       default: '',
     },
+    address: {
+      type: String,
+      trim: true,
+      maxlength: 300,
+      default: '',
+    },
     activity: {
       type: String,
       required: [true, 'Preferred activity is required'],
       enum: ['event', 'education', 'pr', 'other'],
     },
-    message: {
+    projectName: {
       type: String,
       trim: true,
-      maxlength: 2000,
+      maxlength: 200,
       default: '',
     },
     status: {
       type: String,
-      enum: ['pending', 'contacted', 'active', 'closed'],
+      enum: ['pending', 'contacted', 'active', 'completed', 'closed'],
       default: 'pending',
     },
   },

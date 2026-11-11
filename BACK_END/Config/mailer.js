@@ -24,14 +24,19 @@ function getTransporter() {
   return transporter;
 }
 
-async function sendApplicationConfirmation({ to, name, type }) {
+async function sendApplicationConfirmation({ to, name, type, amount, paymentUrl }) {
   const applicationType = type === 'membership' ? '入会' : 'ボランティア';
+  const membershipPaymentDetails = type === 'membership'
+    ? `\n会費: ¥${amount.toLocaleString('ja-JP')}（年額）\n${paymentUrl
+      ? `お支払いリンク: ${paymentUrl}`
+      : 'お支払いリンクは準備中です。事務局から改めてご案内します。'}\nお支払い確認と事務局の承認後、会員登録が完了します。\n`
+    : '';
 
   await getTransporter().sendMail({
     from: process.env.MAIL_FROM,
     to,
     subject: `岡山ユネスコ協会: ${applicationType}申込を受け付けました`,
-    text: `${name || 'お申し込み者'} 様\n\n岡山ユネスコ協会です。\n${applicationType}のお申し込みを受け付けました。内容を確認のうえ、改めてご連絡いたします。\n\nこのメールは自動送信されています。`,
+    text: `${name || 'お申し込み者'} 様\n\n岡山ユネスコ協会です。\n${applicationType}のお申し込みを受け付けました。${membershipPaymentDetails}\nこのメールは自動送信されています。`,
   });
 }
 

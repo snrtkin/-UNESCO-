@@ -70,12 +70,22 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    transform: scale(1.02);
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.featured-event:hover .featured-media img {
-    transform: scale(1.08);
+.image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(14, 105, 115, 0.12);
+    color: #0E6973;
+}
+
+.image-placeholder span {
+    padding: 10px 14px;
+    border: 1px solid rgba(14, 105, 115, 0.45);
+    font-family: 'Bodoni Moda', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
 }
 
 .featured-content {
@@ -120,7 +130,6 @@
     background:
         radial-gradient(circle at top right, rgba(201, 169, 110, 0.13), transparent 44%),
         rgba(7, 20, 38, 0.72);
-    transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.32s, box-shadow 0.32s;
 }
 
 .event-thumb {
@@ -136,19 +145,6 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.event-card:hover .event-thumb img {
-    transform: scale(1.06);
-}
-
-.event-card:hover {
-    transform: translateY(-7px);
-    border-color: rgba(201, 169, 110, 0.62);
-    background: rgba(186, 217, 206, 1);
-    border-color: rgba(17, 140, 140, 0.44);
-    box-shadow: 0 12px 28px rgba(14, 105, 115, 0.2);
 }
 
 .event-card h3 {
@@ -170,6 +166,44 @@
     color: rgba(245, 240, 232, 0.82);
     line-height: 1.8;
     font-size: 0.97rem;
+}
+
+.event-registration {
+    margin-top: 20px;
+}
+
+.event-register-button {
+    padding: 11px 16px;
+    border: 1px solid var(--gold);
+    border-radius: 3px;
+    color: var(--navy);
+    background: var(--gold);
+    font: inherit;
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: none;
+    transition: background 0.2s, color 0.2s, opacity 0.2s;
+}
+
+.event-register-button:hover:not(:disabled) {
+    color: var(--cream);
+    background: transparent;
+}
+
+.event-register-button:disabled {
+    cursor: default;
+    opacity: 0.72;
+}
+
+.event-registration-status {
+    margin: 8px 0 0 !important;
+    color: rgba(245, 240, 232, 0.82) !important;
+    font-size: 0.82rem !important;
+}
+
+.featured-content > .event-register-button {
+    align-self: flex-start;
+    margin-top: 4px;
 }
 
 .cta-band {
@@ -223,7 +257,6 @@
 }
 
 .btn-back:hover {
-    color: var(--navy);
     transform: translateY(-2px);
     box-shadow: 0 12px 30px rgba(201, 169, 110, 0.28);
 }

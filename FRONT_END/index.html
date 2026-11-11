@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flyward Animated Concept</title>
+    <title>Okayama UNESCO
+        
+    </title>
     <link rel="stylesheet" href="style/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,21 +23,17 @@
     <aside class="offcanvas-menu" id="sidebarMenu" role="dialog" aria-label="Navigation menu">
         <div class="offcanvas-header">
             <button class="close-toggle" id="closeToggle" aria-label="Close menu">✕</button>
-            <a href="pages/membership.html" class="btn-nav">CONTACT</a>
+            <a href="#contact" class="btn-nav">CONTACT</a>
         </div>
         <nav class="offcanvas-nav" aria-label="Main navigation">
             <ul class="menu-links">
-                <li><a href="pages/aisatsu.html"  class="menu-item"><span class="menu-num">01</span><span data-i18n="nav_aisatsu">会長挨拶</span></a></li>
-                <li><a href="pages/unesco-int.html"  class="menu-item"><span class="menu-num">02</span><span data-i18n="nav_intro">岡山ユネスコ協会紹介</span></a></li>
-                <li><a href="pages/events.html"   class="menu-item"><span class="menu-num">03</span><span data-i18n="nav_events">イベント</span></a></li>
-                <li><a href="pages/membership.html"   class="menu-item"><span class="menu-num">04</span><span data-i18n="nav_membership">入会案内</span></a></li>
-            
+                <li><a href="pages/aisatsu.html" class="menu-item"><span class="menu-num">01</span><span data-i18n="nav_aisatsu">会長挨拶</span></a></li>
+                <li><a href="pages/unesco-int.html" class="menu-item"><span class="menu-num">02</span><span data-i18n="nav_intro">協会紹介</span></a></li>
+                <li><a href="pages/unesco-seukhai.html" class="menu-item"><span class="menu-num">03</span><span data-i18n="nav_activities">活動紹介</span></a></li>
+                <li><a href="pages/events.html" class="menu-item"><span class="menu-num">04</span><span data-i18n="nav_events">イベント</span></a></li>
+                <li><a href="pages/membership.html" class="menu-item"><span class="menu-num">05</span><span data-i18n="nav_membership">入会案内</span></a></li>
             </ul>
         </nav>
-        <div class="sidebar-footer">
-            <p>Get in touch</p>
-            <a href="mailto:hello@flyward.co">hello@flyward.co</a>
-        </div>
     </aside>
 
     <!-- NAVBAR -->
@@ -49,6 +47,7 @@
             <ul class="desktop-menu-links">
                 <li><a href="pages/aisatsu.html" data-i18n="nav_aisatsu">会長挨拶</a></li>
                 <li><a href="pages/unesco-int.html" data-i18n="nav_intro">協会紹介</a></li>
+                <li><a href="pages/unesco-seukhai.html" data-i18n="nav_activities">活動紹介</a></li>
                 <li><a href="pages/events.html" data-i18n="nav_events">イベント</a></li>
                 <li><a href="pages/membership.html" data-i18n="nav_membership">入会案内</a></li>
             </ul>
@@ -79,18 +78,20 @@
             <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="sidebarMenu">
                 <span></span><span></span><span></span>
             </button>
-            <a href="pages/membership.html" class="btn-nav">CONTACT</a>
+            <a href="#contact" class="btn-nav">CONTACT</a>
         </div>
     </header>
 
     <!-- HERO -->
     <section class="hero-section">
         <div class="hero-bg" id="heroBg">
-            <div class="hero-slide is-active" style="background-image: url('images/okayama.jpg');"></div>
+            <div class="hero-slide is-active" style="background-image: url('images/home1.jpg');"></div>
             <div class="hero-slide" style="background-image: url('images/landing 1.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('images/main-frame 2.png');"></div>
             <div class="hero-slide" style="background-image: url('images/landing 2.jpg');"></div>
             <div class="hero-slide" style="background-image: url('images/landing 3.jpg');"></div>
-            <div class="hero-slide" style="background-image: url('images/okayama.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('images/main-frame 3.png');"></div>
+            <div class="hero-slide" style="background-image: url('images/home1.jpg');"></div>
             <div class="hero-slide" style="background-image: url('images/landing 4.jpg');"></div>
         </div>
         <div class="hero-overlay"></div>
@@ -110,20 +111,20 @@
 
     <!-- SPLIT -->
     <section class="split-section reveal" id="discover">
-        <div class="split-block private-bg">
+        <div class="split-block private-bg" data-href="pages/volunteer.html" role="link" tabindex="0" aria-label="ボランティア参加申込を見る">
             <div class="block-overlay"></div>
             <div class="block-content">
                 <a href="pages/volunteer.html" class="btn-explore" data-i18n="discover_explore">EXPLORE ↗</a>
                 <div class="text-row">
-                    <h2 data-i18n="discover_volunteer_title">仲間募集</h2>
+                    <h2 data-i18n="discover_volunteer_title">ボランティア募集</h2>
                     <p data-i18n="discover_volunteer_desc">国際交流やSDGs、地域活動に興味のある方、大歓迎！<br>私たちと一緒に、岡山から世界につながる活動をしてみませんか？</p>
                 </div>
             </div>
         </div>
-        <div class="split-block corporate-bg" id="corporate">
+        <div class="split-block corporate-bg" id="corporate" data-href="pages/sdgs.html" role="link" tabindex="0" aria-label="SDGsの活動紹介を見る">
             <div class="block-overlay"></div>
             <div class="block-content">
-                <a href="pages/unesco-seukhai.html" class="btn-explore" data-i18n="discover_explore">EXPLORE ↗</a>
+                <a href="pages/sdgs.html" class="btn-explore" data-i18n="discover_explore">EXPLORE ↗</a>
                 <div class="text-row">
                     <h2 data-i18n="discover_activities_title">主な活動内容<br>SDGs</h2>
                     <p data-i18n="discover_activities_desc">持続可能な開発目標（SDGs）の達成に向けた、ESD（持続可能な開発のための教育）や環境保護などの地域活動をご紹介します。</p>
@@ -134,27 +135,57 @@
 
     <!-- SUPPORT -->
     <section class="support-section reveal reveal-stagger" id="about">
+        <div class="missions-feature">
+            <div class="missions-feature-heading">
+                <span class="missions-feature-kicker" data-i18n="featured_activity_kicker">FEATURED ACTIVITY</span>
+                <h2 data-i18n="featured_activity_title">ESD・SDGsで地域の未来をつくる</h2>
+                <p data-i18n="featured_activity_desc_1">ESD（持続発展教育）や環境教育・環境学習を通じて、持続可能な地域づくりを支援します。</p>
+                <p data-i18n="featured_activity_desc_2">場と教材と人材の提供・支援、担い手人材の育成など、学びを行動につなげる活動です。</p>
+            </div>
+            <div class="missions-feature-visual">
+                <img class="missions-feature-image" src="images/esd-presentation.jpg" alt="ESD・SDGsの学びを発表する生徒たち">
+                <div class="missions-feature-panel">
+                    <span class="missions-feature-panel-label" data-i18n="featured_activity_panel_label">ESD / SDGs COOPERATION</span>
+                    <h3 data-i18n="featured_activity_panel_title">学びからはじめる<br>持続可能な地域づくり</h3>
+                    <span class="missions-feature-rule" aria-hidden="true"></span>
+                    <p data-i18n="featured_activity_panel_desc">ユネスコ地球環境講座、環境教材の提供、学校や公民館への講師派遣などを行っています。</p>
+                    <a href="pages/esd-sdgs.html" class="missions-feature-link"><span data-i18n="featured_activity_link">詳しく見る</span> <span aria-hidden="true">→</span></a>
+                </div>
+            </div>
+        </div>
         <h3 class="section-tag" data-i18n="missions_tag">OUR CORE MISSIONS / ユネスコ活動の柱</h3>
         <div class="support-grid">
             <div class="grid-item">
-                <span class="grid-num">1</span>
-                <h4 data-i18n="mission_title_1">ESDの推進</h4>
-                <p data-i18n="mission_desc_1">未来の地球を担う人材を育成するため、持続可能な開発のための教育を地域全体で推進します。</p>
+                <div class="mission-visual"><img src="images/goodpic.jpg" alt="ESD活動の様子"></div>
+                <div class="mission-content">
+                    <span class="grid-num">01</span>
+                    <h4 data-i18n="mission_title_1">ESDの推進</h4>
+                    <p data-i18n="mission_desc_1">未来の地球を担う人材を育成するため、持続可能な開発のための教育を地域全体で推進します。</p>
+                </div>
             </div>
             <div class="grid-item">
-                <span class="grid-num">2</span>
-                <h4 data-i18n="mission_title_2">SDGsの達成</h4>
-                <p data-i18n="mission_desc_2">誰一人取り残さない持続可能で多様性と包摂性のある社会の実現に向けて、地域から世界へ貢献します。</p>
+                <div class="mission-visual"><img src="images/sdgs_main.jpg" alt="SDGs活動の様子"></div>
+                <div class="mission-content">
+                    <span class="grid-num">02</span>
+                    <h4 data-i18n="mission_title_2">SDGsの達成</h4>
+                    <p data-i18n="mission_desc_2">誰一人取り残さない持続可能で多様性と包摂性のある社会の実現に向けて、地域から世界へ貢献します。</p>
+                </div>
             </div>
             <div class="grid-item">
-                <span class="grid-num">3</span>
-                <h4 data-i18n="mission_title_3">青少年育成</h4>
-                <p data-i18n="mission_desc_3">次代を担うユース世代の国際交流やボランティア活動を支援し、グローバルな視野を養います。</p>
+                <div class="mission-visual"><img src="images/boss12.jpg" alt="青少年育成活動の様子"></div>
+                <div class="mission-content">
+                    <span class="grid-num">03</span>
+                    <h4 data-i18n="mission_title_3">青少年育成</h4>
+                    <p data-i18n="mission_desc_3">次代を担うユース世代の国際交流やボランティア活動を支援し、グローバルな視野を養います。</p>
+                </div>
             </div>
             <div class="grid-item">
-                <span class="grid-num">4</span>
-                <h4>平和の文化の構築</h4>
-                <p>教育・科学・文化の発展を通じて、人々の心の中に平和のとりでを築く活動を展開しています。</p>
+                <div class="mission-visual"><img src="images/heiwa.jpg" alt="平和の文化構築活動の様子"></div>
+                <div class="mission-content">
+                    <span class="grid-num">04</span>
+                    <h4 data-i18n="mission_title_4">平和の文化の構築</h4>
+                    <p data-i18n="mission_desc_4">教育・科学・文化の発展を通じて、人々の心の中に平和のとりでを築く活動を展開しています。</p>
+                </div>
             </div>
         </div>
     </section>
@@ -164,20 +195,30 @@
     <!-- NEWS & EVENTS -->
     <section class="news-section reveal reveal-stagger" id="news">
         <h3 class="section-tag" data-i18n="news_tag">NEWS & EVENTS / お知らせ・イベント</h3>
-        <div class="news-grid">
-            <a href="pages/events.html" class="news-card">
-                <div class="news-date" data-i18n="news_date_1">2024.05.15</div>
-                <div class="news-title" data-i18n="news_title_1">2024年度 岡山ユネスコ協会 通常総会のご案内</div>
+        <div class="news-grid" id="newsGrid">
+            <a href="pages/esd-sdgs.html" class="news-card news-card-featured">
+                <div class="news-date" data-i18n="news_featured_label">FEATURED ACTIVITY</div>
+                <div class="news-title" data-i18n="news_featured_title">ESD・SDGs連携事業の取り組みをご紹介します</div>
                 <div class="news-arrow">→</div>
             </a>
             <a href="pages/events.html" class="news-card">
-                <div class="news-date" data-i18n="news_date_2">2024.04.10</div>
-                <div class="news-title" data-i18n="news_title_2">「ESDフォーラム2024」開催のお知らせと参加者募集</div>
+                <div class="news-date" data-i18n="news_date_1">2026.08.05</div>
+                <div class="news-title" data-i18n="news_title_1_home">平和の鐘を鳴らそう in 長泉寺が開催されました</div>
                 <div class="news-arrow">→</div>
             </a>
             <a href="pages/events.html" class="news-card">
-                <div class="news-date" data-i18n="news_date_3">2024.03.22</div>
-                <div class="news-title" data-i18n="news_title_3">ユネスコスクール支援: 出前講座の今年度レポート公開</div>
+                <div class="news-date" data-i18n="news_date_2">2026.08.02</div>
+                <div class="news-title" data-i18n="news_title_2_home">おかやまSDGsフェア内にて、SDGsパスポート体験発表会を開催</div>
+                <div class="news-arrow">→</div>
+            </a>
+            <a href="pages/events.html" class="news-card">
+                <div class="news-date" data-i18n="news_date_3">2026.07.18-20</div>
+                <div class="news-title" data-i18n="news_title_3_home">世界とつながる「多文化共生」スタディカフェ2026を開催</div>
+                <div class="news-arrow">→</div>
+            </a>
+            <a href="pages/events.html" class="news-card">
+                <div class="news-date" data-i18n="news_date_4">2026.07.07</div>
+                <div class="news-title" data-i18n="news_title_4_home">平和への発信 〜広島原爆展〜 in 岡山 2026を開催</div>
                 <div class="news-arrow">→</div>
             </a>
         </div>
@@ -211,17 +252,6 @@
                 </div>
             </a>
 
-            <div class="member-card">
-                <div class="member-avatar">
-                    <img src="images/aisatsu-shachou.jpg" alt="鈴木 一郎">
-                </div>
-                <div class="member-info">
-                    <span class="member-role" data-i18n="team_role_3">ユース・代表 (Youth Rep)</span>
-                    <h4 class="member-name" data-i18n="team_name_3">鈴木 一郎</h4>
-                    <p class="member-bio" data-i18n="team_bio_3">「若い世代の声を届け、新しいアイデアで活動を盛り上げます！」</p>
-                </div>
-            </div>
-
         </div>
     </section>
 
@@ -247,17 +277,39 @@
                     <img src="images/logo.png" alt="Okayama UNESCO Association">
                 </a>
                 <div class="footer-contact">
-                    <p data-i18n="footer_address">〒700-0000 岡山県岡山市 (Placeholder)</p>
-                    <p data-i18n="footer_tel">Tel: 086-XXX-XXXX / Email: info@unesco.okayama.jp</p>
+                    <p data-i18n="footer_address">〒700-0013　岡山県岡山市北区伊福町4-4-31-202</p>
+                    <p data-i18n="footer_tel">TEL:050-3551-0642（井上事務局長）</p>
                 <div class="social-icons" aria-label="SNS links">
-                    <a href="#" class="social-icon social-facebook" aria-label="Facebook">
+                    <a href="https://www.facebook.com/unesco.okayama?ref=embed_page" class="social-icon social-facebook" aria-label="Facebook" title="岡山ユネスコ協会" target="_blank" rel="noopener noreferrer">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 9H16V6h-2.5C10.9 6 9 7.9 9 10.5V13H7v3h2v5h3v-5h2.2l.8-3H12v-2.5c0-.9.6-1.5 1.5-1.5Z"/></svg>
                     </a>
-                    <a href="#" class="social-icon social-x" aria-label="X">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h3.8l4.4 6 5-6H20l-6.5 7.8L20 20h-3.8l-4.8-6.5L6 20H4l6.6-7.9L4 4Z"/></svg>
+                    <a href="https://www.kc-d.net/pages/esd/" class="social-icon social-link" aria-label="京山ESD推進協議会" title="京山ESD推進協議会" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h5v2H7v10h10v-3h2v5H5V5Z"/></svg>
+                        <span class="social-label">京山ESD推進協議会</span>
                     </a>
-                    <a href="#" class="social-icon social-instagram" aria-label="Instagram">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 3h9A4.5 4.5 0 0 1 21 7.5v9a4.5 4.5 0 0 1-4.5 4.5h-9A4.5 4.5 0 0 1 3 16.5v-9A4.5 4.5 0 0 1 7.5 3Zm0 2A2.5 2.5 0 0 0 5 7.5v9A2.5 2.5 0 0 0 7.5 19h9a2.5 2.5 0 0 0 2.5-2.5v-9A2.5 2.5 0 0 0 16.5 5h-9Zm10.8 1.3a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/></svg>
+                    <a href="https://www.kc-d.net/pages/esd/" class="social-icon social-link" aria-label="岡山県国際団体協議会" title="岡山県国際団体協議会" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h5v2H7v10h10v-3h2v5H5V5Z"/></svg>
+                        <span class="social-label">岡山県国際団体協議会</span>
+                    </a>
+                    <a href="https://www.chosenji.net/" class="social-icon social-link" aria-label="真言宗御室派 長泉寺" title="真言宗御室派 長泉寺" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h5v2H7v10h10v-3h2v5H5V5Z"/></svg>
+                        <span class="social-label">長泉寺</span>
+                    </a>
+                    <a href="https://8092fun.jp/cgi/web/index.cgi?c=aruaru-1" class="social-icon social-link" aria-label="晴れの国おかやま応援サイト" title="晴れの国おかやま応援サイト" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h5v2H7v10h10v-3h2v5H5V5Z"/></svg>
+                        <span class="social-label">ピースフェスティバル</span>
+                    </a>
+                    <a href="https://www.unesco.or.jp/" class="social-icon social-link" aria-label="日本ユネスコ協会連盟" title="日本ユネスコ協会連盟" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h5v2H7v10h10v-3h2v5H5V5Z"/></svg>
+                        <span class="social-label">日本ユネスコ協会連盟</span>
+                    </a>
+                    <a href="https://www.mext.go.jp/unesco/003/001.htm" class="social-icon social-link" aria-label="文部科学省「ユネスコとは」" title="文部科学省「ユネスコとは」" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h5v2H7v10h10v-3h2v5H5V5Z"/></svg>
+                        <span class="social-label">文部科学省</span>
+                    </a>
+                    <a href="http://youth-unesco.net/" class="social-icon social-link" aria-label="全国ユネスコユース情報" title="全国ユネスコユース情報" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h5v2H7v10h10v-3h2v5H5V5Z"/></svg>
+                        <span class="social-label">全国ユース情報</span>
                     </a>
                 </div>
                 </div>
@@ -273,5 +325,7 @@
 
     <script src="script/translations.js"></script>
     <script src="script/index.js"></script>
+    <script src="script/config.js"></script>
+    <script src="script/events-public.js"></script>
 </body>
 </html>

@@ -1,0 +1,708 @@
+/* =================================
+   Basic Settings
+================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    background: #f5f7f4;
+
+    color: #26352c;
+
+    font-family:
+        "Noto Sans JP",
+        "Yu Gothic",
+        "Hiragino Kaku Gothic ProN",
+        sans-serif;
+
+    line-height: 1.9;
+}
+
+
+/* =================================
+   Hero / Green Header
+================================= */
+
+.hero {
+    min-height: 330px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #123d27,
+            #245d3a
+        );
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* အလှဆင်စက်ဝိုင်း */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    border-radius: 50%;
+
+    top: -250px;
+    right: -100px;
+}
+
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    border-radius: 50%;
+
+    bottom: -180px;
+    left: -80px;
+}
+
+
+.hero-content {
+    text-align: center;
+
+    color: white;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+.hero-small {
+    margin: 0 0 10px;
+
+    font-size: 14px;
+
+    letter-spacing: 4px;
+
+    opacity: 0.8;
+}
+
+
+.hero h1 {
+    margin: 0;
+
+    color: #f2df55;
+
+    font-size: clamp(38px, 6vw, 70px);
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+
+.hero-sub {
+    margin-top: 15px;
+
+    font-size: 17px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.9;
+}
+
+
+/* =================================
+   Main Container
+================================= */
+
+.container {
+    width: min(1100px, 90%);
+
+    margin: 0 auto;
+
+    padding: 80px 0;
+}
+
+
+/* =================================
+   Section
+================================= */
+
+section {
+    margin-bottom: 100px;
+}
+
+
+.section-label {
+    display: inline-block;
+
+    color: #32724a;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 8px;
+}
+
+
+h2 {
+    margin-top: 0;
+
+    margin-bottom: 30px;
+
+    color: #173b25;
+
+    font-size: 34px;
+
+    letter-spacing: 1px;
+}
+
+
+h3 {
+    color: #234b32;
+
+    font-size: 21px;
+
+    line-height: 1.6;
+}
+
+
+p {
+    font-size: 17px;
+
+    color: #4b554f;
+}
+
+
+/* =================================
+   Introduction
+================================= */
+
+.intro {
+    background: white;
+
+    padding: 50px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 35px rgba(30, 60, 40, 0.08);
+
+    border-left: 6px solid #32724a;
+}
+
+
+/* =================================
+   Activity Cards
+================================= */
+
+.activity-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+
+.activity-card {
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 18px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border: 1px solid #e4eae5;
+}
+
+
+.activity-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+
+    background: #edf5ef;
+
+    right: -40px;
+    bottom: -40px;
+
+    z-index: 0;
+}
+
+
+.activity-card h3,
+.activity-card p,
+.number {
+    position: relative;
+
+    z-index: 1;
+}
+
+
+.number {
+    font-size: 14px;
+
+    font-weight: bold;
+
+    color: #57916a;
+
+    letter-spacing: 2px;
+}
+
+
+.activity-card h3 {
+    margin: 15px 0 10px;
+}
+
+
+/* =================================
+   Focus Section
+================================= */
+
+.focus-section {
+    position: relative;
+}
+
+
+.focus-box {
+    background:
+        linear-gradient(
+            135deg,
+            #173b25,
+            #285d3d
+        );
+
+    color: white;
+
+    padding: 55px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 20px 45px rgba(23, 59, 37, 0.18);
+}
+
+
+.focus-box h3 {
+    color: #f2df55;
+
+    font-size: 25px;
+
+    margin-top: 0;
+
+    margin-bottom: 25px;
+}
+
+
+.focus-box p {
+    color: rgba(255,255,255,0.88);
+
+    font-size: 16px;
+}
+
+
+/* =================================
+   Terms
+================================= */
+
+.terms-section {
+    background: white;
+
+    padding: 55px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 10px 35px rgba(30, 60, 40, 0.07);
+}
+
+
+.term {
+    padding: 25px 0;
+
+    border-bottom: 1px solid #e2e8e3;
+}
+
+
+.term:last-child {
+    border-bottom: none;
+}
+
+
+.term-title {
+    display: flex;
+
+    align-items: center;
+
+    margin-bottom: 8px;
+}
+
+
+.term-title::before {
+    content: "";
+
+    width: 7px;
+    height: 32px;
+
+    background: #32724a;
+
+    border-radius: 5px;
+
+    margin-right: 14px;
+}
+
+
+.term-title span {
+    font-size: 22px;
+
+    font-weight: bold;
+
+    color: #234b32;
+}
+
+
+/* =================================
+   Footer
+================================= */
+
+footer {
+    background: #173b25;
+
+    padding: 30px;
+
+    text-align: center;
+}
+
+
+footer p {
+    margin: 0;
+
+    color: rgba(255,255,255,0.7);
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =================================
+   Responsive
+================================= */
+
+@media (max-width: 700px) {
+
+    .hero {
+        min-height: 260px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero-sub {
+        font-size: 14px;
+    }
+
+    .container {
+        width: 92%;
+
+        padding: 50px 0;
+    }
+
+    section {
+        margin-bottom: 65px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    .intro {
+        padding: 30px;
+    }
+
+    .activity-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .activity-card {
+        padding: 28px;
+    }
+
+    .focus-box {
+        padding: 30px;
+    }
+
+    .terms-section {
+        padding: 30px;
+    }
+}
+
+.sdgs-page {
+    width: min(1180px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 120px 0 96px;
+    color: #26352c;
+}
+
+.sdgs-page .hero-intro {
+    position: relative;
+    min-height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    padding: clamp(48px, 8vw, 96px);
+    background: linear-gradient(135deg, #123d27 0%, #245d3a 62%, #32724a 100%);
+    color: #fff;
+    isolation: isolate;
+}
+
+.sdgs-page .hero-intro::after {
+    content: "SDGs";
+    position: absolute;
+    right: clamp(20px, 8vw, 110px);
+    bottom: -45px;
+    color: rgba(255, 255, 255, 0.08);
+    font-family: "Bodoni Moda", serif;
+    font-size: clamp(100px, 20vw, 240px);
+    line-height: 1;
+    z-index: -1;
+}
+
+.sdgs-page .hero-intro .eyebrow {
+    color: #d9e86b;
+}
+
+.sdgs-page .hero-intro h1 {
+    max-width: 760px;
+    margin: 12px 0 18px;
+    color: #fff;
+    font-size: clamp(2.25rem, 6vw, 5rem);
+    line-height: 1.2;
+}
+
+.sdgs-page .intro-copy {
+    max-width: 620px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.86);
+    font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+.sdgs-section {
+    margin: 0;
+    padding: clamp(56px, 8vw, 104px) 0 0;
+}
+
+.sdgs-section .section-tag {
+    margin: 0 0 10px;
+    color: #32724a;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.24em;
+}
+
+.sdgs-h2 {
+    margin: 0 0 26px;
+    color: #173b25;
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
+    line-height: 1.25;
+}
+
+.sdgs-intro {
+    max-width: 860px;
+}
+
+.sdgs-intro .sdgs-lead {
+    margin: 0;
+    color: #4b554f;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    line-height: 2;
+}
+
+.sdgs-detail-feature {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: clamp(24px, 5vw, 64px);
+    align-items: center;
+    padding: clamp(22px, 4vw, 42px);
+    background: rgba(230, 241, 237, 0.55);
+    border: 1px solid rgba(14, 105, 115, 0.22);
+}
+
+.sdgs-detail-feature img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+
+.sdgs-detail-feature > div {
+    padding: 10px 0;
+}
+
+.sdgs-detail-feature > div > p:not(.section-tag) {
+    margin: 0;
+    color: #4b554f;
+    font-size: 1rem;
+    line-height: 1.9;
+}
+
+.sdgs-activity-grid,
+.sdgs-term-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.sdgs-activity-card,
+.sdgs-term-card {
+    position: relative;
+    padding: clamp(24px, 4vw, 36px);
+    overflow: hidden;
+    border: 1px solid #e1e9e2;
+    background: #fff;
+    box-shadow: 0 12px 30px rgba(30, 60, 40, 0.06);
+}
+
+.sdgs-activity-card:last-child {
+    grid-column: 1 / -1;
+}
+
+.sdgs-activity-num {
+    color: #57916a;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+}
+
+.sdgs-activity-card h3,
+.sdgs-term-card h3 {
+    margin: 14px 0 10px;
+    color: #234b32;
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    line-height: 1.5;
+}
+
+.sdgs-activity-card p,
+.sdgs-term-card p,
+.sdgs-focus-box p {
+    margin: 0;
+    color: #4b554f;
+    font-size: 0.98rem;
+    line-height: 1.85;
+}
+
+.sdgs-focus-box {
+    padding: clamp(28px, 5vw, 56px);
+    background: linear-gradient(135deg, #173b25, #285d3d);
+    box-shadow: 0 20px 45px rgba(23, 59, 37, 0.18);
+}
+
+.sdgs-focus-box h3 {
+    margin: 0 0 22px;
+    color: #f2df55;
+    font-size: clamp(1.35rem, 3vw, 2rem);
+    line-height: 1.5;
+}
+
+.sdgs-focus-box p {
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.sdgs-focus-box p + p {
+    margin-top: 16px;
+}
+
+.sdgs-term-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.sdgs-term-card h3 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 0;
+}
+
+.sdgs-term-card h3::before {
+    content: "";
+    width: 6px;
+    height: 30px;
+    flex: 0 0 auto;
+    background: #32724a;
+}
+
+.sdgs-page + .footer,
+.footer {
+    text-align: left;
+}
+
+.footer .design-credit-link {
+    color: inherit;
+}
+
+@media (max-width: 760px) {
+    .sdgs-page {
+        width: min(100% - 28px, 620px);
+        padding-top: 96px;
+        padding-bottom: 64px;
+    }
+
+    .sdgs-page .hero-intro {
+        min-height: 300px;
+        padding: 38px 28px;
+    }
+
+    .sdgs-activity-grid,
+    .sdgs-term-list {
+        grid-template-columns: 1fr;
+    }
+
+    .sdgs-detail-feature {
+        grid-template-columns: 1fr;
+    }
+
+    .sdgs-activity-card:last-child {
+        grid-column: auto;
+    }
+}

@@ -135,6 +135,25 @@ if (sidebarOverlay) {
       sidebarOverlay.addEventListener('click', closeSidebar);
 }
 document.querySelectorAll('.menu-item').forEach((link) => link.addEventListener('click', closeSidebar));
+
+document.querySelectorAll('.split-block[data-href]').forEach((block) => {
+      const navigate = () => {
+            window.location.href = block.dataset.href;
+      };
+
+      block.addEventListener('click', (event) => {
+            if (event.target.closest('a, button')) return;
+            navigate();
+      });
+
+      block.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                  event.preventDefault();
+                  navigate();
+            }
+      });
+});
+
 document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape') {
             closeSidebar();

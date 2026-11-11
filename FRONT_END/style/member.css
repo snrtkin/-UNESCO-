@@ -1,0 +1,253 @@
+:root {
+    color-scheme: light;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #173c40;
+    background: #f4f7f3;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    cursor: auto;
+    background:
+        radial-gradient(circle at 90% 0%, rgba(17, 140, 140, 0.1), transparent 28rem),
+        #f4f7f3;
+}
+
+.member-topbar {
+    min-height: 76px;
+    padding: 12px clamp(20px, 6vw, 88px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: #fff;
+    border-bottom: 1px solid rgba(23, 60, 64, 0.1);
+}
+
+.member-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    color: #173c40;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.member-brand img {
+    width: auto;
+    height: 42px;
+}
+
+.member-logout,
+.member-link,
+.member-shortcuts a {
+    cursor: pointer;
+    font: inherit;
+}
+
+.member-logout {
+    padding: 10px 16px;
+    border: 1px solid rgba(23, 60, 64, 0.2);
+    border-radius: 8px;
+    color: #173c40;
+    background: #fff;
+}
+
+.member-logout:hover {
+    border-color: #118c8c;
+    color: #0e6973;
+}
+
+.member-main {
+    width: min(100% - 40px, 960px);
+    margin: 0 auto;
+    padding: 64px 0 80px;
+}
+
+.member-welcome {
+    margin-bottom: 32px;
+}
+
+.member-eyebrow {
+    margin: 0 0 10px;
+    color: #a96e12;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+}
+
+.member-welcome h1 {
+    margin: 0;
+    color: #173c40;
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.member-welcome > p:last-child {
+    margin: 12px 0 0;
+    color: #586b69;
+    line-height: 1.7;
+}
+
+.member-card {
+    margin-top: 20px;
+    padding: clamp(22px, 4vw, 36px);
+    border: 1px solid rgba(23, 60, 64, 0.1);
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 12px 34px rgba(23, 60, 64, 0.06);
+}
+
+.member-profile {
+    display: grid;
+    grid-template-columns: minmax(160px, 1fr) 2fr;
+    align-items: start;
+    gap: 28px;
+}
+
+.member-card h2 {
+    margin: 0;
+    color: #173c40;
+    font-size: 1.3rem;
+}
+
+.member-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin: 0;
+}
+
+.member-details div {
+    min-width: 0;
+}
+
+.member-details dt {
+    margin-bottom: 8px;
+    color: #71817e;
+    font-size: 0.78rem;
+}
+
+.member-details dd {
+    margin: 0;
+    color: #173c40;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.member-section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.member-link,
+.member-shortcuts a {
+    color: #0e6973;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.member-link:hover,
+.member-shortcuts a:hover {
+    color: #a96e12;
+}
+
+.member-message {
+    margin: 0;
+    color: #71817e;
+    line-height: 1.6;
+}
+
+.member-message:empty {
+    display: none;
+}
+
+.volunteer-history,
+.event-history {
+    display: grid;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.volunteer-history:not(:empty),
+.event-history:not(:empty) {
+    margin-top: 20px;
+}
+
+.volunteer-history li,
+.event-history li {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 18px;
+    border-radius: 10px;
+    background: #f4f7f3;
+}
+
+.history-activity {
+    color: #173c40;
+    font-weight: 600;
+}
+
+.history-meta {
+    margin-top: 5px;
+    color: #71817e;
+    font-size: 0.8rem;
+}
+
+.history-status {
+    color: #0e6973;
+    font-size: 0.82rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.member-shortcuts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 28px;
+}
+
+.member-error {
+    color: #a13232;
+}
+
+@media (max-width: 640px) {
+    .member-main {
+        width: min(100% - 28px, 960px);
+        padding: 40px 0 56px;
+    }
+
+    .member-profile {
+        grid-template-columns: 1fr;
+    }
+
+    .member-details {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .member-section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .volunteer-history li,
+    .event-history li {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新規会員登録 - 岡山ユネスコ協会</title>
+    <meta name="description" content="岡山ユネスコ協会への入会申し込み">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/membership.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600;6..96,700;6..96,800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+</head>
+<body class="membership-application-page">
+    <header class="application-header">
+        <a href="../index.html" aria-label="岡山ユネスコ協会トップページ">
+            <img src="../images/logo.png" alt="岡山ユネスコ協会">
+        </a>
+        <a href="login.html">会員ログイン</a>
+    </header>
+
+    <main>
+        <section class="va-page-header">
+            <div class="va-page-header-inner">
+                <p class="va-tag">JOIN US / 新規会員登録</p>
+                <h1>入会お申し込みフォーム</h1>
+                <p class="va-lead">必要事項をご入力ください。お申し込み後、会費のお支払いについてメールでご案内します。</p>
+            </div>
+        </section>
+
+        <section class="va-form-section">
+            <div class="va-form-container">
+                <h2>会員情報</h2>
+                <p>お支払いと事務局の承認が完了するまで、マイページに進捗状況が表示されます。</p>
+                <form class="va-form" id="membershipForm">
+                    <div class="form-group">
+                        <label for="member-type">希望する会員種別 <span class="required">*</span></label>
+                        <select id="member-type" name="member_type" required>
+                            <option value="">選択してください</option>
+                            <option value="regular">正会員（¥5,000 / 年）</option>
+                            <option value="supporting">賛助会員（¥10,000 / 口・年）</option>
+                            <option value="student">学生会員（¥2,000 / 年）</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="fullname">お名前（フリガナ） <span class="required">*</span></label>
+                        <input type="text" id="fullname" name="fullname" autocomplete="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="organization">所属・学校名・部署名</label>
+                        <input type="text" id="organization" name="organization" autocomplete="organization">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">メールアドレス <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" autocomplete="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="country">国・地域 <span class="required">*</span></label>
+                        <input type="text" id="country" name="country" autocomplete="country-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="account-password">ログイン用パスワード（8文字以上） <span class="required">*</span></label>
+                        <input type="password" id="account-password" name="password" minlength="8" maxlength="128" autocomplete="new-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="account-password-confirm">パスワード（確認） <span class="required">*</span></label>
+                        <input type="password" id="account-password-confirm" minlength="8" maxlength="128" autocomplete="new-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">電話番号 <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="postal">郵便番号 <span class="required">*</span></label>
+                        <input type="text" id="postal" name="postal" autocomplete="postal-code" required>
+                    </div>
+                    <div class="form-group form-group-wide">
+                        <label for="address">ご住所 <span class="required">*</span></label>
+                        <input type="text" id="address" name="address" autocomplete="street-address" required>
+                    </div>
+                    <p class="form-group-wide account-note">お申し込み後、登録メールアドレスに会費とお支払い方法をご案内します。事務局がお支払いを確認し、承認すると会員登録が完了します。</p>
+                    <p class="form-status" id="membershipFormStatus" role="status" aria-live="polite"></p>
+                    <div class="va-form-submit">
+                        <button type="submit" class="btn-cta-primary" id="membershipSubmitBtn">入会を申し込む →</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="../script/config.js"></script>
+    <script src="../script/membership.js"></script>
+    <script>
+        const tier = new URLSearchParams(window.location.search).get('tier');
+        if (['regular', 'supporting', 'student'].includes(tier)) {
+            document.getElementById('member-type').value = tier;
+        }
+    </script>
+</body>
+</html>

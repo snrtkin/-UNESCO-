@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>お問い合わせ - 岡山ユネスコ協会</title>
+    <title>ボランティア入会案内 - 岡山ユネスコ協会</title>
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/membership.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,7 +12,6 @@
 </head>
 <body>
 
-    
     <!-- SIDEBAR OVERLAY -->
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
@@ -20,24 +19,20 @@
     <aside class="offcanvas-menu" id="sidebarMenu" role="dialog" aria-label="Navigation menu">
         <div class="offcanvas-header">
             <button class="close-toggle" id="closeToggle" aria-label="Close menu">✕</button>
-            <a href="../index.html#contact" class="btn-nav">CONTACT</a>
+            <a href="#contact" class="btn-nav">CONTACT</a>
         </div>
         <nav class="offcanvas-nav" aria-label="Main navigation">
             <ul class="menu-links">
-                <li><a href="aisatsu.html"  class="menu-item"><span class="menu-num">01</span><span data-i18n="nav_aisatsu">会長挨拶</span></a></li>
-                <li><a href="unesco-seukhai.html"  class="menu-item"><span class="menu-num">02</span><span data-i18n="nav_intro">岡山ユネスコ協会紹介</span></a></li>
-                <li><a href="events.html"   class="menu-item"><span class="menu-num">03</span><span data-i18n="nav_events">イベント</span></a></li>
-                <li><a href="membership.html"   class="menu-item"><span class="menu-num">04</span><span data-i18n="nav_membership">入会案内</span></a></li>
+                <li><a href="aisatsu.html" class="menu-item"><span class="menu-num">01</span><span data-i18n="nav_aisatsu">会長挨拶</span></a></li>
+                <li><a href="unesco-int.html" class="menu-item"><span class="menu-num">02</span><span data-i18n="nav_intro">岡山ユネスコ協会紹介</span></a></li>
+                <li><a href="events.html" class="menu-item"><span class="menu-num">03</span><span data-i18n="nav_events">イベント</span></a></li>
+                <li><a href="membership.html" class="menu-item active"><span class="menu-num">04</span><span data-i18n="nav_membership">ボランティア入会案内</span></a></li>
             </ul>
         </nav>
-        <div class="sidebar-footer">
-            <p>Get in touch</p>
-            <a href="mailto:hello@flyward.co">hello@flyward.co</a>
-        </div>
     </aside>
 
     <!-- NAVBAR -->
-    <header class="navbar" id="navbar" style="animation: fadeDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;">
+    <header class="navbar" id="navbar">
         <div class="nav-left">
             <a href="../index.html" class="nav-logo">
                 <img src="../images/logo.png" alt="Logo">
@@ -46,9 +41,9 @@
         <nav class="desktop-nav">
             <ul class="desktop-menu-links">
                 <li><a href="aisatsu.html" data-i18n="nav_aisatsu">会長挨拶</a></li>
-                <li><a href="unesco-seukhai.html" data-i18n="nav_intro">協会紹介</a></li>
+                <li><a href="unesco-int.html" data-i18n="nav_intro">協会紹介</a></li>
                 <li><a href="events.html" data-i18n="nav_events">イベント</a></li>
-                <li><a href="membership.html" data-i18n="nav_membership">入会案内</a></li>
+                <li><a href="volunteer-admission.html" class="active" data-i18n="nav_membership">ボランティア入会案内</a></li>
             </ul>
         </nav>
         <div class="nav-right">
@@ -77,198 +72,117 @@
             <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="sidebarMenu">
                 <span></span><span></span><span></span>
             </button>
-            <a href="../index.html#contact" class="btn-nav" data-i18n="nav_contact">CONTACT</a>
+            <a href="#contact" class="btn-nav">CONTACT</a>
         </div>
     </header>
 
-    <div class="content-wrapper reveal">
-        <div class="contact-breadcrumb"><a href="../index.html" data-i18n="contact_breadcrumb_home">トップ</a><span>/</span><strong data-i18n="contact_breadcrumb_current">お問い合わせ</strong></div>
-        <span class="eyebrow" data-i18n="contact_eyebrow">CONTACT / GET IN TOUCH</span>
-        <h1 data-i18n="contact_title">お問い合わせ</h1>
-        
-        <div class="membership-intro">
-            <p data-i18n="contact_intro">岡山ユネスコ協会へのお問い合わせはこちらから。内容を確認の上、事務局よりご連絡いたします。</p>
+    <!-- PAGE HEADER -->
+    <section class="va-page-header">
+        <div class="va-page-header-inner">
+            <p class="va-tag" data-i18n="va_tag">JOIN US / 入会案内</p>
+            <h1 data-i18n="va_title">岡山ユネスコ協会への入会</h1>
+            <p class="va-lead" data-i18n="va_lead">
+                私たちの活動に賛同し、共に平和で持続可能な社会づくりに参加してくださる会員を募集しています。
+            </p>
         </div>
+    </section>
 
-        <div class="contact-layout">
-            <aside class="contact-details">
-                <span class="contact-label" data-i18n="contact_org">OKAYAMA UNESCO ASSOCIATION</span>
-                <h2 data-i18n="contact_details_title">お気軽に<br>ご連絡ください</h2>
-                <p data-i18n="contact_details_intro">活動についてのご質問、イベント、入会に関するご相談などを受け付けています。</p>
-                <div class="contact-detail-item">
-                    <span data-i18n="contact_office_label">OFFICE</span>
-                    <p data-i18n="contact_office">岡山ユネスコ協会 事務局</p>
-                </div>
-                <div class="contact-detail-item">
-                    <span data-i18n="contact_address_label">ADDRESS</span>
-                    <p data-i18n="contact_address">〒700-0013<br>岡山県岡山市北区伊福町4-4-31-202</p>
-                </div>
-                <div class="contact-detail-item">
-                    <span data-i18n="contact_phone_label">CONTACT</span>
-                    <p data-i18n="contact_phone">TEL 050-3551-0642<br>MAIL okayama●unesco.or.jp</p>
-                </div>
-            </aside>
-
-            <div class="contact-form-card">
-                <div class="contact-form-heading">
-                    <span data-i18n="contact_form_label">CONTACT FORM</span>
-                    <h2 data-i18n="contact_form_title">お問い合わせフォーム</h2>
-                </div>
-                <form class="contact-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('お問い合わせを受け付けました。');">
-                    <div class="form-group">
-                        <label for="contact-name"><span data-i18n="contact_name_label">お名前</span> <span class="required">*</span></label>
-                        <input type="text" id="contact-name" name="contact-name" required data-i18n="contact_name_placeholder" placeholder="岡山 太郎">
-                    </div>
-                    <div class="form-group">
-                        <label for="contact-email"><span data-i18n="contact_email_label">メールアドレス</span> <span class="required">*</span></label>
-                        <input type="email" id="contact-email" name="contact-email" required data-i18n="contact_email_placeholder" placeholder="sample@example.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="contact-message"><span data-i18n="contact_message_label">お問い合わせ内容</span> <span class="required">*</span></label>
-                        <textarea id="contact-message" name="contact-message" rows="6" required data-i18n="contact_message_placeholder" placeholder="お問い合わせ内容をご記入ください"></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary contact-submit"><span data-i18n="contact_submit">送信する</span><span aria-hidden="true">→</span></button>
-                </form>
-            </div>
-        </div>
-
-        <div class="membership-section-heading">
-            <span class="eyebrow" data-i18n="membership_eyebrow">JOIN US</span>
-            <h2 data-i18n="membership_section_title">入会案内</h2>
-            <p data-i18n="membership_section_intro">活動に賛同し、共に平和で持続可能な社会づくりに参加してくださる会員を募集しています。</p>
-        </div>
-
-        <div class="membership-tiers">
-            <div class="tier-card reveal reveal-stagger">
-                <div class="tier-header">
-                    <h3>正会員</h3>
-                    <span class="tier-price">¥5,000<span>/年</span></span>
-                </div>
-                <div class="tier-body">
-                    <p>個人の方向けの基本となる会員種別です。総会での議決権を持ち、当協会の運営に直接関わることができます。</p>
-                    <ul class="tier-benefits">
-                        <li>総会での議決権</li>
-                        <li>会報誌のお届け</li>
-                        <li>イベントの優先案内</li>
-                    </ul>
-                    <button class="btn-tier-buy" data-tier="regular">
-                        <span data-i18n="membership_buy_btn">申し込む</span>
-                    </button>
-                </div>
+    <!-- MEMBERSHIP TIERS -->
+    <section class="va-tiers-section">
+        <h2 class="va-section-title" data-i18n="va_tiers_title">会員種別と会費</h2>
+        <div class="va-tier-grid">
+            <div class="va-tier-card">
+                <h3 data-i18n="va_tier1_name">正会員</h3>
+                <p class="va-tier-price">¥5,000 <span data-i18n="va_tier1_unit">/ 年</span></p>
+                <p data-i18n="va_tier1_desc">個人の方向けの基本となる会員種別です。総会での議決権を持ち、当協会の運営に直接関わることができます。</p>
+                <ul>
+                    <li data-i18n="va_tier1_b1">✦ 総会での議決権</li>
+                    <li data-i18n="va_tier1_b2">✦ 会報誌（ニュースレター）のお届け</li>
+                    <li data-i18n="va_tier1_b3">✦ イベント・講座の優先案内</li>
+                </ul>
+                <button type="button" class="btn-tier-buy" data-tier="regular">申し込む</button>
             </div>
 
-            <div class="tier-card premium reveal reveal-stagger">
-                <div class="tier-header">
-                    <h3>賛助会員 (団体・法人)</h3>
-                    <span class="tier-price">¥10,000<span>/口(年)</span></span>
-                </div>
-                <div class="tier-body">
-                    <p>当協会の活動趣旨に賛同し、財政的に支援してくださる企業・団体向けの会員種別です。</p>
-                    <ul class="tier-benefits">
-                        <li>会報誌のお届け</li>
-                        <li>イベントの優先案内</li>
-                        <li>当協会ウェブサイトでのご紹介（希望者）</li>
-                    </ul>
-                    <button class="btn-tier-buy" data-tier="corporate">
-                        <span data-i18n="membership_buy_btn">申し込む</span>
-                    </button>
-                </div>
+            <div class="va-tier-card va-tier-card--featured">
+                <h3 data-i18n="va_tier2_name">賛助会員（団体・法人）</h3>
+                <p class="va-tier-price">¥10,000 <span data-i18n="va_tier2_unit">/ 口（年）</span></p>
+                <p data-i18n="va_tier2_desc">当協会の活動趣旨に賛同し、財政的に支援してくださる企業・団体向けの会員種別です。</p>
+                <ul>
+                    <li data-i18n="va_tier2_b1">✦ 会報誌（ニュースレター）のお届け</li>
+                    <li data-i18n="va_tier2_b2">✦ イベントの優先案内</li>
+                    <li data-i18n="va_tier2_b3">✦ 当協会ウェブサイトでのご紹介（希望団体）</li>
+                </ul>
+                <button type="button" class="btn-tier-buy" data-tier="supporting">申し込む</button>
             </div>
 
-            <div class="tier-card reveal reveal-stagger">
-                <div class="tier-header">
-                    <h3>学生会員</h3>
-                    <span class="tier-price">¥2,000<span>/年</span></span>
-                </div>
-                <div class="tier-body">
-                    <p>学生（高校生・大学生・専門学生など）の方を対象とした、参加しやすい会員種別です。</p>
-                    <ul class="tier-benefits">
-                        <li>会報誌のお届け</li>
-                        <li>イベントの優先案内</li>
-                        <li>ユース活動への参加</li>
-                    </ul>
-                    <button class="btn-tier-buy" data-tier="student">
-                        <span data-i18n="membership_buy_btn">申し込む</span>
-                    </button>
-                </div>
+            <div class="va-tier-card">
+                <h3 data-i18n="va_tier3_name">学生会員</h3>
+                <p class="va-tier-price">¥2,000 <span data-i18n="va_tier3_unit">/ 年</span></p>
+                <p data-i18n="va_tier3_desc">高校生・大学生・専門学校生などを対象とした、参加しやすい会員種別です。</p>
+                <ul>
+                    <li data-i18n="va_tier3_b1">✦ 会報誌（ニュースレター）のお届け</li>
+                    <li data-i18n="va_tier3_b2">✦ イベント・講座の優先案内</li>
+                    <li data-i18n="va_tier3_b3">✦ ユース（青年部）活動・企画への参加</li>
+                </ul>
+                <button type="button" class="btn-tier-buy" data-tier="student">申し込む</button>
             </div>
         </div>
+    </section>
 
-        <div class="membership-form-container hidden" id="membershipFormContainer">
-            <h2>入会お申し込み</h2>
-            <p>以下のフォームに必要事項をご記入の上、「送信する」ボタンを押してください。</p>
-            
-            <form class="membership-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('お申し込みを受け付けました。');">
-                <div class="form-group">
-                    <label for="name">氏名 (Name) <span class="required">*</span></label>
-                    <input type="text" id="name" name="name" required placeholder="例: 岡山 太郎">
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">メールアドレス (Email) <span class="required">*</span></label>
-                    <input type="email" id="email" name="email" required placeholder="例: sample@unesco.okayama.jp">
-                </div>
-                
-                <div class="form-group">
-                    <label for="phone">電話番号 (Phone)</label>
-                    <input type="tel" id="phone" name="phone" placeholder="例: 090-1234-5678">
-                </div>
-                
-                <div class="form-group">
-                    <label for="tier">希望会員種別 (Membership Type) <span class="required">*</span></label>
-                    <select id="tier" name="tier" required>
-                        <option value="" disabled selected>選択してください</option>
-                        <option value="regular">正会員 (¥5,000/年)</option>
-                        <option value="corporate">賛助会員 (¥10,000/口)</option>
-                        <option value="student">学生会員 (¥2,000/年)</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">備考・メッセージ (Message)</label>
-                    <textarea id="message" name="message" rows="4" placeholder="ご質問やご要望があればご記入ください"></textarea>
-                </div>
-                
-                <div class="form-actions">
-                    <button type="submit" class="btn-primary" style="border:none;"><span>送信する (SUBMIT)</span></button>
-                    <a href="../index.html" class="btn-back" style="animation:none; opacity:1;"><span>ホームに戻る</span></a>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <footer class="footer" id="contact">
+    <!-- FOOTER -->
+    <footer class="footer">
         <div class="footer-container">
             <div class="footer-brand">
                 <a href="../index.html" class="footer-logo">
                     <img src="../images/logo.png" alt="Okayama UNESCO Association">
                 </a>
                 <div class="footer-contact">
-                    <p data-i18n="footer_address">〒700-0000 岡山県岡山市 (Placeholder)</p>
-                    <p data-i18n="footer_tel">Tel: 086-XXX-XXXX / Email: info@unesco.okayama.jp</p>
-                <div class="social-icons" aria-label="SNS links">
-                    <a href="#" class="social-icon social-facebook" aria-label="Facebook">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 9H16V6h-2.5C10.9 6 9 7.9 9 10.5V13H7v3h2v5h3v-5h2.2l.8-3H12v-2.5c0-.9.6-1.5 1.5-1.5Z"/></svg>
-                    </a>
-                    <a href="#" class="social-icon social-x" aria-label="X">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h3.8l4.4 6 5-6H20l-6.5 7.8L20 20h-3.8l-4.8-6.5L6 20H4l6.6-7.9L4 4Z"/></svg>
-                    </a>
-                    <a href="#" class="social-icon social-instagram" aria-label="Instagram">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 3h9A4.5 4.5 0 0 1 21 7.5v9a4.5 4.5 0 0 1-4.5 4.5h-9A4.5 4.5 0 0 1 3 16.5v-9A4.5 4.5 0 0 1 7.5 3Zm0 2A2.5 2.5 0 0 0 5 7.5v9A2.5 2.5 0 0 0 7.5 19h9a2.5 2.5 0 0 0 2.5-2.5v-9A2.5 2.5 0 0 0 16.5 5h-9Zm10.8 1.3a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/></svg>
-                    </a>
-                </div>
+                    <p>〒700-0013　岡山県岡山市北区伊福町4-4-31-202</p>
+                    <p>TEL:050-3551-0642（井上事務局長）</p>
+                    <div class="social-icons" aria-label="SNS links">
+                        <a href="https://www.facebook.com/unesco.okayama?ref=embed_page" class="social-icon social-facebook" aria-label="Facebook" title="岡山ユネスコ協会" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 9H16V6h-2.5C10.9 6 9 7.9 9 10.5V13H7v3h2v5h3v-5h2.2l.8-3H12v-2.5c0-.9.6-1.5 1.5-1.5Z"/></svg>
+                        </a>
+                        <a href="https://www.kc-d.net/pages/esd/" class="social-icon social-link" aria-label="京山ESD推進協議会" title="京山ESD推進協議会" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h5v2H7v10h10v-3h2v5H5V5Z"/></svg>
+                            <span class="social-label">京山ESD推進協議会</span>
+                        </a>
+                        <a href="https://www.kc-d.net/pages/esd/" class="social-icon social-link" aria-label="岡山県国際団体協議会" title="岡山県国際団体協議会" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h5v2H7v10h10v-3h2v5H5V5Z"/></svg>
+                            <span class="social-label">岡山県国際団体協議会</span>
+                        </a>
+                        <a href="https://www.chosenji.net/" class="social-icon social-link" aria-label="真言宗御室派 長泉寺" title="真言宗御室派 長泉寺" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h5v2H7v10h10v-3h2v5H5V5Z"/></svg>
+                            <span class="social-label">長泉寺</span>
+                        </a>
+                        <a href="https://8092fun.jp/cgi/web/index.cgi?c=aruaru-1" class="social-icon social-link" aria-label="晴れの国おかやま応援サイト" title="晴れの国おかやま応援サイト" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h5v2H7v10h10v-3h2v5H5V5Z"/></svg>
+                            <span class="social-label">ピースフェスティバル</span>
+                        </a>
+                        <a href="https://www.unesco.or.jp/" class="social-icon social-link" aria-label="日本ユネスコ協会連盟" title="日本ユネスコ協会連盟" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h5v2H7v10h10v-3h2v5H5V5Z"/></svg>
+                            <span class="social-label">日本ユネスコ協会連盟</span>
+                        </a>
+                        <a href="https://www.mext.go.jp/unesco/003/001.htm" class="social-icon social-link" aria-label="文部科学省「ユネスコとは」" title="文部科学省「ユネスコとは」" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h5v2H7v10h10v-3h2v5H5V5Z"/></svg>
+                            <span class="social-label">文部科学省</span>
+                        </a>
+                        <a href="http://youth-unesco.net/" class="social-icon social-link" aria-label="全国ユネスコユース情報" title="全国ユネスコユース情報" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h5v2H7v10h10v-3h2v5H5V5Z"/></svg>
+                            <span class="social-label">全国ユース情報</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p data-i18n="footer_rights">&copy; 2024 Okayama UNESCO Association. All rights reserved.</p>
-            <p class="design-credit">
-                <span data-i18n="footer_design_by">DESIGN by </span><a href="designers.html" class="design-credit-link">岡山情報ビジネス学院 国際ITビジネス学科</a>
-            </p>
+            <p>&copy; 2024 Okayama UNESCO Association. All rights reserved.</p>
         </div>
     </footer>
+
     <script src="../script/translations.js"></script>
     <script src="../script/index.js"></script>
+    <script src="../script/config.js"></script>
     <script src="../script/membership.js"></script>
 </body>
 </html>

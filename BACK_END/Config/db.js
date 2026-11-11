@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const dns = require('dns');
 
 let isConnected = false;
 
@@ -15,6 +16,15 @@ async function connectDB() {
 
   if (isConnected) {
     return mongoose.connection;
+  }
+
+  const dnsServers = (process.env.MONGODB_DNS_SERVERS || '1.1.1.1,8.8.8.8')
+    .split(',')
+    .map((server) => server.trim())
+    .filter(Boolean);
+
+  if (dnsServers.length > 0) {
+    dns.setServers(dnsServers);
   }
 
   mongoose.connection.on('connected', () => {

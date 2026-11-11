@@ -45,11 +45,14 @@
                             <th>日時</th>
                             <th>氏名</th>
                             <th>メール</th>
+                            <th>国・地域</th>
                             <th>電話</th>
                             <th>種別</th>
-                            <th>メッセージ</th>
-                            <th>状態</th>
-                            <th>操作</th>
+                            <th>住所</th>
+                            <th>会費</th>
+                            <th>審査</th>
+                            <th>審査の更新</th>
+                            <th>会費の確認</th>
                         </tr>
                     </thead>
                     <tbody></tbody>
@@ -70,7 +73,7 @@
                             <th>メール</th>
                             <th>電話</th>
                             <th>希望活動</th>
-                            <th>メッセージ</th>
+                            <th>住所</th>
                             <th>状態</th>
                             <th>操作</th>
                         </tr>
@@ -132,6 +135,27 @@
             </div>
             <div class="event-admin-grid" id="eventAdminGrid"></div>
             <p class="table-empty" id="eventsEmpty"></p>
+
+            <div class="admin-panel-header" style="margin-top:40px;">
+                <h2>イベント申し込み・出欠確認 (Event Registrations)</h2>
+                <button type="button" class="btn-secondary" id="refreshEventRegistrations">更新</button>
+            </div>
+            <div class="table-wrap">
+                <table class="admin-table" id="eventRegistrationTable">
+                    <thead>
+                        <tr>
+                            <th>イベント</th>
+                            <th>会員</th>
+                            <th>メール</th>
+                            <th>申込日時</th>
+                            <th>開催日</th>
+                            <th>出欠状況</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <p class="table-empty" id="eventRegistrationEmpty"></p>
+            </div>
 
         </section>
 

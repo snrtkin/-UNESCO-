@@ -590,7 +590,13 @@
  .split-block {
      position: relative;
      overflow: hidden;
+     cursor: pointer;
 
+ }
+
+ .split-block:focus-visible {
+     outline: 3px solid var(--gold);
+     outline-offset: -6px;
  }
 
  .private-bg {
@@ -599,6 +605,25 @@
 
  .corporate-bg {
      background: url('../images/unesco member.avif') center/cover;
+ }
+
+ .corporate-bg::before {
+     content: '';
+     position: absolute;
+     inset: -8%;
+     z-index: 1;
+     background:
+         radial-gradient(circle at 70% 30%, rgba(242, 187, 22, 0.3), transparent 34%),
+         linear-gradient(135deg, rgba(14, 105, 115, 0.18), rgba(5, 18, 22, 0.5));
+     opacity: 0;
+     transform: scale(0.96);
+     transition: opacity 0.65s ease, transform 0.8s var(--ease-out-expo);
+     pointer-events: none;
+ }
+
+ .corporate-bg:hover::before {
+     opacity: 1;
+     transform: scale(1);
  }
 
  .block-img {
@@ -707,6 +732,32 @@
      text-shadow: 0 1px 12px rgba(0, 0, 0, 0.65);
  }
 
+ .corporate-bg .text-row {
+     max-width: 560px;
+     padding: 22px 26px 24px 30px;
+     border-left: 4px solid var(--gold);
+     border-radius: 0 12px 12px 0;
+     background: linear-gradient(90deg, rgba(5, 18, 22, 0.72), rgba(5, 18, 22, 0.38));
+     box-shadow: 0 14px 32px rgba(5, 18, 22, 0.18);
+     backdrop-filter: blur(4px);
+     -webkit-backdrop-filter: blur(4px);
+ }
+
+ .corporate-bg:hover .text-row {
+     animation: sdgs-content-reveal 0.65s var(--ease-out-expo) both;
+ }
+
+ @keyframes sdgs-content-reveal {
+     from {
+         opacity: 0.72;
+         transform: translateY(14px);
+     }
+     to {
+         opacity: 1;
+         transform: translateY(0);
+     }
+ }
+
  .split-block:hover .text-row p {
      transform: translateY(0);
      opacity: 1;
@@ -734,24 +785,7 @@
  .grid-item {
      border-top: 1px solid rgba(201, 169, 110, 0.25);
      padding-top: 24px;
-     transition: border-color 0.3s;
      position: relative;
-     overflow: hidden;
- }
-
- .grid-item::before {
-     content: '';
-     position: absolute;
-     top: -1px;
-     left: 0;
-     width: 0;
-     height: 1px;
-     background: var(--gold);
-     transition: width 0.5s var(--ease-out-expo);
- }
-
- .grid-item:hover::before {
-     width: 100%;
  }
 
  .grid-num {
@@ -761,11 +795,6 @@
      color: var(--gold);
      letter-spacing: 0.1em;
      margin-bottom: 16px;
-     transition: letter-spacing 0.3s;
- }
-
- .grid-item:hover .grid-num {
-     letter-spacing: 0.18em;
  }
 
  .grid-item h4 {
@@ -773,11 +802,6 @@
      letter-spacing: 0.12em;
      font-weight: 500;
      margin-bottom: 12px;
-     transition: color 0.25s;
- }
-
- .grid-item:hover h4 {
-     color: var(--gold-light);
  }
 
  .grid-item p {
@@ -1156,6 +1180,8 @@
          display: flex;
          align-items: center;
          flex: 0 0 auto;
+         width: 0;
+         min-width: 0;
          gap: 0;
      }
 
@@ -1525,6 +1551,7 @@
  .social-icons {
      display: flex;
      flex-direction: row;
+     flex-wrap: wrap;
      gap: 10px;
      align-items: flex-start;
  }
@@ -1546,11 +1573,31 @@
      width: 14px;
      height: 14px;
      fill: currentColor;
+     flex-shrink: 0;
+ }
+
+ /* Related-site links need a readable name, not just an icon: render as a labelled pill. */
+ .social-icon.social-link {
+     width: auto;
+     height: 30px;
+     border-radius: 15px;
+     padding: 0 12px 0 10px;
+     gap: 6px;
+ }
+
+ .social-label {
+     font-size: 0.68rem;
+     font-weight: 700;
+     letter-spacing: 0.01em;
+     white-space: nowrap;
  }
 
  .social-icons a {
      color: #1f2937;
      text-decoration: none;
+ }
+
+ .social-icons a.social-facebook {
      font-size: 0;
  }
 
@@ -1633,10 +1680,15 @@
          max-width: 100%;
      }
 
+     .support-grid {
+         grid-template-columns: 1fr;
+     }
+
      .news-section,
      .president-snippet-section,
      .membership-cta-section,
-     .support-section {
+     .support-section,
+     .members-section {
          padding: 60px 20px;
      }
 
@@ -1649,7 +1701,7 @@
      }
 
      .news-date {
-         width: auto;
+         width: 100%;
          font-size: 0.96rem;
      }
 
@@ -1668,8 +1720,31 @@
          padding: 40px 20px;
      }
 
-     .members-section {
-         padding: 60px 20px;
+     .members-grid {
+         grid-template-columns: 1fr;
+         gap: 20px;
+     }
+
+     .member-card {
+         padding: 22px 18px;
+     }
+
+     .member-avatar {
+         width: 96px;
+         height: 96px;
+     }
+
+     .member-name {
+         font-size: 1.2rem;
+     }
+
+     .member-bio {
+         font-size: 0.85rem;
+     }
+
+     .president-text h2 {
+         font-size: clamp(1.6rem, 5vw, 2.1rem);
+         line-height: 1.3;
      }
 
      .footer-container {
@@ -1801,7 +1876,8 @@
 
      .btn-discover,
      .btn-cta-primary {
-         width: 100%;
+         width: auto;
+         min-width: 180px;
          max-width: 300px;
          text-align: center;
          padding-left: 18px;
@@ -1839,20 +1915,30 @@
          min-width: 16px;
          font-size: 0.62rem;
      }
+
+     .news-card {
+         min-height: auto;
+     }
  }
 
   @media (max-width: 560px) {
-      .nav-logo {
-          position: static !important;
-          transform: none !important;
-      }
       .navbar {
           height: 68px !important;
           padding-left: 12px;
           padding-right: 12px;
       }
+      .nav-left {
+          width: auto;
+          min-width: 0;
+      }
+      .nav-logo {
+          position: absolute !important;
+          left: 12px !important;
+          transform: none !important;
+      }
       .nav-logo img {
-          height: 48px !important;
+          width: 175px !important;
+          height: auto !important;
       }
   }
 
@@ -1863,7 +1949,8 @@
           padding-right: 8px;
       }
       .nav-logo img {
-          height: 40px !important;
+          width: 170px !important;
+          height: auto !important;
       }
       .nav-right {
           gap: 3px !important;
@@ -2042,11 +2129,14 @@
  .news-date,
  .event-tag,
  .member-role,
+ .grid-num {
+     color: #0E6973;
+ }
+
  .section-tag,
- .grid-num,
  .hero-eyebrow,
  .eyebrow {
-     color: #0E6973;
+     color: var(--gold);
  }
 
  .btn-discover,
@@ -2090,16 +2180,7 @@
      background: rgba(20, 58, 65, 0.97);
  }
 
- .member-card:hover,
- .news-card:hover,
- .featured-event:hover,
- .event-card:hover,
- .governance-card:hover,
- .info-card:hover,
- .quote-card:hover,
- .timeline-card:hover,
- .link-card:hover,
- .aisatsu-section:hover {
+ .news-card:hover {
      background: rgba(25, 72, 80, 1);
      border-color: rgba(242, 187, 22, 0.44);
      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.24);
@@ -2170,7 +2251,6 @@
  }
 
  .btn-discover:hover,
- .btn-back:hover,
  .btn-explore:hover,
  .btn-cta-primary,
  .btn-primary,
@@ -2351,7 +2431,11 @@
       background: #118c8c !important;
   }
 
-  .offcanvas-menu,
+  .offcanvas-menu {
+      background: #f5f3ec !important;
+  }
+
+  /* Elevated surface: distinct from the mint page background so cards read as separate layers. */
   .news-card,
   .member-card,
   .featured-event,
@@ -2369,7 +2453,13 @@
   .timeline-card,
   .link-card,
   .aisatsu-section {
-      background: rgba(186, 217, 206, 0.97) !important;
+      background: rgba(255, 255, 255, 0.92) !important;
+      border-color: rgba(14, 105, 115, 0.22) !important;
+      box-shadow: 0 16px 36px rgba(7, 43, 49, 0.14);
+  }
+
+  .tier-card.premium {
+      box-shadow: 0 20px 44px rgba(7, 43, 49, 0.2);
   }
 
   .menu-item,
@@ -2413,10 +2503,12 @@
       background: rgba(186, 217, 206, 0.94) !important;
       border-bottom: 1px solid rgba(0, 0, 0, 0.12);
       backdrop-filter: blur(14px);
+      box-shadow: 0 8px 24px rgba(7, 43, 49, 0.1);
   }
 
   .navbar.scrolled {
       background: rgba(186, 217, 206, 0.98) !important;
+      box-shadow: 0 8px 24px rgba(7, 43, 49, 0.16);
   }
 
   .hero-section {
@@ -2832,34 +2924,384 @@
       gap: 24px;
   }
 
-  #about .grid-item {
-      min-height: 250px;
-      padding: 24px 24px 26px;
-      background: rgba(255, 255, 255, 0.18);
-      border: 1px solid rgba(14, 105, 115, 0.24);
-      border-top: 2px solid rgba(242, 187, 22, 0.58);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28), 0 10px 24px rgba(14, 105, 115, 0.04);
-      transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  /* Core missions: airy, editorial treatment inspired by the reference layout. */
+  #about.support-section {
+      position: relative;
+      padding: clamp(72px, 8vw, 112px) clamp(24px, 4.2vw, 64px) clamp(78px, 9vw, 124px);
+      overflow: hidden;
+      background-color: #c5ded7;
+      background-image: repeating-linear-gradient(0deg, rgba(14, 105, 115, 0.045) 0, rgba(14, 105, 115, 0.045) 1px, transparent 1px, transparent 5px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.17) 0, rgba(255, 255, 255, 0.17) 1px, transparent 1px, transparent 5px);
+      border-top: 1px solid rgba(14, 105, 115, 0.18);
+      border-bottom: 1px solid rgba(14, 105, 115, 0.18);
   }
 
-  #about .grid-item:hover {
-      background: rgba(255, 255, 255, 0.42);
-      border-color: rgba(14, 105, 115, 0.42);
-      border-top-color: #f2bb16;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 14px 30px rgba(14, 105, 115, 0.12);
-      transform: translateY(-4px);
+  #about.support-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(110deg, rgba(255, 255, 255, 0.16), transparent 34%, rgba(14, 105, 115, 0.05));
   }
 
-  #about .grid-item::before {
-      top: -2px;
+  #about .missions-feature {
+      position: relative;
+      z-index: 1;
+      max-width: 1120px;
+      margin: 0 auto clamp(78px, 10vw, 132px);
+  }
+
+  #about .missions-feature-heading {
+      max-width: 880px;
+      margin: 0 auto clamp(42px, 6vw, 70px);
+      text-align: center;
+  }
+
+  #about .missions-feature-kicker {
+      display: block;
+      margin-bottom: 12px;
+      color: #176d75;
+      font-family: 'Bodoni Moda', serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+  }
+
+  #about .missions-feature-heading h2 {
+      margin: 0 0 24px;
+      color: #102b31;
+      font-family: 'Bodoni Moda', serif;
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      letter-spacing: 0.08em;
+      line-height: 1.2;
+  }
+
+  #about .missions-feature-heading p {
+      margin: 8px auto 0;
+      color: rgba(16, 43, 49, 0.86);
+      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+      font-weight: 600;
+      line-height: 1.9;
+  }
+
+  #about .missions-feature-visual {
+      position: relative;
+      min-height: 440px;
+      margin: 0 4vw;
+  }
+
+  #about .missions-feature-placeholder,
+  #about .missions-feature-image {
+      display: block;
+      width: min(84%, 900px);
+      height: 440px;
+      object-fit: cover;
+      object-position: center;
+      box-shadow: 0 18px 40px rgba(14, 105, 115, 0.14);
+  }
+
+  #about .missions-feature-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(16, 43, 49, 0.64);
+      background: linear-gradient(135deg, rgba(225, 239, 235, 0.92), rgba(174, 210, 202, 0.86));
+      border: 1px dashed rgba(14, 105, 115, 0.42);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+  }
+
+  #about .missions-feature-panel {
+      position: absolute;
+      top: 74px;
+      right: -2vw;
+      bottom: auto;
+      width: min(42%, 430px);
+      min-height: 300px;
+      padding: clamp(28px, 4vw, 48px);
+      color: #fff;
+      background: linear-gradient(135deg, #1592a2 0%, #3878e4 100%);
+      box-shadow: 0 20px 38px rgba(19, 88, 133, 0.2);
+  }
+
+  #about .missions-feature-panel-label {
+      display: block;
+      margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.8);
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+  }
+
+  #about .missions-feature-panel h3 {
+      margin: 0;
+      color: #fff;
+      font-family: 'Bodoni Moda', serif;
+      font-size: clamp(1.35rem, 2.5vw, 2rem);
+      line-height: 1.4;
+  }
+
+  #about .missions-feature-rule {
+      display: block;
+      width: 26px;
       height: 2px;
-      width: 0;
+      margin: 22px 0;
+            background: #f2df55;
+  }
+
+  #about .missions-feature-panel p {
+      margin: 0 0 26px;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.92rem;
+      line-height: 1.85;
+  }
+
+  #about .news-card-featured {
+      border-top: 2px solid #f2bb16;
+  }
+
+  #about .missions-feature-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+  }
+
+  #about .missions-feature-link::after {
+      content: '';
+      width: 70px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.82);
+      transition: width 0.3s ease;
+  }
+
+  #about .missions-feature-link:hover::after,
+  #about .missions-feature-link:focus-visible::after {
+      width: 96px;
+  }
+
+  #about .section-tag,
+  #about .support-grid {
+      position: relative;
+      z-index: 1;
+  }
+
+  #about .section-tag {
+      margin-bottom: clamp(48px, 6vw, 76px);
+      font-family: 'Bodoni Moda', serif;
+      font-size: clamp(1.35rem, 2.8vw, 2rem);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      line-height: 1.3;
+  }
+
+  #about .section-tag::after {
+      width: 84px;
+      height: 4px;
+      background: #176d75;
+      box-shadow: none;
+  }
+
+  #about .support-grid {
+      grid-template-columns: 1fr;
+      gap: clamp(52px, 8vw, 104px);
+      max-width: 1180px;
+      margin: 0 auto;
+  }
+
+  #about .grid-item {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(340px, 0.9fr);
+      align-items: center;
+      min-height: 0;
+      padding: 0;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+  }
+
+  #about .mission-visual {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: clamp(290px, 34vw, 430px);
+      min-height: clamp(290px, 34vw, 430px);
+      background-color: #9ac9cf;
+      background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.34) 0, rgba(255, 255, 255, 0.34) 1px, transparent 1px, transparent 6px);
+      border: 1px solid rgba(14, 105, 115, 0.22);
+      color: rgba(16, 43, 49, 0.72);
+  }
+
+  #about .mission-visual span {
+      padding: 10px 14px;
+      border: 1px solid currentColor;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+  }
+
+  #about .mission-visual img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  #about .mission-content {
+      position: relative;
+      z-index: 1;
+      margin-left: clamp(-92px, -7vw, -52px);
+      padding: clamp(30px, 4vw, 54px);
+      background: linear-gradient(135deg, #1299a2, #3d72db);
+      box-shadow: 0 18px 38px rgba(19, 88, 133, 0.18);
+  }
+
+  #about .grid-item:nth-child(even) .mission-visual {
+      grid-column: 2;
+      grid-row: 1;
+  }
+
+  #about .grid-item:nth-child(even) .mission-content {
+      grid-column: 1;
+      grid-row: 1;
+      margin-right: clamp(-92px, -7vw, -52px);
+      margin-left: 0;
+  }
+
+  #about .grid-num {
+      display: block;
+      margin: 0 0 18px;
+      color: rgba(255, 255, 255, 0.84);
+      font-family: 'Bodoni Moda', serif;
+      font-size: clamp(2.6rem, 5vw, 4.2rem);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      line-height: 1;
+  }
+
+  #about .grid-item h4 {
+      position: relative;
+      margin: 0;
+      padding-top: 0;
+      color: #ffffff !important;
+      font-family: 'Bodoni Moda', serif;
+      font-size: clamp(1.65rem, 2.8vw, 2.5rem);
+      font-weight: 700;
+      letter-spacing: 0.015em;
+      line-height: 1.3;
+  }
+
+  #about .grid-item h4::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 28px;
+      height: 2px;
+      background: #f2df55;
+      transform: translateY(-16px);
+  }
+
+  #about .grid-item p {
+      max-width: none;
+      margin: 26px 0 0;
+      padding-top: 0;
+      color: rgba(255, 255, 255, 0.92) !important;
+      font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+      font-weight: 500;
+      line-height: 1.9;
   }
 
   @media (max-width: 768px) {
+      #about.support-section {
+          padding: 64px 20px 72px;
+      }
+
+      #about .support-grid {
+          margin-bottom: 34px;
+          gap: 42px;
+      }
+
+      #about .grid-item {
+          grid-template-columns: 1fr;
+          gap: 0;
+      }
+
+      #about .grid-item:nth-child(even) .mission-visual {
+          grid-column: auto;
+          grid-row: auto;
+      }
+
+      #about .mission-visual {
+          height: 240px;
+          min-height: 240px;
+      }
+
+      #about .mission-content,
+      #about .grid-item:nth-child(even) .mission-content {
+          grid-column: auto;
+          grid-row: auto;
+          margin: -28px 18px 0;
+          padding: 30px 26px;
+      }
+
+      #about .grid-num {
+          font-size: 0.72rem;
+      }
+
+      #about .grid-item h4 {
+          padding-top: 0;
+      }
+
+      #about .grid-item p {
+          padding-top: 0;
+      }
+  }
+
+  @media (max-width: 520px) {
+      #about .missions-feature-heading {
+          margin-bottom: 34px;
+      }
+
+      #about .missions-feature-heading h2 {
+          font-size: 2rem;
+      }
+
+      #about .missions-feature-visual {
+          min-height: 540px;
+      }
+
+      #about .missions-feature-placeholder,
+      #about .missions-feature-image {
+          height: 280px;
+      }
+
+      #about .missions-feature-panel {
+          top: 186px;
+          right: 0;
+          bottom: auto;
+          width: 92%;
+          padding: 26px 24px;
+      }
+
+      #about .support-grid {
+          grid-template-columns: 1fr;
+      }
+
       #about .grid-item {
           min-height: 0;
-          padding: 22px 20px 24px;
+      }
+
+      #about .mission-visual {
+          height: 210px;
+          min-height: 210px;
       }
   }
 
@@ -2883,34 +3325,6 @@
 
   #news .news-arrow {
       color: #0e6973 !important;
-  }
-
-  /* Shared headline underline treatment. */
-  .section-tag {
-      position: relative;
-      display: inline-flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 10px;
-      color: #0e6973 !important;
-      text-shadow: 0 1px 8px rgba(14, 105, 115, 0.16);
-  }
-
-  .section-tag::after {
-      content: '';
-      display: block;
-      width: 56px;
-      height: 3px;
-      background: #0e6973;
-      box-shadow: 0 3px 8px rgba(14, 105, 115, 0.3);
-      transition: width 0.35s ease, background 0.35s ease, box-shadow 0.35s ease;
-  }
-
-  .section-tag:hover::after,
-  .section-tag:focus-visible::after {
-      width: 100%;
-      background: #118c8c;
-      box-shadow: 0 4px 12px rgba(17, 140, 140, 0.42);
   }
 
   /* Quiet hover state: depth without moving the copy or changing the layout. */

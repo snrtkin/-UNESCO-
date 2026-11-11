@@ -112,7 +112,6 @@
 }
 
 .governance-card .btn-back:hover {
-      color: #000000 !important;
       border-color: rgba(17, 140, 140, 0.44);
       box-shadow: 0 8px 20px rgba(14, 105, 115, 0.16);
 }

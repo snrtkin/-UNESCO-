@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会員マイページ - 岡山ユネスコ協会</title>
+    <meta name="description" content="岡山ユネスコ協会 会員マイページ">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="../style/member.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="member-topbar">
+        <a class="member-brand" href="../index.html">
+            <img src="../images/logo.png" alt="岡山ユネスコ協会">
+            <span>会員マイページ</span>
+        </a>
+        <button type="button" class="member-logout" id="memberLogout">ログアウト</button>
+    </header>
+
+    <main class="member-main">
+        <section class="member-welcome">
+            <p class="member-eyebrow">MY PAGE / 会員専用</p>
+            <h1><span id="memberName">会員</span> 様</h1>
+            <p>会費のお支払い状況と入会審査、イベント参加・ボランティア活動履歴をご確認いただけます。</p>
+        </section>
+
+        <section class="member-card member-profile" aria-labelledby="profileHeading">
+            <div>
+                <p class="member-eyebrow">MEMBERSHIP</p>
+                <h2 id="profileHeading">会員情報</h2>
+            </div>
+            <dl class="member-details">
+                <div><dt>会員種別</dt><dd id="memberTier">読み込み中...</dd></div>
+                <div><dt>会員状態</dt><dd id="memberStatus">読み込み中...</dd></div>
+                <div><dt>会費のお支払い</dt><dd id="memberPaymentStatus">読み込み中...</dd></div>
+                <div><dt>国・地域</dt><dd id="memberCountry">読み込み中...</dd></div>
+                <div><dt>登録日</dt><dd id="memberSince">読み込み中...</dd></div>
+            </dl>
+        </section>
+
+        <section class="member-card" aria-labelledby="historyHeading">
+            <div class="member-section-heading">
+                <div>
+                    <p class="member-eyebrow">VOLUNTEER ACTIVITY</p>
+                    <h2 id="historyHeading">ボランティア活動履歴</h2>
+                </div>
+                <a class="member-link" href="volunteer.html">活動に申し込む <span aria-hidden="true">→</span></a>
+            </div>
+            <p class="member-message" id="memberMessage" role="status" aria-live="polite">活動履歴を読み込んでいます...</p>
+            <ul class="volunteer-history" id="volunteerHistory"></ul>
+        </section>
+
+        <section class="member-card" aria-labelledby="eventHistoryHeading">
+            <div class="member-section-heading">
+                <div>
+                    <p class="member-eyebrow">EVENT REGISTRATION</p>
+                    <h2 id="eventHistoryHeading">イベント参加履歴</h2>
+                </div>
+                <a class="member-link" href="events.html">イベントを見る <span aria-hidden="true">→</span></a>
+            </div>
+            <p class="member-message" id="memberEventMessage" role="status" aria-live="polite">イベント履歴を読み込んでいます...</p>
+            <ul class="event-history" id="eventHistory"></ul>
+        </section>
+
+        <nav class="member-shortcuts" aria-label="関連ページ">
+            <a href="events.html">イベントを見る <span aria-hidden="true">→</span></a>
+            <a href="../index.html">協会トップページ <span aria-hidden="true">→</span></a>
+        </nav>
+    </main>
+
+    <script src="../script/config.js"></script>
+    <script src="../script/member.js"></script>
+</body>
+</html>

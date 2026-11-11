@@ -1,9 +1,11 @@
 require('dotenv').config({ override: true });
 
+const path = require('path');
 const express = require('express');
 const cors = require('cors');
 const { connectDB } = require('./Config/db');
 const dataRoutes = require('./Routes/data');
+const eventsRoutes = require('./Routes/events');
 const { router: authRoutes } = require('./Routes/auth');
 
 const app = express();
@@ -37,6 +39,7 @@ app.use(
 );
 
 app.use(express.json({ limit: '32kb' }));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.get('/', (_req, res) => {
   res.json({
@@ -46,11 +49,13 @@ app.get('/', (_req, res) => {
       health: '/api/health',
       membership: 'POST /api/membership',
       volunteer: 'POST /api/volunteer',
+      events: 'GET /api/events',
     },
   });
 });
 
 app.use('/api/auth', authRoutes);
+app.use('/api', eventsRoutes);
 app.use('/api', dataRoutes);
 
 app.use((_req, res) => {

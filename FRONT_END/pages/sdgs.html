@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESD・SDGs連携事業 - 岡山ユネスコ協会</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/sdgs-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600;6..96,700;6..96,800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="cursor-dot" aria-hidden="true"></div>
+    <div id="cursor-ring" aria-hidden="true"></div>
+
+    <!-- SIDEBAR OVERLAY -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="offcanvas-menu" id="sidebarMenu" role="dialog" aria-label="Navigation menu">
+        <div class="offcanvas-header">
+            <button class="close-toggle" id="closeToggle" aria-label="Close menu">✕</button>
+            <a href="#contact" class="btn-nav">CONTACT</a>
+        </div>
+        <nav class="offcanvas-nav" aria-label="Main navigation">
+            <ul class="menu-links">
+                <li><a href="aisatsu.html" class="menu-item"><span class="menu-num">01</span><span data-i18n="nav_aisatsu">会長挨拶</span></a></li>
+                <li><a href="unesco-int.html" class="menu-item"><span class="menu-num">02</span><span data-i18n="nav_intro">岡山ユネスコ協会紹介</span></a></li>
+                <li><a href="unesco-seukhai.html" class="menu-item"><span class="menu-num">03</span><span>活動紹介</span></a></li>
+                <li><a href="events.html" class="menu-item"><span class="menu-num">04</span><span data-i18n="nav_events">イベント</span></a></li>
+                <li><a href="membership.html" class="menu-item"><span class="menu-num">05</span><span data-i18n="nav_membership">入会案内</span></a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+        <div class="nav-left">
+            <a href="../index.html" class="nav-logo">
+                <img src="../images/logo.png" alt="Logo">
+            </a>
+        </div>
+        <nav class="desktop-nav">
+            <ul class="desktop-menu-links">
+                <li><a href="aisatsu.html" data-i18n="nav_aisatsu">会長挨拶</a></li>
+                <li><a href="unesco-int.html" data-i18n="nav_intro">協会紹介</a></li>
+                <li><a href="unesco-seukhai.html">活動紹介</a></li>
+                <li><a href="events.html" data-i18n="nav_events">イベント</a></li>
+                <li><a href="membership.html" data-i18n="nav_membership">入会案内</a></li>
+            </ul>
+        </nav>
+        <div class="nav-right">
+            <div class="lang-dropdown">
+                <button class="lang-toggle-btn" aria-haspopup="true" aria-expanded="false" aria-label="Switch language">
+                    <span>JA</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <ul class="lang-menu" role="menu">
+                    <li role="none"><a href="#" class="lang-item active" data-lang="ja" role="menuitem">日本語</a></li>
+                    <li role="none"><a href="#" class="lang-item" data-lang="en" role="menuitem">English</a></li>
+                    <li role="none"><a href="#" class="lang-item" data-lang="ne" role="menuitem">ネパール語</a></li>
+                    <li role="none"><a href="#" class="lang-item" data-lang="my" role="menuitem">ミャンマー語</a></li>
+                    <li role="none"><a href="#" class="lang-item" data-lang="vi" role="menuitem">ベトナム語</a></li>
+                    <li role="none"><a href="#" class="lang-item" data-lang="bn" role="menuitem">バングラデシュ語</a></li>
+                </ul>
+            </div>
+            <a href="login.html" class="nav-icon-btn login-btn" aria-label="Login">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="sidebarMenu">
+                <span></span><span></span><span></span>
+            </button>
+            <a href="#contact" class="btn-nav" data-i18n="nav_contact">CONTACT</a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <main class="content-wrapper sdgs-page reveal" role="main">
+        <section class="hero-intro">
+            <span class="eyebrow">ESD / SDGs</span>
+            <h1>ESD・SDGs連携事業</h1>
+            <p class="intro-copy">持続可能な社会づくりのための教育・環境活動</p>
+        </section>
+
+    <!-- INTRO -->
+    <section class="sdgs-section sdgs-intro reveal reveal-stagger">
+        <p class="section-tag">ABOUT</p>
+        <h2 class="sdgs-h2">ESD・SDGs連携事業</h2>
+        <p class="sdgs-lead">
+            ESD・SDGs連携事業部はESD（持続発展教育）ならびに環境教育・環境学習の支援活動に力を入れ、
+            場と教材と人材の提供・支援、担い手人材の育成などを行います。
+        </p>
+    </section>
+
+    <!-- ACTIVITIES -->
+    <section class="sdgs-section sdgs-activities reveal reveal-stagger">
+        <p class="section-tag">ACTIVITIES</p>
+        <h2 class="sdgs-h2">活動項目</h2>
+
+        <div class="sdgs-activity-grid">
+            <div class="sdgs-activity-card">
+                <span class="sdgs-activity-num">01</span>
+                <h3>ESD・環境講座の開催</h3>
+                <p>「ユネスコ地球環境講座」等</p>
+            </div>
+
+            <div class="sdgs-activity-card">
+                <span class="sdgs-activity-num">02</span>
+                <h3>ESD・環境教材の作成・提供</h3>
+                <p>岡山ユネスコ協会編「市民のための地球環境科学入門」、「環境学習キット 川と共に生きる暮らしと文化」等</p>
+            </div>
+
+            <div class="sdgs-activity-card">
+                <span class="sdgs-activity-num">03</span>
+                <h3>ESD・環境教育・環境学習活動の支援・協力</h3>
+                <p>学校や公民館等からの依頼に応えて講師派遣等</p>
+            </div>
+
+            <div class="sdgs-activity-card">
+                <span class="sdgs-activity-num">04</span>
+                <h3>ESD・環境保全活動の実践</h3>
+                <p>「山火事で焼けた山林に緑を復活させるための植樹活動」等のほかに、旭川流域や京山地区等での地域実践活動に直接的または間接的に参加・実践</p>
+            </div>
+
+            <div class="sdgs-activity-card">
+                <span class="sdgs-activity-num">05</span>
+                <h3>ESD・RCE（ESDの地域拠点）の世界的ハブ・先進地化の推進</h3>
+                <p>岡山における先進的なESD・RCEの取り組み等を直接的または間接的に推進</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOCUS -->
+    <section class="sdgs-section sdgs-focus-section reveal reveal-stagger">
+        <p class="section-tag">FOCUS</p>
+        <h2 class="sdgs-h2">重点項目</h2>
+
+        <div class="sdgs-focus-box">
+            <h3>岡山におけるESD・環境教育・環境学習の先駆的取り組みの推進</h3>
+            <p>この分野（特にユネスコがリードエイジェンシーを担っているESD）においては、「ユネスコ地球環境講座」、そして京山地区での先駆的なESD活動の推進と、岡山ユネスコ協会は牽引役を果たしてきた。</p>
+            <p>岡山ユネスコ協会地球環境部としては、この分野の牽引役として、先駆的な取り組みを推進していきたい。</p>
+            <p>その意味で、岡山を代表する文教地区である北区京山地区で先駆的に進めてきたESDの取り組みについて、人材育成の教育プログラムの取り組みを、公民館の社会教育主事等と共に、地球環境部として深く携わり、その成果を京山地区以外にも広めていくことを行いたい。</p>
+        </div>
+    </section>
+
+    <!-- TERMS -->
+    <section class="sdgs-section sdgs-terms reveal reveal-stagger">
+        <p class="section-tag">TERMS</p>
+        <h2 class="sdgs-h2">用語説明</h2>
+
+        <div class="sdgs-term-list">
+            <div class="sdgs-term-card">
+                <h3>ESD</h3>
+                <p>持続可能な開発（発展）のための教育（Education for Sustainable Development）の頭文字を取ったもので、「持続発展教育」と略したりもします。持続可能な社会づくりのために、社会の課題と身近な暮らしを結びつけ、新たな価値観や行動を生み出すことを目指す学習や活動です。</p>
+            </div>
+
+            <div class="sdgs-term-card">
+                <h3>ユネスコ・スクール</h3>
+                <p>ユネスコの理想を実現する学校です。ASPnet（Associated Schools Project Network）は、ユネスコ憲章に示された理念を学校現場で実践するため、国際理解教育の実験的な試みを比較研究し、その調整をはかる共同体として発足しました。</p>
+            </div>
+
+            <div class="sdgs-term-card">
+                <h3>日本/ユネスコパートナーシップ事業</h3>
+                <p>国内におけるユネスコ活動の普及促進を目的に実施しています。特に、わが国が提唱し、ユネスコが主導推進機関となっているＥＳＤ（持続発展教育）の理解の促進と活動の充実を図っています。</p>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="../index.html" class="footer-logo">
+                    <img src="../images/logo.png" alt="Okayama UNESCO Association">
+                </a>
+                <div class="footer-contact">
+                    <p>〒700-0013　岡山県岡山市北区伊福町4-4-31-202</p>
+                    <p>TEL:050-3551-0642（井上事務局長）</p>
+                    <div class="social-icons" aria-label="SNS links">
+                        <a href="https://www.facebook.com/unesco.okayama?ref=embed_page" class="social-icon social-facebook" aria-label="Facebook" title="岡山ユネスコ協会" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 9H16V6h-2.5C10.9 6 9 7.9 9 10.5V13H7v3h2v5h3v-5h2.2l.8-3H12v-2.5c0-.9.6-1.5 1.5-1.5Z"/></svg>
+                        </a>
+                        <a href="https://www.kc-d.net/pages/esd/" class="social-icon social-link" aria-label="京山ESD推進協議会" title="京山ESD推進協議会" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h5v2H7v10h10v-3h2v5H5V5Z"/></svg>
+                            <span class="social-label">京山ESD推進協議会</span>
+                        </a>
+                        <a href="https://www.kc-d.net/pages/esd/" class="social-icon social-link" aria-label="岡山県国際団体協議会" title="岡山県国際団体協議会" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h5v2H7v10h10v-3h2v5H5V5Z"/></svg>
+                            <span class="social-label">岡山県国際団体協議会</span>
+                        </a>
+                        <a href="https://www.chosenji.net/" class="social-icon social-link" aria-label="真言宗御室派 長泉寺" title="真言宗御室派 長泉寺" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h5v2H7v10h10v-3h2v5H5V5Z"/></svg>
+                            <span class="social-label">長泉寺</span>
+                        </a>
+                        <a href="https://8092fun.jp/cgi/web/index.cgi?c=aruaru-1" class="social-icon social-link" aria-label="晴れの国おかやま応援サイト" title="晴れの国おかやま応援サイト" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h5v2H7v10h10v-3h2v5H5V5Z"/></svg>
+                            <span class="social-label">ピースフェスティバル</span>
+                        </a>
+                        <a href="https://www.unesco.or.jp/" class="social-icon social-link" aria-label="日本ユネスコ協会連盟" title="日本ユネスコ協会連盟" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h5v2H7v10h10v-3h2v5H5V5Z"/></svg>
+                            <span class="social-label">日本ユネスコ協会連盟</span>
+                        </a>
+                        <a href="https://www.mext.go.jp/unesco/003/001.htm" class="social-icon social-link" aria-label="文部科学省「ユネスコとは」" title="文部科学省「ユネスコとは」" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h5v2H7v10h10v-3h2v5H5V5Z"/></svg>
+                            <span class="social-label">文部科学省</span>
+                        </a>
+                        <a href="http://youth-unesco.net/" class="social-icon social-link" aria-label="全国ユネスコユース情報" title="全国ユネスコユース情報" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h5v2H7v10h10v-3h2v5H5V5Z"/></svg>
+                            <span class="social-label">全国ユース情報</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Okayama UNESCO Association. All rights reserved.</p>
+            <p class="design-credit"><span>DESIGN by </span><a href="designers.html" class="design-credit-link">岡山情報ビジネス学院 国際ITビジネス学科</a></p>
+        </div>
+    </footer>
+
+    <script src="../script/translations.js"></script>
+    <script src="../script/index.js"></script>
+</body>
+</html>

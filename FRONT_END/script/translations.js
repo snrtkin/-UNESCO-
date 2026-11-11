@@ -4,6 +4,7 @@ window.translations = {
     nav_home: "ホーム",
     nav_aisatsu: "会長挨拶",
     nav_intro: "協会紹介",
+    nav_activities: "活動紹介",
     nav_events: "イベント",
     nav_membership: "入会案内",
     nav_contact: "CONTACT",
@@ -14,8 +15,20 @@ window.translations = {
     hero_subtitle: "ユネスコ協会について -",
     hero_discover: "DISCOVER",
 
+    // Sidebar
+
+    // Featured Activity / support area
+    featured_activity_kicker: "FEATURED ACTIVITY",
+    featured_activity_title: "ESD・SDGsで地域の未来をつくる",
+    featured_activity_desc_1: "ESD（持続発展教育）や環境教育・環境学習を通じて、持続可能な地域づくりを支援します。",
+    featured_activity_desc_2: "場と教材と人材の提供・支援、担い手人材の育成など、学びを行動につなげる活動です。",
+    featured_activity_panel_label: "ESD / SDGs COOPERATION",
+    featured_activity_panel_title: "学びからはじめる<br>持続可能な地域づくり",
+    featured_activity_panel_desc: "ユネスコ地球環境講座、環境教材の提供、学校や公民館への講師派遣などを行っています。",
+    featured_activity_link: "詳しく見る",
+
     // Discover (Split) Section
-    discover_volunteer_title: "仲間募集",
+    discover_volunteer_title: "ボランティア募集",
     discover_volunteer_desc: "国際交流やSDGs、地域活動に興味のある方、大歓迎！<br>私たちと一緒に、岡山から世界につながる活動をしてみませんか？",
     discover_activities_title: "主な活動内容<br>SDGs",
     discover_activities_desc: "持続可能な開発目標（SDGs）の達成に向けた、ESD（持続可能な開発のための教育）や環境保護などの地域活動をご紹介します。",
@@ -28,18 +41,22 @@ window.translations = {
     mission_title_2: "SDGsの達成",
     mission_desc_2: "誰一人取り残さない持続可能で多様性と包摂性のある社会の実現に向けて、地域から世界へ貢献します。",
     mission_title_3: "青少年育成",
-    mission_desc_3: "次代を担うユース世代 of 国際交流やボランティア活動を支援し、グローバルな視野を養います。",
+    mission_desc_3: "次代を担うユース世代の国際交流やボランティア活動を支援し、グローバルな視野を養います。",
     mission_title_4: "平和の文化の構築",
     mission_desc_4: "教育・科学・文化の発展を通じて、人々の心の中に平和のとりでを築く活動を展開しています。",
 
     // News & Events Section
     news_tag: "NEWS & EVENTS / お知らせ・イベント",
-    news_date_1: "2024.05.15",
-    news_title_1: "2024年度 岡山ユネスコ協会 通常総会のご案内",
-    news_date_2: "2024.04.10",
-    news_title_2: "「ESDフォーラム2024」開催のお知らせと参加者募集",
-    news_date_3: "2024.03.22",
-    news_title_3: "ユネスコスクール支援: 出前講座の今年度レポート公開",
+    news_featured_label: "FEATURED ACTIVITY",
+    news_featured_title: "ESD・SDGs連携事業の取り組みをご紹介します",
+    news_date_1: "2026.08.05",
+    news_title_1_home: "平和の鐘を鳴らそう in 長泉寺が開催されました",
+    news_date_2: "2026.08.02",
+    news_title_2_home: "おかやまSDGsフェア内にて、SDGsパスポート体験発表会を開催",
+    news_date_3: "2026.07.18-20",
+    news_title_3_home: "世界とつながる「多文化共生」スタディカフェ2026を開催",
+    news_date_4: "2026.07.07",
+    news_title_4_home: "平和への発信 〜広島原爆展〜 in 岡山 2026を開催",
 
     // Team Section
     team_tag: "OUR TEAM / 役員・メンバー紹介",
@@ -63,8 +80,8 @@ window.translations = {
     president_more: "READ MORE",
 
     // Footer
-    footer_address: "〒700-0000 岡山県岡山市 (Placeholder)",
-    footer_tel: "Tel: 086-XXX-XXXX / Email: info@unesco.okayama.jp",
+    footer_address: "〒700-0013　岡山県岡山市北区伊福町4-4-31-202",
+    footer_tel: "TEL:050-3551-0642（井上事務局長）",
     footer_rights: "&copy; 2024 Okayama UNESCO Association. All rights reserved.",
     footer_design_by: "DESIGN by ",
 
@@ -82,7 +99,7 @@ window.translations = {
     aisatsu_back: "BACK TO HOME",
     contact_breadcrumb_home: "トップ",
     contact_breadcrumb_current: "お問い合わせ",
-    contact_eyebrow: "CONTACT / GET IN TOUCH",
+    contact_eyebrow: "CONTACT",
     contact_title: "お問い合わせ",
     contact_intro: "岡山ユネスコ協会へのお問い合わせはこちらから。内容を確認の上、事務局よりご連絡いたします。",
     contact_org: "OKAYAMA UNESCO ASSOCIATION",
@@ -116,6 +133,7 @@ window.translations = {
     nav_home: "Home",
     nav_aisatsu: "President's Message",
     nav_intro: "About Association",
+    nav_activities: "Activities",
     nav_events: "Events",
     nav_membership: "Membership",
     nav_contact: "CONTACT",
@@ -125,6 +143,18 @@ window.translations = {
     hero_title: "Okayama UNESCO Association",
     hero_subtitle: "About UNESCO and the UNESCO Association",
     hero_discover: "DISCOVER",
+
+    // Sidebar
+
+    // Featured Activity / support area
+    featured_activity_kicker: "FEATURED ACTIVITY",
+    featured_activity_title: "Building the future of our community through ESD and SDGs",
+    featured_activity_desc_1: "We support sustainable community development through ESD (Education for Sustainable Development), environmental education, and environmental learning.",
+    featured_activity_desc_2: "We connect learning to action through support for spaces, materials, people, and youth leadership development.",
+    featured_activity_panel_label: "ESD / SDGs COOPERATION",
+    featured_activity_panel_title: "Starting with learning<br>to build a sustainable community",
+    featured_activity_panel_desc: "We provide UNESCO environmental lectures, learning materials, and lecturer support for schools and community centers.",
+    featured_activity_link: "Learn more",
 
     // Discover (Split) Section
     discover_volunteer_title: "Volunteers<br>Wanted",
@@ -146,20 +176,24 @@ window.translations = {
 
     // News & Events Section
     news_tag: "NEWS & EVENTS",
-    news_date_1: "2024.05.15",
-    news_title_1: "Information on the 2024 Okayama UNESCO Association General Meeting",
-    news_date_2: "2024.04.10",
-    news_title_2: "Announcement of 'ESD Forum 2024' and Recruitment of Participants",
-    news_date_3: "2024.03.22",
-    news_title_3: "UNESCO School Support: This Year's School Visit Lecture Report Released",
+    news_featured_label: "FEATURED ACTIVITY",
+    news_featured_title: "Introducing our ESD and SDGs collaboration initiatives",
+    news_date_1: "2026.08.05",
+    news_title_1_home: "The 'Ring the Bell of Peace' event in Nagaseiji was held",
+    news_date_2: "2026.08.02",
+    news_title_2_home: "Held the SDGs Passport Experience Presentation at the Okayama SDGs Fair",
+    news_date_3: "2026.07.18-20",
+    news_title_3_home: "Held the 2026 'Multicultural Coexistence' Study Cafe connected to the world",
+    news_date_4: "2026.07.07",
+    news_title_4_home: "Held 'Messages for Peace' ~ Hiroshima Peace Exhibition ~ in Okayama 2026",
 
     // Team Section
     team_tag: "OUR TEAM / Board & Members",
-    team_role_1: "Vice President",
-    team_name_1: "Taro Yamada",
+    team_role_1: "President",
+    team_name_1: "Junko Tokuyama",
     team_bio_1: "Let's create a sustainable future for our community together through education.",
-    team_role_2: "Secretary General",
-    team_name_2: "Hanako Sato",
+    team_role_2: "Vice President",
+    team_name_2: "Yoshiko Kawaguchi",
     team_bio_2: "We aim for an open association operation where diverse people can collaborate.",
     team_role_3: "Youth Rep",
     team_name_3: "Ichiro Suzuki",
@@ -175,8 +209,8 @@ window.translations = {
     president_more: "READ MORE",
 
     // Footer
-    footer_address: "Okayama City, Okayama Prefecture 700-0000 (Placeholder)",
-    footer_tel: "Tel: 086-XXX-XXXX / Email: info@unesco.okayama.jp",
+    footer_address: "〒700-0013　岡山県岡山市北区伊福町4-4-31-202",
+    footer_tel: "TEL:050-3551-0642（井上事務局長）",
     footer_rights: "&copy; 2024 Okayama UNESCO Association. All rights reserved.",
     footer_design_by: "DESIGN by ",
 
@@ -194,7 +228,7 @@ window.translations = {
     aisatsu_back: "BACK TO HOME",
     contact_breadcrumb_home: "Home",
     contact_breadcrumb_current: "Contact",
-    contact_eyebrow: "CONTACT / GET IN TOUCH",
+    contact_eyebrow: "CONTACT",
     contact_title: "Contact us",
     contact_intro: "Please contact the Okayama UNESCO Association using the form below. Our office will respond after reviewing your message.",
     contact_org: "OKAYAMA UNESCO ASSOCIATION",
@@ -228,6 +262,7 @@ window.translations = {
     nav_home: "गृहपृष्ठ",
     nav_aisatsu: "अध्यक्षको सन्देश",
     nav_intro: "संघको परिचय",
+    nav_activities: "गतिविधिहरू",
     nav_events: "कार्यक्रमहरू",
     nav_membership: "सदस्यता जानकारी",
     nav_contact: "सम्पर्क",
@@ -237,6 +272,18 @@ window.translations = {
     hero_title: "ओकायामा युनेस्को संघ",
     hero_subtitle: "युनेस्को र युनेस्को संघको बारेमा -",
     hero_discover: "खोज्नुहोस्",
+
+    // Sidebar
+
+    // Featured Activity / support area
+    featured_activity_kicker: "विशेष गतिविधि",
+    featured_activity_title: "ESD र SDGs मार्फत समुदायको भविष्य निर्माण गर्दै",
+    featured_activity_desc_1: "ESD (दिगो विकासका लागि शिक्षा), वातावरण शिक्षा र वातावरण अध्ययनमार्फत दिगो समुदाय विकासमा सहयोग गर्छौं।",
+    featured_activity_desc_2: "स्थान, सामग्री, मानव संसाधन र युवा नेतृत्व विकासलाई समर्थन गरेर शिक्षा र व्यवहारलाई जोड्छौं।",
+    featured_activity_panel_label: "ESD / SDGs सहयोग",
+    featured_activity_panel_title: "सिकाइबाट започेर<br>दिगो समुदाय निर्माण",
+    featured_activity_panel_desc: "हामी युनेस्को वातावरण व्याख्यान, शिक्षण सामग्री र विद्यालय तथा सामुदायिक केन्द्रहरूमा व्याख्याता सहयोग प्रदान गर्छौं।",
+    featured_activity_link: "अझै हेर्नुहोस्",
 
     // Discover (Split) Section
     discover_volunteer_title: "साथीहरू खोज्दै",
@@ -258,20 +305,24 @@ window.translations = {
 
     // News & Events Section
     news_tag: "समाचार र कार्यक्रमहरू",
-    news_date_1: "2024.05.15",
-    news_title_1: "२०२४ ओकायामा युनेस्को संघको साधारण सभाको जानकारी",
-    news_date_2: "2024.04.10",
-    news_title_2: "'ESD फोरम २०२४' आयोजना र सहभागीहरूको आह्वान",
-    news_date_3: "2024.03.22",
-    news_title_3: "युनेस्को विद्यालय सहयोग: यस वर्षको भ्रमण व्याख्यान रिपोर्ट सार्वजनिक",
+    news_featured_label: "विशेष गतिविधि",
+    news_featured_title: "हाम्रो ESD र SDGs सहयोग पहलहरूको परिचय",
+    news_date_1: "2026.08.05",
+    news_title_1_home: "नागासेइजीमा 'शान्तिको घण्टी बजाउने' कार्यक्रम भयो",
+    news_date_2: "2026.08.02",
+    news_title_2_home: "ओकायामा SDGs फेयरमा SDGs पासपोर्ट अनुभव प्रस्तुति आयोजित भयो",
+    news_date_3: "2026.07.18-20",
+    news_title_3_home: "विश्वसँग जोडिएको २०२६ 'बहुसांस्कृतिक सहअस्तित्व' स्टडीकफे आयोजित भयो",
+    news_date_4: "2026.07.07",
+    news_title_4_home: "ओकायामा २०२६ मा 'शान्तिको सन्देश' ~ हिरोशिमा शान्ति प्रदर्शन ~ आयोजित भयो",
 
     // Team Section
     team_tag: "हाम्रो टोली / सदस्यहरू",
-    team_role_1: "उपाध्यक्ष",
-    team_name_1: "तारो यामादा",
+    team_role_1: "अध्यक्ष",
+    team_name_1: "जुनको तोकुयामा",
     team_bio_1: "शिक्षाको माध्यमबाट हाम्रो समुदायको लागि दिगो भविष्य निर्माण गरौं।",
-    team_role_2: "महासचिव",
-    team_name_2: "हानाको सातो",
+    team_role_2: "उपाध्यक्ष",
+    team_name_2: "योशिको कावागुची",
     team_bio_2: "हामी विविध मानिसहरू मिलेर सहकार्य गर्न सक्ने खुला संस्थाको रूपमा विकास गर्न चाहन्छौं।",
     team_role_3: "युवा प्रतिनिधि",
     team_name_3: "इचिरो सुजुकी",
@@ -288,7 +339,7 @@ window.translations = {
 
     // Footer
     footer_address: "ओकायामा शहर, ओकायामा प्रिफेक्चर ७००-०००० (प्लेसहोल्डर)",
-    footer_tel: "Tel: 086-XXX-XXXX / इमेल: info@unesco.okayama.jp",
+    footer_tel: "TEL:050-3551-0642（井上事務局長）",
     footer_rights: "&copy; २०२४ ओकायामा युनेस्को संघ। सर्वाधिकार सुरक्षित।",
     footer_design_by: "डिजाइन - ",
 
@@ -340,6 +391,7 @@ window.translations = {
     nav_home: "ပင်မစာမျက်နှာ",
     nav_aisatsu: "ဥက္ကဌ၏ နှုတ်ခွန်းဆက်စကား",
     nav_intro: "အသင်းမိတ်ဆက်",
+    nav_activities: "လှုပ်ရှားမှုများ",
     nav_events: "ပွဲလမ်းသဘင်များ",
     nav_membership: "အသင်းဝင်ရန် ဖိတ်ခေါ်လွှာ",
     nav_contact: "ဆက်သွယ်ရန်",
@@ -349,6 +401,18 @@ window.translations = {
     hero_title: "အိုကာယာမ ယူနက်စကို အသင်း",
     hero_subtitle: "ယူနက်စကိုနှင့် ယူနက်စကို အသင်းအကြောင်း -",
     hero_discover: "လေ့လာရန်",
+
+    // Sidebar
+
+    // Featured Activity / support area
+    featured_activity_kicker: "အထူးလှုပ်ရှားမှု",
+    featured_activity_title: "ESD နှင့် SDGs ဖြင့် ကျွန်ုပ်တို့ဒေသ၏ အနာဂတ်ကို တည်ဆောက်ခြင်း",
+    featured_activity_desc_1: "ESD (စဉ်ဆက်မပြတ် ဖွံ့ဖြိုးတိုးတက်ရေး ပညာရေး), ပတ်ဝန်းကျင်ပညာရေးနှင့် ပတ်ဝန်းကျင်သင်ယူမှုမှတစ်ဆင့် တည်တံ့သောဒေသဖွံ့ဖြိုးမှုကို ပံ့ပိုးပေးပါသည်။",
+    featured_activity_desc_2: "နေရာ၊ ပစ္စည်း၊ လူသုံးစွဲမှုနှင့် လူငယ်ခေါင်းဆောင်မှု တိုးတက်ရေးကို ပံ့ပိုးပေးခြင်းဖြင့် သင်ယူမှုကို လုပ်ဆောင်မှုအဖြစ် ချိတ်ဆက်ပေးပါသည်။",
+    featured_activity_panel_label: "ESD / SDGs ပူးပေါင်းဆောင်ရွက်မှု",
+    featured_activity_panel_title: "သင်ယူမှုမှစတင်၍<br>တည်တံ့သောဒေသတည်ဆောက်ခြင်း",
+    featured_activity_panel_desc: "ကျွန်ုပ်တို့သည် ယူနက်စကို ပတ်ဝန်းကျင်ဟောပြောပွဲများ၊ သင်ကြားရေးပစ္စည်းများနှင့် ကျောင်းများ၊ လူမှုအသိုက်အဝန်းများအတွက် lecturer ပံ့ပိုးမှုများကို ပေးပါသည်။",
+    featured_activity_link: "အသေးစိတ်ကြည့်ရှုရန်",
 
     // Discover (Split) Section
     discover_volunteer_title: "မိတ်ဆွေများ ဖိတ်ခေါ်ခြင်း",
@@ -370,20 +434,24 @@ window.translations = {
 
     // News & Events Section
     news_tag: "သတင်းနှင့် ပွဲလမ်းသဘင်များ",
-    news_date_1: "2024.05.15",
-    news_title_1: "၂၀၂၄ ခုနှစ် အိုကာယာမ ယူနက်စကို အသင်း အထွေထွေအစည်းအဝေး ဖိတ်ကြားလွှာ",
-    news_date_2: "2024.04.10",
-    news_title_2: "၂၀၂၄ ခုနှစ် ESD ဖိုရမ် ကျင်းပခြင်းနှင့် ပါဝင်ရန် ဖိတ်ခေါ်ခြင်း",
-    news_date_3: "2024.03.22",
-    news_title_3: "ယူနက်စကို ကျောင်းများ ပံ့ပိုးမှု- ယခုနှစ် ကျောင်းဟောပြောပွဲ အစီရင်ခံစာ ထုတ်ပြန်ခြင်း",
+    news_featured_label: "အထူးလှုပ်ရှားမှု",
+    news_featured_title: "ကျွန်ုပ်တို့၏ ESD နှင့် SDGs ပူးပေါင်းဆောင်ရွက်မှုများကို ဖော်ပြပါမည်",
+    news_date_1: "2026.08.05",
+    news_title_1_home: "နဂါးဆီဂျီတွင် 'ငြိမ်းချမ်းရေးအခါ' ပွဲကျင်းပခဲ့သည်",
+    news_date_2: "2026.08.02",
+    news_title_2_home: "အိုကာယာမ SDGs ဖဲယားတွင် SDGs Passport အတွေ့အကြုံ တင်ပြပွဲ ကျင်းပခဲ့သည်",
+    news_date_3: "2026.07.18-20",
+    news_title_3_home: "ကမ္ဘာနှင့်ချိတ်ဆက်သော 2026 'မီဒီယာလေးဖက်ပူးပေါင်းမှု' Study Cafe ကျင်းပခဲ့သည်",
+    news_date_4: "2026.07.07",
+    news_title_4_home: "အိုကာယာမ 2026 တွင် 'ငြိမ်းချမ်းရေးသို့ ပေးပို့ချက်' ~ ဟိရိုရှီးမား ငြိမ်းချမ်းရေး ပြပွဲ ~ ကျင်းပခဲ့သည်",
 
     // Team Section
     team_tag: "ကျွန်ုပ်တို့၏ အဖွဲ့ဝင်များ",
-    team_role_1: "ဒုတိယဥက္ကဌ",
-    team_name_1: "တာရို ယာမာဒါ",
+    team_role_1: "ဥက္ကဌ",
+    team_name_1: "ဂျွန်ကို တိုကူယာမာ",
     team_bio_1: "ပညာရေးမှတစ်ဆင့် ကျွန်ုပ်တို့ လူ့အဖွဲ့အစည်းအတွက် ရေရှည်တည်တံ့သော အနာဂတ်ကို အတူတကွ တည်ဆောက်ကြပါစို့။",
-    team_role_2: "အထွေထွေအတွင်းရေးမှူး",
-    team_name_2: "ဟာနာကို ဆာတို",
+    team_role_2: "ဒုတိယဥက္ကဌ",
+    team_name_2: "ယိုရှီကို ကာဝါဂူချီ",
     team_bio_2: "လူမျိုးစုံ ပူးပေါင်းဆောင်ရွက်နိုင်သည့် ပွင့်လင်းသော အသင်းအဖွဲ့ လည်ပတ်မှုကို ဦးတည်ပါသည်။",
     team_role_3: "လူငယ် ကိုယ်စားလှယ်",
     team_name_3: "အီချီရို ဆူဇူကီ",
@@ -400,7 +468,7 @@ window.translations = {
 
     // Footer
     footer_address: "အိုကာယာမမြို့၊ အိုကာယာမခရိုင် ၇၀၀-၀၀၀၀ (နမူနာ)",
-    footer_tel: "Tel: 086-XXX-XXXX / အီးမေးလ်- info@unesco.okayama.jp",
+    footer_tel: "TEL:050-3551-0642（井上事務局長）",
     footer_rights: "&copy; ၂၀၂၄ အိုကာယာမ ယူနက်စကို အသင်း။ မူပိုင်ခွင့်များအားလုံး လက်ဝယ်ရှိသည်။",
     footer_design_by: "ဒီဇိုင်း - ",
 
@@ -452,6 +520,7 @@ window.translations = {
     nav_home: "Trang chủ",
     nav_aisatsu: "Thông điệp Chủ tịch",
     nav_intro: "Giới thiệu Hiệp hội",
+    nav_activities: "Hoạt động",
     nav_events: "Sự kiện",
     nav_membership: "Hướng dẫn Gia nhập",
     nav_contact: "CONTACT",
@@ -461,6 +530,18 @@ window.translations = {
     hero_title: "Hiệp hội UNESCO Okayama",
     hero_subtitle: "Về UNESCO và Hiệp hội UNESCO -",
     hero_discover: "DISCOVER",
+
+    // Sidebar
+
+    // Featured Activity / support area
+    featured_activity_kicker: "HOẠT ĐỘNG NỔI BẬT",
+    featured_activity_title: "Xây dựng tương lai cộng đồng thông qua ESD và SDGs",
+    featured_activity_desc_1: "Chúng tôi hỗ trợ phát triển cộng đồng bền vững thông qua ESD (Giáo dục vì sự phát triển bền vững), giáo dục môi trường và học tập về môi trường.",
+    featured_activity_desc_2: "Chúng tôi kết nối học tập với hành động thông qua việc hỗ trợ không gian, tài liệu, nguồn nhân lực và phát triển lãnh đạo trẻ.",
+    featured_activity_panel_label: "HỢP TÁC ESD / SDGs",
+    featured_activity_panel_title: "Bắt đầu từ việc học tập<br>để xây dựng cộng đồng bền vững",
+    featured_activity_panel_desc: "Chúng tôi cung cấp các bài giảng môi trường UNESCO, tài liệu học tập và hỗ trợ giảng viên cho các trường học và trung tâm cộng đồng.",
+    featured_activity_link: "Tìm hiểu thêm",
 
     // Discover (Split) Section
     discover_volunteer_title: "Tìm đồng đội",
@@ -482,20 +563,24 @@ window.translations = {
 
     // News & Events Section
     news_tag: "TIN TỨC & SỰ KIỆN",
-    news_date_1: "2024.05.15",
-    news_title_1: "Thông báo Đại hội Thường niên Hiệp hội UNESCO Okayama năm 2024",
-    news_date_2: "2024.04.10",
-    news_title_2: "Thông báo tổ chức 'Diễn đàn ESD 2024' và tuyển thành viên tham gia",
-    news_date_3: "2024.03.22",
-    news_title_3: "Hỗ trợ Trường học UNESCO: Công bố báo cáo lớp học lưu động năm nay",
+    news_featured_label: "HOẠT ĐỘNG NỔI BẬT",
+    news_featured_title: "Giới thiệu các sáng kiến hợp tác ESD và SDGs của chúng tôi",
+    news_date_1: "2026.08.05",
+    news_title_1_home: "Sự kiện 'Rung chuông Hòa bình' tại Nagaseiji đã diễn ra",
+    news_date_2: "2026.08.02",
+    news_title_2_home: "Tổ chức buổi trình bày trải nghiệm SDGs Passport tại Triển lãm SDGs Okayama",
+    news_date_3: "2026.07.18-20",
+    news_title_3_home: "Tổ chức 'Study Cafe về sự đồng tồn tại đa văn hóa' 2026 gắn kết với thế giới",
+    news_date_4: "2026.07.07",
+    news_title_4_home: "Tổ chức 'Thông điệp Hòa bình' ~ Triển lãm Hòa bình Hiroshima ~ tại Okayama 2026",
 
     // Team Section
     team_tag: "ĐỘI NGŨ CỦA CHÚNG TÔI / Ban điều hành & Thành viên",
-    team_role_1: "Phó Chủ tịch",
-    team_name_1: "Taro Yamada",
+    team_role_1: "Chủ tịch",
+    team_name_1: "Junko Tokuyama",
     team_bio_1: "Hãy cùng nhau xây dựng tương lai bền vững cho cộng đồng của chúng ta thông qua giáo dục.",
-    team_role_2: "Tổng thư ký",
-    team_name_2: "Hanako Sato",
+    team_role_2: "Phó Chủ tịch",
+    team_name_2: "Yoshiko Kawaguchi",
     team_bio_2: "Chúng tôi hướng tới việc điều hành một hiệp hội cởi mở, nơi mọi người đa dạng có thể hợp tác với nhau.",
     team_role_3: "Đại diện thanh niên",
     team_name_3: "Ichiro Suzuki",
@@ -512,7 +597,7 @@ window.translations = {
 
     // Footer
     footer_address: "Thành phố Okayama, Tỉnh Okayama 700-0000 (Placeholder)",
-    footer_tel: "Tel: 086-XXX-XXXX / Email: info@unesco.okayama.jp",
+    footer_tel: "TEL:050-3551-0642（井上事務局長）",
     footer_rights: "&copy; 2024 Hiệp hội UNESCO Okayama. Bảo lưu mọi quyền.",
     footer_design_by: "DESIGN by ",
 
@@ -564,6 +649,7 @@ window.translations = {
     nav_home: "হোম",
     nav_aisatsu: "সভাপতির বাণী",
     nav_intro: "অ্যাসোসিয়েশন পরিচিতি",
+    nav_activities: "কার্যক্রম",
     nav_events: "ইভেন্টসমূহ",
     nav_membership: "সদস্যপদ তথ্য",
     nav_contact: "CONTACT",
@@ -573,6 +659,18 @@ window.translations = {
     hero_title: "ওকায়ামা ইউনেস্কো অ্যাসোসিয়েশন",
     hero_subtitle: "ইউনেস্কো এবং ইউনেস্কো অ্যাসোসিয়েশন সম্পর্কে -",
     hero_discover: "DISCOVER",
+
+    // Sidebar
+
+    // Featured Activity / support area
+    featured_activity_kicker: "বিশেষ কার্যক্রম",
+    featured_activity_title: "ESD ও SDGs দিয়ে আমাদের সম্প্রদায়ের ভবিষ্যৎ গড়ে তোলা",
+    featured_activity_desc_1: "আমরা ESD (টেকসই উন্নয়নের জন্য শিক্ষা), পরিবেশ শিক্ষা ও পরিবেশ সম্পর্কিত শিক্ষার মাধ্যমে টেকসই সম্প্রদায় উন্নয়নে সহায়তা করি।",
+    featured_activity_desc_2: "স্থান, উপকরণ, মানুষ ও তরুণ নেতৃত্ব বিকাশকে সমর্থন করে আমরা শিক্ষা ও কর্মের সংযোগ ঘটাই।",
+    featured_activity_panel_label: "ESD / SDGs সহযোগিতা",
+    featured_activity_panel_title: "শেখার মাধ্যমে শুরু করে<br>টেকসই সম্প্রদায় গঠন",
+    featured_activity_panel_desc: "আমরা ইউনেস্কো পরিবেশ বক্তৃতা, শিক্ষা উপকরণ ও স্কুল ও কমিউনিটি সেন্টারের জন্য講師 সহায়তা প্রদান করি।",
+    featured_activity_link: "আরও দেখুন",
 
     // Discover (Split) Section
     discover_volunteer_title: "সঙ্গী খুঁজছি",
@@ -594,20 +692,24 @@ window.translations = {
 
     // News & Events Section
     news_tag: "সংবাদ ও ইভেন্ট",
-    news_date_1: "2024.05.15",
-    news_title_1: "২০২৪ সালের ওকায়ামা ইউনেস্কো অ্যাসোসিয়েশনের সাধারণ সভার তথ্য",
-    news_date_2: "2024.04.10",
-    news_title_2: "'ইএসডি ফোরাম ২০২৪' আয়োজন এবং অংশগ্রহণকারীদের আহ্বান",
-    news_date_3: "2024.03.22",
-    news_title_3: "ইউনেস্কো স্কুল সহায়তা: এই বছরের স্কুল ভিজিট লেকচার রিপোর্ট প্রকাশ",
+    news_featured_label: "বিশেষ কার্যক্রম",
+    news_featured_title: "আমাদের ESD ও SDGs সহযোগিতার উদ্যোগ紹介",
+    news_date_1: "2026.08.05",
+    news_title_1_home: "নাগাসেইজিতে 'শান্তির ঘণ্টা বাজানো' অনুষ্ঠান অনুষ্ঠিত হয়েছে",
+    news_date_2: "2026.08.02",
+    news_title_2_home: "ওকায়ামা SDGs ফেয়ারে SDGs পাসপোর্ট অভিজ্ঞতা উপস্থাপনা অনুষ্ঠিত হয়েছে",
+    news_date_3: "2026.07.18-20",
+    news_title_3_home: "বিশ্বের সঙ্গে সংযুক্ত ২০২৬ 'বহু-সাংস্কৃতিক সহাবস্থান' স্টাডি কফি অনুষ্ঠিত হয়েছে",
+    news_date_4: "2026.07.07",
+    news_title_4_home: "ওকায়ামা ২০২৬-এ 'শান্তির বার্তা' ~ হিরোশিমা শান্তি প্রদর্শনী ~ অনুষ্ঠিত হয়েছে",
 
     // Team Section
     team_tag: "আমাদের দল / কার্যনির্বাহী ও সদস্যবৃন্দ",
-    team_role_1: "সহ-সভাপতি",
-    team_name_1: "তারো ইয়ামাদা",
+    team_role_1: "সভাপতি",
+    team_name_1: "জুনকো তোকুয়ামা",
     team_bio_1: "শিক্ষার মাধ্যমে আমাদের সম্প্রদায়ের জন্য একসাথে একটি টেকসই ভবিষ্যৎ গড়ে তুলি।",
-    team_role_2: "সাধারণ সম্পাদক",
-    team_name_2: "হানাকো সাতো",
+    team_role_2: "সহ-সভাপতি",
+    team_name_2: "ইয়োশিকো কাওয়াগুচি",
     team_bio_2: "আমরা একটি উন্মুক্ত অ্যাসোসিয়েশন পরিচালনা করতে চাই যেখানে বৈচিত্র্যময় মানুষ একসাথে কাজ করতে পারে।",
     team_role_3: "যুব প্রতিনিধি",
     team_name_3: "ইচিরো সুজুকি",
@@ -624,7 +726,7 @@ window.translations = {
 
     // Footer
     footer_address: "ওকায়ামা সিটি, ওকায়ামা প্রিফেকচার ৭০০-০০০০ (প্লেসহোল্ডার)",
-    footer_tel: "Tel: 086-XXX-XXXX / ইমেল: info@unesco.okayama.jp",
+    footer_tel: "TEL:050-3551-0642（井上事務局長）",
     footer_rights: "&copy; ২০২৪ ওকায়ামা ইউনেস্কো অ্যাসোসিয়েশন। সর্বস্বত্ব সংরক্ষিত।",
     footer_design_by: "ডিজাইন - ",
 

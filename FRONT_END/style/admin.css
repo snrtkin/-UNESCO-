@@ -198,11 +198,13 @@
 }
 
 .status-pending { background: #fdf3d6; color: #8a6d00; }
-.status-approved, .status-active { background: #dcf3e4; color: #1a7f4e; }
+.status-approved, .status-active, .status-completed { background: #dcf3e4; color: #1a7f4e; }
 .status-rejected, .status-closed { background: #fbe1de; color: #c0392b; }
 
-.status-select { border: 1px solid var(--admin-border); border-radius: 6px; padding: 5px 8px; background: #fff; color: inherit; cursor: pointer; font: inherit; font-size: 0.75rem; }
-.status-select:disabled { cursor: wait; opacity: 0.5; }
+.status-select,
+.event-attendance-select { border: 1px solid var(--admin-border); border-radius: 6px; padding: 5px 8px; background: #fff; color: inherit; cursor: pointer; font: inherit; font-size: 0.75rem; }
+.status-select:disabled,
+.event-attendance-select:disabled { cursor: wait; opacity: 0.5; }
 
 /* ── Forms ── */
 .admin-form {

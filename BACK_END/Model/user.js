@@ -15,6 +15,16 @@ const membershipSchema = new mongoose.Schema(
       lowercase: true,
       maxlength: 254,
     },
+    country: {
+      type: String,
+      required: [true, 'Country is required'],
+      trim: true,
+      maxlength: 100,
+    },
+    passwordHash: {
+      type: String,
+      select: false,
+    },
     phone: {
       type: String,
       trim: true,
@@ -24,7 +34,25 @@ const membershipSchema = new mongoose.Schema(
     tier: {
       type: String,
       required: [true, 'Membership tier is required'],
-      enum: ['regular', 'corporate', 'student'],
+      enum: ['regular', 'corporate', 'supporting', 'student'],
+    },
+    organization: {
+      type: String,
+      trim: true,
+      maxlength: 200,
+      default: '',
+    },
+    postal: {
+      type: String,
+      trim: true,
+      maxlength: 20,
+      default: '',
+    },
+    address: {
+      type: String,
+      trim: true,
+      maxlength: 300,
+      default: '',
     },
     message: {
       type: String,
@@ -35,6 +63,11 @@ const membershipSchema = new mongoose.Schema(
     status: {
       type: String,
       enum: ['pending', 'reviewed', 'approved', 'rejected'],
+      default: 'pending',
+    },
+    paymentStatus: {
+      type: String,
+      enum: ['pending', 'paid'],
       default: 'pending',
     },
   },

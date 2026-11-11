@@ -27,13 +27,9 @@
                 <li><a href="aisatsu.html"        class="menu-item"><span class="menu-num">01</span><span data-i18n="nav_aisatsu">会長挨拶</span></a></li>
                 <li><a href="unesco-int.html"     class="menu-item"><span class="menu-num">02</span><span data-i18n="nav_intro">協会紹介</span></a></li>
                 <li><a href="events.html"          class="menu-item"><span class="menu-num">03</span><span data-i18n="nav_events">イベント</span></a></li>
-                <li><a href="membership.html"      class="menu-item"><span class="menu-num">04</span><span data-i18n="nav_membership">入会案内</span></a></li>
+                <li><a href="membership.html"      class="menu-item"><span class="menu-num">04</span><span data-i18n="nav_membership">ボランティア入会案内</span></a></li>
             </ul>
         </nav>
-        <div class="sidebar-footer">
-            <p>Get in touch</p>
-            <a href="mailto:hello@flyward.co">hello@flyward.co</a>
-        </div>
     </aside>
 
     <!-- NAVBAR -->
@@ -92,8 +88,8 @@
             </div>
 
             <!-- Heading -->
-            <h1 class="login-heading">ログイン</h1>
-            <p class="login-sub">会員番号またはメールアドレスで<br>ログインしてください</p>
+            <h1 class="login-heading">会員ログイン</h1>
+            <p class="login-sub">会員承認後、登録したメールアドレスと<br>パスワードでログインしてください</p>
 
             <!-- Form -->
             <form id="loginForm" novalidate>
@@ -101,7 +97,7 @@
                 <!-- Email / ID field -->
                 <div class="field" id="field-user">
                     <input
-                        type="text"
+                        type="email"
                         id="username"
                         name="username"
                         placeholder=" "
@@ -109,9 +105,9 @@
                         required
                         aria-describedby="username-error"
                     >
-                    <label for="username">メールアドレス または 会員番号</label>
+                    <label for="username">メールアドレス</label>
                     <span class="field-error" id="username-error" role="alert">
-                        メールアドレスまたは会員番号を入力してください
+                        メールアドレスを入力してください
                     </span>
                 </div>
 
@@ -170,7 +166,10 @@
 
             <!-- Register -->
             <div class="login-register">
-                会員でない方は <a href="membership.html">入会のご案内</a> をご覧ください
+                新規会員の方は <a id="newMemberLink" href="membership-application.html">こちらから会員登録</a>
+            </div>
+            <div class="login-register" id="adminLoginLink">
+                管理者の方は <a href="login.html?admin=1">管理者ログイン</a>
             </div>
 
             <!-- Back home -->
@@ -233,6 +232,28 @@
         const fieldUser = document.getElementById('field-user');
         const fieldPass = document.getElementById('field-pass');
         const userInput = document.getElementById('username');
+        const queryParams = new URLSearchParams(window.location.search);
+        const isAdminLogin = queryParams.get('admin') === '1';
+        const returnTo = queryParams.get('returnTo');
+        const registerLink = document.querySelector('.login-register');
+        const adminLoginLink = document.getElementById('adminLoginLink');
+        const newMemberLink = document.getElementById('newMemberLink');
+        const selectedTier = new URLSearchParams(window.location.search).get('tier');
+        if (['regular', 'supporting', 'student'].includes(selectedTier)) {
+            newMemberLink.href = `membership-application.html?tier=${encodeURIComponent(selectedTier)}`;
+        }
+
+        if (isAdminLogin) {
+            document.querySelector('.login-heading').textContent = '管理者ログイン';
+            document.querySelector('.login-sub').textContent = '管理者アカウントでログインしてください';
+            userInput.type = 'text';
+            userInput.setAttribute('autocomplete', 'username');
+            userInput.nextElementSibling.textContent = '管理者ユーザー名';
+            document.getElementById('username-error').textContent = 'ユーザー名を入力してください';
+            document.getElementById('forgotLink').textContent = 'パスワードを忘れた場合';
+            registerLink.innerHTML = '会員の方は <a href="login.html">会員ログイン</a>';
+            adminLoginLink.hidden = true;
+        }
 
         function validate() {
             let ok = true;
@@ -270,21 +291,26 @@
             loginBtn.classList.add('loading');
             loginBtn.disabled = true;
             try {
-                const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
+                const response = await fetch(`${API_BASE_URL}/api/auth/${isAdminLogin ? 'login' : 'member-login'}`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        username: userInput.value.trim(),
+                        [isAdminLogin ? 'username' : 'email']: userInput.value.trim(),
                         password: pwInput.value,
                     }),
                 });
                 const data = await response.json();
                 if (!response.ok || !data.ok) throw new Error(data.message || 'ログインに失敗しました');
                 const storage = document.getElementById('remember').checked ? localStorage : sessionStorage;
-                storage.setItem('adminToken', data.token);
-                storage.setItem('adminUsername', data.username);
-                sessionStorage.setItem('adminUsername', data.username);
-                window.location.href = 'admin.html';
+                if (isAdminLogin) {
+                    storage.setItem('adminToken', data.token);
+                    storage.setItem('adminUsername', data.username);
+                    sessionStorage.setItem('adminUsername', data.username);
+                    window.location.href = 'admin.html';
+                } else {
+                    storage.setItem('memberToken', data.token);
+                    window.location.href = returnTo === 'events.html' ? returnTo : 'member.html';
+                }
             } catch (err) {
                 showToast(err.message);
             } finally {
