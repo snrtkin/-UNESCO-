@@ -195,6 +195,7 @@
 
     <script src="../script/translations.js"></script>
     <script src="../script/index.js"></script>
+    <script src="../script/config.js"></script>
     <script>
     (() => {
         // Password toggle
@@ -263,16 +264,33 @@
             pwInput.classList.remove('error');
         });
 
-        form.addEventListener('submit', e => {
+        form.addEventListener('submit', async e => {
             e.preventDefault();
             if (!validate()) return;
             loginBtn.classList.add('loading');
             loginBtn.disabled = true;
-            setTimeout(() => {
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        username: userInput.value.trim(),
+                        password: pwInput.value,
+                    }),
+                });
+                const data = await response.json();
+                if (!response.ok || !data.ok) throw new Error(data.message || 'ログインに失敗しました');
+                const storage = document.getElementById('remember').checked ? localStorage : sessionStorage;
+                storage.setItem('adminToken', data.token);
+                storage.setItem('adminUsername', data.username);
+                sessionStorage.setItem('adminUsername', data.username);
+                window.location.href = 'admin.html';
+            } catch (err) {
+                showToast(err.message);
+            } finally {
                 loginBtn.classList.remove('loading');
                 loginBtn.disabled = false;
-                showToast(`${userInput.value} 様、ようこそ！マイページは準備中です。`);
-            }, 1600);
+            }
         });
     })();
     </script>

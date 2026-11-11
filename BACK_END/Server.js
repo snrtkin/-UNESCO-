@@ -1,10 +1,10 @@
-require('dotenv').config();
+require('dotenv').config({ override: true });
 
 const express = require('express');
 const cors = require('cors');
 const { connectDB } = require('./Config/db');
 const dataRoutes = require('./Routes/data');
-const authRoutes = require('./Routes/auth');
+const { router: authRoutes } = require('./Routes/auth');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -14,10 +14,20 @@ const allowedOrigins = (process.env.CORS_ORIGIN || 'http://localhost:5500')
   .map((origin) => origin.trim())
   .filter(Boolean);
 
+function isAllowedOrigin(origin) {
+  if (!origin || allowedOrigins.includes(origin)) return true;
+  try {
+    const url = new URL(origin);
+    return url.protocol === 'http:' && (url.hostname === 'localhost' || url.hostname === '127.0.0.1');
+  } catch {
+    return false;
+  }
+}
+
 app.use(
   cors({
     origin(origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
+      if (isAllowedOrigin(origin)) {
         callback(null, true);
         return;
       }
@@ -40,8 +50,8 @@ app.get('/', (_req, res) => {
   });
 });
 
-app.use('/api', dataRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api', dataRoutes);
 
 app.use((_req, res) => {
   res.status(404).json({ ok: false, message: 'Not found' });

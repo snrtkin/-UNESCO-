@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理画面 - 岡山ユネスコ協会</title>
+    <meta name="description" content="岡山ユネスコ協会 管理画面（お申し込み確認・イベント管理）">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="../style/admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+</head>
+<body class="admin-body">
+
+    <header class="admin-topbar">
+        <a href="../index.html" class="admin-logo">
+            <img src="../images/logo.png" alt="岡山ユネスコ協会">
+            <span>管理画面</span>
+        </a>
+        <div class="admin-topbar-right">
+            <span class="admin-username" id="adminUsername"></span>
+            <button type="button" class="btn-logout" id="logoutBtn">ログアウト</button>
+        </div>
+    </header>
+
+    <main class="admin-main">
+
+        <nav class="admin-tabs" role="tablist">
+            <button class="admin-tab active" data-tab="submissions" role="tab" aria-selected="true">お申し込み一覧</button>
+            <button class="admin-tab" data-tab="events" role="tab" aria-selected="false">イベント管理</button>
+        </nav>
+
+        <!-- ═══ SUBMISSIONS TAB ═══ -->
+        <section class="admin-panel active" id="panel-submissions">
+
+            <div class="admin-panel-header">
+                <h2>入会申し込み (Membership Applications)</h2>
+                <button type="button" class="btn-secondary" id="refreshMembership">更新</button>
+            </div>
+            <div class="table-wrap">
+                <table class="admin-table" id="membershipTable">
+                    <thead>
+                        <tr>
+                            <th>日時</th>
+                            <th>氏名</th>
+                            <th>メール</th>
+                            <th>電話</th>
+                            <th>種別</th>
+                            <th>メッセージ</th>
+                            <th>状態</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <p class="table-empty" id="membershipEmpty"></p>
+            </div>
+
+            <div class="admin-panel-header" style="margin-top:40px;">
+                <h2>ボランティア申し込み (Volunteer Applications)</h2>
+                <button type="button" class="btn-secondary" id="refreshVolunteer">更新</button>
+            </div>
+            <div class="table-wrap">
+                <table class="admin-table" id="volunteerTable">
+                    <thead>
+                        <tr>
+                            <th>日時</th>
+                            <th>氏名</th>
+                            <th>メール</th>
+                            <th>電話</th>
+                            <th>希望活動</th>
+                            <th>メッセージ</th>
+                            <th>状態</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <p class="table-empty" id="volunteerEmpty"></p>
+            </div>
+
+        </section>
+
+        <!-- ═══ EVENTS TAB ═══ -->
+        <section class="admin-panel" id="panel-events">
+
+            <div class="admin-panel-header">
+                <h2>新しいイベントを追加 (Add Event)</h2>
+            </div>
+
+            <form class="admin-form" id="eventForm">
+                <div class="admin-form-grid">
+                    <div class="form-group">
+                        <label for="eventTitle">タイトル (Title) <span class="required">*</span></label>
+                        <input type="text" id="eventTitle" name="title" required maxlength="200" placeholder="例: ESD体験ワークショップ">
+                    </div>
+                    <div class="form-group">
+                        <label for="eventCategory">カテゴリ (Category)</label>
+                        <select id="eventCategory" name="category">
+                            <option value="event">イベント運営</option>
+                            <option value="education">教育・出前講座</option>
+                            <option value="pr">広報・SNS</option>
+                            <option value="other">その他</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventDate">開催日 (Date)</label>
+                        <input type="date" id="eventDate" name="eventDate">
+                    </div>
+                    <div class="form-group">
+                        <label for="eventImage">画像 (Image)</label>
+                        <input type="file" id="eventImage" name="image" accept="image/jpeg,image/png,image/webp,image/avif,image/gif">
+                    </div>
+                    <div class="form-group form-group-wide">
+                        <label for="eventDescription">説明 (Description)</label>
+                        <textarea id="eventDescription" name="description" rows="3" maxlength="2000" placeholder="イベントの詳細"></textarea>
+                    </div>
+                    <div class="form-group form-group-wide checkbox-row">
+                        <label><input type="checkbox" id="eventFeatured" name="featured"> トップに注目イベントとして表示 (Featured)</label>
+                    </div>
+                </div>
+                <p class="form-status" id="eventFormStatus" role="status" aria-live="polite"></p>
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary" id="eventSubmitBtn"><span>追加する (ADD)</span></button>
+                </div>
+            </form>
+
+            <div class="admin-panel-header" style="margin-top:40px;">
+                <h2>登録済みイベント (Existing Events)</h2>
+                <button type="button" class="btn-secondary" id="refreshEvents">更新</button>
+            </div>
+            <div class="event-admin-grid" id="eventAdminGrid"></div>
+            <p class="table-empty" id="eventsEmpty"></p>
+
+        </section>
+
+    </main>
+
+    <script src="../script/config.js"></script>
+    <script src="../script/admin.js"></script>
+</body>
+</html>

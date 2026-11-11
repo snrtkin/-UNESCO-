@@ -80,11 +80,24 @@ if (particlesEl) {
 /* ── NAVBAR SCROLL ── */
 const navbar = document.getElementById('navbar');
 
-window.addEventListener('scroll', () => {
+function updateNavbarState() {
       if (navbar) {
-            navbar.classList.toggle('scrolled', window.scrollY > 60);
+            const isScrolled = window.scrollY > 60;
+            navbar.classList.toggle('scrolled', isScrolled);
+            if (isScrolled) {
+                  navbar.style.setProperty('background', '#bad9ce', 'important');
+                  navbar.style.setProperty('height', '56px', 'important');
+                  navbar.style.setProperty('box-shadow', '0 8px 24px rgba(14, 105, 115, 0.14)', 'important');
+            } else {
+                  navbar.style.removeProperty('background');
+                  navbar.style.removeProperty('height');
+                  navbar.style.removeProperty('box-shadow');
+            }
       }
-}, { passive: true });
+}
+
+window.addEventListener('scroll', updateNavbarState, { passive: true });
+updateNavbarState();
 
 /* ── SIDEBAR ── */
 const menuToggle = document.getElementById('menuToggle');
@@ -329,4 +342,4 @@ function showLangToast(message) {
             setTimeout(() => toast.remove(), 300);
       }, 2500);
 }
-
+

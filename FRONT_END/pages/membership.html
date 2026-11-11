@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>入会案内 - 岡山ユネスコ協会</title>
+    <title>お問い合わせ - 岡山ユネスコ協会</title>
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/membership.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -82,11 +82,60 @@
     </header>
 
     <div class="content-wrapper reveal">
-        <span class="eyebrow">JOIN US</span>
-        <h1>入会案内</h1>
+        <div class="contact-breadcrumb"><a href="../index.html" data-i18n="contact_breadcrumb_home">トップ</a><span>/</span><strong data-i18n="contact_breadcrumb_current">お問い合わせ</strong></div>
+        <span class="eyebrow" data-i18n="contact_eyebrow">CONTACT / GET IN TOUCH</span>
+        <h1 data-i18n="contact_title">お問い合わせ</h1>
         
         <div class="membership-intro">
-            <p>岡山ユネスコ協会では、私たちの活動に賛同し、共に平和で持続可能な社会づくりに貢献してくださる会員を募集しています。</p>
+            <p data-i18n="contact_intro">岡山ユネスコ協会へのお問い合わせはこちらから。内容を確認の上、事務局よりご連絡いたします。</p>
+        </div>
+
+        <div class="contact-layout">
+            <aside class="contact-details">
+                <span class="contact-label" data-i18n="contact_org">OKAYAMA UNESCO ASSOCIATION</span>
+                <h2 data-i18n="contact_details_title">お気軽に<br>ご連絡ください</h2>
+                <p data-i18n="contact_details_intro">活動についてのご質問、イベント、入会に関するご相談などを受け付けています。</p>
+                <div class="contact-detail-item">
+                    <span data-i18n="contact_office_label">OFFICE</span>
+                    <p data-i18n="contact_office">岡山ユネスコ協会 事務局</p>
+                </div>
+                <div class="contact-detail-item">
+                    <span data-i18n="contact_address_label">ADDRESS</span>
+                    <p data-i18n="contact_address">〒700-0013<br>岡山県岡山市北区伊福町4-4-31-202</p>
+                </div>
+                <div class="contact-detail-item">
+                    <span data-i18n="contact_phone_label">CONTACT</span>
+                    <p data-i18n="contact_phone">TEL 050-3551-0642<br>MAIL okayama●unesco.or.jp</p>
+                </div>
+            </aside>
+
+            <div class="contact-form-card">
+                <div class="contact-form-heading">
+                    <span data-i18n="contact_form_label">CONTACT FORM</span>
+                    <h2 data-i18n="contact_form_title">お問い合わせフォーム</h2>
+                </div>
+                <form class="contact-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('お問い合わせを受け付けました。');">
+                    <div class="form-group">
+                        <label for="contact-name"><span data-i18n="contact_name_label">お名前</span> <span class="required">*</span></label>
+                        <input type="text" id="contact-name" name="contact-name" required data-i18n="contact_name_placeholder" placeholder="岡山 太郎">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email"><span data-i18n="contact_email_label">メールアドレス</span> <span class="required">*</span></label>
+                        <input type="email" id="contact-email" name="contact-email" required data-i18n="contact_email_placeholder" placeholder="sample@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message"><span data-i18n="contact_message_label">お問い合わせ内容</span> <span class="required">*</span></label>
+                        <textarea id="contact-message" name="contact-message" rows="6" required data-i18n="contact_message_placeholder" placeholder="お問い合わせ内容をご記入ください"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary contact-submit"><span data-i18n="contact_submit">送信する</span><span aria-hidden="true">→</span></button>
+                </form>
+            </div>
+        </div>
+
+        <div class="membership-section-heading">
+            <span class="eyebrow" data-i18n="membership_eyebrow">JOIN US</span>
+            <h2 data-i18n="membership_section_title">入会案内</h2>
+            <p data-i18n="membership_section_intro">活動に賛同し、共に平和で持続可能な社会づくりに参加してくださる会員を募集しています。</p>
         </div>
 
         <div class="membership-tiers">
